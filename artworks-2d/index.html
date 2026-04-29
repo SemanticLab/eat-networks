@@ -210,6 +210,118 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
 
 
     }
+
+    #menu-toggle{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: solid 1px #212427;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    #menu-toggle:hover{
+      background-color: #f5f5f5;
+    }
+    #menu-toggle .bar{
+      display: block;
+      width: 22px;
+      height: 3px;
+      background-color: #212427;
+      margin: 3px 0;
+      border-radius: 2px;
+    }
+    #menu-panel{
+      position: absolute;
+      top: 64px;
+      right: 12px;
+      width: 320px;
+      max-height: calc(100vh - 80px);
+      background-color: rgba(255, 255, 255, 0.97);
+      border: solid 1px #212427;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      z-index: 10;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    #menu-panel.open{
+      display: flex;
+    }
+    #menu-panel-header{
+      padding: 0.75em 1em;
+      border-bottom: solid 1px #ddd;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #menu-panel-actions{
+      font-size: 0.75em;
+      font-weight: 400;
+      text-transform: none;
+    }
+    #menu-panel-actions a{
+      cursor: pointer;
+      text-decoration: underline;
+      margin-left: 0.5em;
+    }
+    #menu-panel-filter{
+      padding: 0.5em 1em;
+      border-bottom: solid 1px #eee;
+    }
+    #menu-panel-filter input{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.4em 0.5em;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9em;
+    }
+    #menu-panel-filter input:focus{
+      outline: none;
+      border-color: #212427;
+    }
+    #menu-panel-list{
+      overflow-y: auto;
+      padding: 0.5em 0;
+    }
+    .menu-item.hidden{
+      display: none;
+    }
+    .menu-item{
+      display: flex;
+      align-items: center;
+      padding: 0.35em 1em;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .menu-item:hover{
+      background-color: #f0f0f0;
+    }
+    .menu-item input{
+      margin-right: 0.6em;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: #212427;
+    }
+    .menu-item label{
+      cursor: pointer;
+      flex-grow: 1;
+    }
   </style>
   <!--<script src="../../dist/force-graph.js"></script>-->
 </head>
@@ -218,6 +330,24 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
 
   <h1 id="title">Artworks </h1>
   <div id="graph"></div>
+
+  <button id="menu-toggle" aria-label="Toggle artwork menu">
+    <span><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+  </button>
+
+  <div id="menu-panel">
+    <div id="menu-panel-header">
+      <span>Artworks</span>
+      <span id="menu-panel-actions">
+        <a id="menu-select-all">all</a>
+        <a id="menu-select-none">none</a>
+      </span>
+    </div>
+    <div id="menu-panel-filter">
+      <input id="menu-panel-filter-input" type="text" placeholder="Filter artworks..." />
+    </div>
+    <div id="menu-panel-list"></div>
+  </div>
 
   <div id="app">
 
@@ -365,25 +495,26 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           nodesAdded[a.id] = true
         }
         
-        if (!nodesAdded[a.creator]){
-          nodes.push({
-            id: a.creator,
-            label: a.creatorLabel,
-            img:a.creatorImg,
-            type:"person"
-          })
-          nodesAdded[a.creator] = true
-        }
-        
+        if (a.creator){
+          if (!nodesAdded[a.creator]){
+            nodes.push({
+              id: a.creator,
+              label: a.creatorLabel,
+              img:a.creatorImg,
+              type:"person"
+            })
+            nodesAdded[a.creator] = true
+          }
 
-        let creatorToArt = `${a.creator}->${a.id}`
-        if (!linksAdded[creatorToArt]){
-          links.push({
-            source: a.creator,
-            target: a.id,
-            ref: "creator"
-          })
-          linksAdded[creatorToArt]=true
+          let creatorToArt = `${a.creator}->${a.id}`
+          if (!linksAdded[creatorToArt]){
+            links.push({
+              source: a.creator,
+              target: a.id,
+              ref: "creator"
+            })
+            linksAdded[creatorToArt]=true
+          }
         }
 
         for (let con in a.contributors){
@@ -601,6 +732,96 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
         .graphData(gData);
 
 
+      const disabledArtworkIds = new Set();
+
+      const rebuildGraph = () => {
+        const linkSourceId = (l) => (typeof l.source === 'object' ? l.source.id : l.source);
+        const linkTargetId = (l) => (typeof l.target === 'object' ? l.target.id : l.target);
+
+        const keptLinks = allData.links.filter(l =>
+          !disabledArtworkIds.has(linkSourceId(l)) &&
+          !disabledArtworkIds.has(linkTargetId(l))
+        );
+
+        const connectedIds = new Set();
+        for (const l of keptLinks){
+          connectedIds.add(linkSourceId(l));
+          connectedIds.add(linkTargetId(l));
+        }
+
+        const keptNodes = allData.nodes.filter(n => {
+          if (n.type === 'artwork') return !disabledArtworkIds.has(n.id);
+          return connectedIds.has(n.id);
+        });
+
+        Graph.graphData({ nodes: keptNodes, links: keptLinks });
+      };
+
+      const artworkNodes = allData.nodes
+        .filter(n => n.type === 'artwork')
+        .sort((a, b) => a.label.localeCompare(b.label));
+
+      const menuList = document.getElementById('menu-panel-list');
+      const menuItemEls = new Map();
+      for (const a of artworkNodes){
+        const item = document.createElement('div');
+        item.className = 'menu-item';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = true;
+        checkbox.id = `artwork-toggle-${a.id}`;
+        const label = document.createElement('label');
+        label.htmlFor = checkbox.id;
+        label.textContent = a.label;
+        checkbox.addEventListener('change', () => {
+          if (checkbox.checked) disabledArtworkIds.delete(a.id);
+          else disabledArtworkIds.add(a.id);
+          rebuildGraph();
+        });
+        item.appendChild(checkbox);
+        item.appendChild(label);
+        menuList.appendChild(item);
+        menuItemEls.set(a.id, item);
+      }
+
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        document.getElementById('menu-panel').classList.toggle('open');
+      });
+
+      const filterInput = document.getElementById('menu-panel-filter-input');
+      const parseFilterTerms = () => filterInput.value
+        .toLowerCase()
+        .split('|')
+        .map(t => t.trim())
+        .filter(t => t.length > 0);
+      const matchesFilter = (label, terms) => {
+        if (terms.length === 0) return true;
+        const lower = label.toLowerCase();
+        return terms.some(t => lower.includes(t));
+      };
+      const getVisibleArtworks = () => {
+        const terms = parseFilterTerms();
+        if (terms.length === 0) return artworkNodes;
+        return artworkNodes.filter(a => matchesFilter(a.label, terms));
+      };
+      filterInput.addEventListener('input', () => {
+        const terms = parseFilterTerms();
+        for (const a of artworkNodes){
+          menuItemEls.get(a.id).classList.toggle('hidden', !matchesFilter(a.label, terms));
+        }
+      });
+
+      const setAll = (checked) => {
+        for (const a of getVisibleArtworks()){
+          const cb = document.getElementById(`artwork-toggle-${a.id}`);
+          cb.checked = checked;
+          if (checked) disabledArtworkIds.delete(a.id);
+          else disabledArtworkIds.add(a.id);
+        }
+        rebuildGraph();
+      };
+      document.getElementById('menu-select-all').addEventListener('click', () => setAll(true));
+      document.getElementById('menu-select-none').addEventListener('click', () => setAll(false));
 
 
     })();

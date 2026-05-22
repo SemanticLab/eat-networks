@@ -1,5 +1,6 @@
 import json
 import itertools
+import os
 
 
 people_lookup = json.load(open('people_lookup.json'))
@@ -12,7 +13,11 @@ all_relationships = {}
 
 ## assoicated entities network
 
-for doc in json.load(open('associated_entities_raw.json')):
+# Prefer the scrubbed file (no references to deleted blocks) if it exists.
+raw_path = 'associated_entities_raw.cleaned.json' if os.path.exists('associated_entities_raw.cleaned.json') else 'associated_entities_raw.json'
+print(f'reading {raw_path}')
+
+for doc in json.load(open(raw_path)):
 
 
 	blocks = {}

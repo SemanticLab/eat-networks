@@ -116,14 +116,20 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
     .wikibase-link{
       display: inline-flex;
       align-items: center;
+      gap: 0.35em;
       color: #555;
       text-decoration: none;
-      padding: 0.25em;
+      padding: 0.25em 0.5em;
       border-radius: 4px;
     }
     .wikibase-link:hover{
       color: #212427;
       background-color: #f0f0f0;
+    }
+    .wikibase-link-label{
+      font-size: 0.4em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
     #about-content{
       border-top:solid 1px #212427;
@@ -399,6 +405,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
         <div class="about-title">
           {{name}}
           <a v-if="wikibaseUrl" :href="wikibaseUrl" target="_blank" rel="noopener" class="wikibase-link" title="Open on Wikibase">
+            <span class="wikibase-link-label">Open in Semlab WikiBase</span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
           <span style="font-size:0.5em; padding-left: 1em">({{mainCount}})</span>
@@ -540,7 +547,11 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           this.mainCount = t + ' text blocks'
 
 
-          this.modalInstructions=`Below are the people who were mentioned with ${this.name} in archival documents. Click to show the text blocks they share.`
+          if (this.blocksByAssoicated.length === 0){
+            this.modalInstructions = `No archival text blocks are currently available for ${this.name}. They may appear in the network because of older relationship data whose source documents have since been removed from the wikibase.`
+          } else {
+            this.modalInstructions = `Below are the people who were mentioned with ${this.name} in archival documents. Click to show the text blocks they share.`
+          }
 
 
           console.log(this.blocksByAssoicated)

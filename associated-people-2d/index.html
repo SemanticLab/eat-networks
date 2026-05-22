@@ -111,6 +111,19 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       align-items: center;
       display: flex;
       padding-left: 1em;
+      gap: 0.5em;
+    }
+    .wikibase-link{
+      display: inline-flex;
+      align-items: center;
+      color: #555;
+      text-decoration: none;
+      padding: 0.25em;
+      border-radius: 4px;
+    }
+    .wikibase-link:hover{
+      color: #212427;
+      background-color: #f0f0f0;
     }
     #about-content{
       border-top:solid 1px #212427;
@@ -207,6 +220,138 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
 
 
     }
+
+    #menu-toggle{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 44px;
+      height: 44px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: solid 1px #212427;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    #menu-toggle:hover{
+      background-color: #f5f5f5;
+    }
+    #menu-toggle .bar{
+      display: block;
+      width: 22px;
+      height: 3px;
+      background-color: #212427;
+      margin: 3px 0;
+      border-radius: 2px;
+    }
+    #menu-panel{
+      position: absolute;
+      top: 64px;
+      right: 12px;
+      width: 320px;
+      max-height: calc(100vh - 80px);
+      background-color: rgba(255, 255, 255, 0.97);
+      border: solid 1px #212427;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      z-index: 10;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    #menu-panel.open{
+      display: flex;
+    }
+    #menu-panel-header{
+      padding: 0.75em 1em;
+      border-bottom: solid 1px #ddd;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9em;
+    }
+    #menu-panel-layouts{
+      display: flex;
+      gap: 4px;
+      padding: 0.5em 1em;
+      border-bottom: solid 1px #eee;
+      flex-wrap: wrap;
+    }
+    .layout-btn{
+      flex: 1 1 auto;
+      min-width: 60px;
+      padding: 0.35em 0.5em;
+      font-family: inherit;
+      font-size: 0.75em;
+      background-color: #f5f5f5;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #212427;
+    }
+    .layout-btn:hover{
+      background-color: #e8e8e8;
+    }
+    .layout-btn.active{
+      background-color: #212427;
+      color: #fff;
+      border-color: #212427;
+    }
+    #menu-panel-filter{
+      padding: 0.5em 1em;
+      border-bottom: solid 1px #eee;
+    }
+    #menu-panel-filter input{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.4em 0.5em;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9em;
+    }
+    #menu-panel-filter input:focus{
+      outline: none;
+      border-color: #212427;
+    }
+    #menu-panel-hint{
+      padding: 0.25em 1em 0.5em;
+      font-size: 0.75em;
+      color: #666;
+      border-bottom: solid 1px #eee;
+    }
+    #menu-panel-list{
+      overflow-y: auto;
+      padding: 0.5em 0;
+    }
+    .menu-item.hidden{
+      display: none;
+    }
+    .menu-item{
+      display: flex;
+      align-items: center;
+      padding: 0.35em 1em;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .menu-item:hover{
+      background-color: #f0f0f0;
+    }
+    .menu-item input{
+      margin-right: 0.6em;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: #ff2d2d;
+    }
+    .menu-item label{
+      cursor: pointer;
+      flex-grow: 1;
+    }
   </style>
   <!--<script src="../../dist/force-graph.js"></script>-->
 </head>
@@ -214,6 +359,25 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
 <body>
   <h1 id="title">Associated People </h1>
   <div id="graph"></div>
+
+  <button id="menu-toggle" aria-label="Toggle people menu">
+    <span><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+  </button>
+
+  <div id="menu-panel">
+    <div id="menu-panel-header">People</div>
+    <div id="menu-panel-layouts">
+      <button class="layout-btn active" data-layout="force">Force</button>
+      <button class="layout-btn" data-layout="hub">Hub &amp; spoke</button>
+      <button class="layout-btn" data-layout="radial">Radial</button>
+      <button class="layout-btn" data-layout="cluster">Cluster</button>
+    </div>
+    <div id="menu-panel-filter">
+      <input id="menu-panel-filter-input" type="text" placeholder="Filter by name (use | for OR)..." />
+    </div>
+    <div id="menu-panel-hint">Check people or type to highlight. Their 2-hop connections stay visible; everyone else is dimmed.</div>
+    <div id="menu-panel-list"></div>
+  </div>
 
   <div id="app">
 
@@ -233,7 +397,11 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           <img :src="pic"/>
         </div>
         <div class="about-title">
-          {{name}} <span style="font-size:0.5em; padding-left: 1em">({{mainCount}})</span>
+          {{name}}
+          <a v-if="wikibaseUrl" :href="wikibaseUrl" target="_blank" rel="noopener" class="wikibase-link" title="Open on Wikibase">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <span style="font-size:0.5em; padding-left: 1em">({{mainCount}})</span>
         </div>
       </div>
       <div id="about-content">
@@ -309,6 +477,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           display:false,
           pic:null,
           name:null,
+          wikibaseUrl:null,
           mainCount:'...',
           modalInstructions: '',
           blocksByAssoicated: [],
@@ -332,6 +501,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           
 
           this.name = names[node.id]
+          this.wikibaseUrl = `http://base.semlab.io/wiki/Item:Q${node.id}`
 
           this.display=true
 
@@ -606,6 +776,20 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       links: allData.links
     };
 
+    // ---- Filter state (mutated by menu; read by render callbacks) ----
+    // primaryIds = explicitly-highlighted people (red ring + label)
+    // hop1Ids = direct neighbors of primary (full opacity)
+    // hop2Ids = neighbors of hop1 not already primary/hop1 (50% opacity)
+    // visibleIds = union of the above; everyone else is hidden
+    // When primaryIds is empty, no filter is active and everything renders normally.
+    const primaryIds = new Set();
+    const hop1Ids = new Set();
+    const hop2Ids = new Set();
+    const visibleIds = new Set();
+
+    const linkSourceId = (l) => (typeof l.source === 'object' ? l.source.id : l.source);
+    const linkTargetId = (l) => (typeof l.target === 'object' ? l.target.id : l.target);
+
     const Graph = ForceGraph()
       (document.getElementById('graph'))
       .nodeCanvasObject((node, ctx, globalScale) => {
@@ -615,12 +799,21 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
 
         const size = 12;
 
+        const filterActive = primaryIds.size > 0;
+        const isPrimary = filterActive && primaryIds.has(node.id);
+        const isVisible = !filterActive || visibleIds.has(node.id);
+
+        if (filterActive && !isVisible){
+          return; // hide entirely
+        }
+        ctx.save();
+        if (filterActive && hop2Ids.has(node.id)) ctx.globalAlpha = 0.5;
 
         if (node.img){
 
           ctx.save();
           ctx.beginPath();
-          ctx.arc(node.x, node.y, size/2, 0, 2 * Math.PI);         
+          ctx.arc(node.x, node.y, size/2, 0, 2 * Math.PI);
           ctx.clip();
 
           ctx.drawImage(imgs[node.id], node.x - size / 2, node.y - size / 2, size, size);
@@ -632,8 +825,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           ctx.beginPath();
           ctx.arc(node.x, node.y, size/2.5, 0, 2 * Math.PI);
           ctx.fillStyle = "white";
-          ctx.fill();          
-          
+          ctx.fill();
+
 
 
           ctx.drawImage(personImg, node.x - size / 2, node.y - size / 2, size, size);
@@ -642,17 +835,24 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           // ctx.fillStyle = 'blue';
           // ctx.fillRect(node.x - size / 2, node.y - size / 2, size, size);
         }
-               
 
-        if (globalScale>3){
+        if (isPrimary){
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, size/2 + 1.5, 0, 2 * Math.PI);
+          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = '#ff2d2d';
+          ctx.stroke();
+        }
+
+        if (globalScale>3 || isPrimary){
 
           const label = node.name;
-          const fontSize = 12/globalScale;
+          const fontSize = (isPrimary && globalScale<=3) ? 3 : 12/globalScale;
           ctx.font = `${fontSize}px Sans-Serif`;
           const textWidth = ctx.measureText(label).width;
           const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
 
-          ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+          ctx.fillStyle = isPrimary ? 'rgba(255, 45, 45, 0.9)' : 'rgba(0, 0, 0, 0.8)';
           ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2 + size/2, ...bckgDimensions);
 
           ctx.textAlign = 'center';
@@ -661,16 +861,33 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
           ctx.fillText(label, node.x, node.y +  size/2);
         }
 
-
+        ctx.restore();
 
       })
       .nodePointerAreaPaint((node, color, ctx) => {
+        if (primaryIds.size > 0 && !visibleIds.has(node.id)) return;
         const size = 12;
         ctx.fillStyle =  color;
         ctx.fillRect(node.x - size / 2, node.y - size / 2, size, size); // draw square as pointer trap
       })
       // .linkColor(() => 'whitesmoke')
-      .linkWidth(() => 0.25)
+      .linkVisibility((link) => {
+        if (primaryIds.size === 0) return true;
+        return visibleIds.has(linkSourceId(link)) && visibleIds.has(linkTargetId(link));
+      })
+      .linkColor((link) => {
+        if (primaryIds.size === 0) return 'rgba(0,0,0,0.2)';
+        const sP = primaryIds.has(linkSourceId(link));
+        const tP = primaryIds.has(linkTargetId(link));
+        if (sP || tP) return 'rgba(255,45,45,0.9)';
+        return 'rgba(0,0,0,0.15)';
+      })
+      .linkWidth((link) => {
+        if (primaryIds.size === 0) return 0.25;
+        const sP = primaryIds.has(linkSourceId(link));
+        const tP = primaryIds.has(linkTargetId(link));
+        return (sP || tP) ? 1.5 : 0.25;
+      })
       // .linkCurvature(() => 1)
       .onNodeClick((node,event)=> {
 
@@ -679,7 +896,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       })
       .onZoom(()=>{
         zoomCount++
-        if (zoomCount>2){          
+        if (zoomCount>2){
           document.getElementById('title').style.opacity=0;
         }
       })
@@ -688,6 +905,299 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       .graphData(gData);
 
       Graph.d3Force('link').distance(link => 100)
+
+
+    // ---- Adjacency index for 2-hop expansion ----
+    const adjacency = new Map();
+    for (const n of allData.nodes) adjacency.set(n.id, new Set());
+    for (const l of allData.links){
+      const s = linkSourceId(l);
+      const t = linkTargetId(l);
+      if (adjacency.has(s)) adjacency.get(s).add(t);
+      if (adjacency.has(t)) adjacency.get(t).add(s);
+    }
+
+    // ---- Hamburger menu ----
+    const filterInput = document.getElementById('menu-panel-filter-input');
+    const parseFilterTerms = () => filterInput.value
+      .toLowerCase()
+      .split('|')
+      .map(t => t.trim())
+      .filter(t => t.length > 0);
+    const matchesFilter = (label, terms) => {
+      const lower = label.toLowerCase();
+      return terms.some(t => lower.includes(t));
+    };
+
+    const checkedIds = new Set();
+
+    const recompute = () => {
+      primaryIds.clear();
+      hop1Ids.clear();
+      hop2Ids.clear();
+      visibleIds.clear();
+
+      const terms = parseFilterTerms();
+      // primary = text matches OR explicitly checked
+      for (const n of allData.nodes){
+        if (checkedIds.has(n.id)) { primaryIds.add(n.id); continue; }
+        if (terms.length > 0 && matchesFilter(n.name || '', terms)) primaryIds.add(n.id);
+      }
+
+      if (primaryIds.size > 0){
+        for (const id of primaryIds){
+          visibleIds.add(id);
+          const neigh = adjacency.get(id);
+          if (!neigh) continue;
+          for (const n of neigh){
+            if (primaryIds.has(n)) continue;
+            hop1Ids.add(n);
+            visibleIds.add(n);
+          }
+        }
+        for (const id of hop1Ids){
+          const neigh = adjacency.get(id);
+          if (!neigh) continue;
+          for (const n of neigh){
+            if (primaryIds.has(n) || hop1Ids.has(n)) continue;
+            hop2Ids.add(n);
+            visibleIds.add(n);
+          }
+        }
+      }
+
+      // Force force-graph to invalidate its visibility cache and repaint.
+      Graph.linkVisibility(Graph.linkVisibility());
+      Graph.nodeRelSize(Graph.nodeRelSize()); // any prop reassignment triggers redraw
+    };
+
+    const peopleNodes = allData.nodes
+      .slice()
+      .sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+
+    const menuList = document.getElementById('menu-panel-list');
+    const menuItemEls = new Map();
+    for (const p of peopleNodes){
+      const item = document.createElement('div');
+      item.className = 'menu-item';
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.checked = false;
+      checkbox.id = `person-toggle-${p.id}`;
+      const label = document.createElement('label');
+      label.htmlFor = checkbox.id;
+      label.textContent = p.name || `Q${p.id}`;
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) checkedIds.add(p.id);
+        else checkedIds.delete(p.id);
+        recompute();
+      });
+      item.appendChild(checkbox);
+      item.appendChild(label);
+      menuList.appendChild(item);
+      menuItemEls.set(p.id, item);
+    }
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('menu-panel').classList.toggle('open');
+    });
+
+    filterInput.addEventListener('input', () => {
+      const terms = parseFilterTerms();
+      for (const p of peopleNodes){
+        const visible = terms.length === 0 || matchesFilter(p.name || '', terms);
+        menuItemEls.get(p.id).classList.toggle('hidden', !visible);
+      }
+      recompute();
+    });
+
+
+    // ---- Layouts ----
+    // Each layout sets fx/fy on some/all nodes (pinning them) and lets the rest float.
+    // 'force' clears all pins.
+    const degree = new Map();
+    for (const n of allData.nodes) degree.set(n.id, adjacency.get(n.id).size);
+
+    const unpinAll = () => {
+      for (const n of allData.nodes){
+        n.fx = undefined;
+        n.fy = undefined;
+      }
+    };
+
+    const layouts = {
+      force: () => {
+        unpinAll();
+      },
+
+      hub: () => {
+        // Top-N highest-degree nodes pinned in a big oval; rest float between/around.
+        unpinAll();
+        const N = 8;
+        const top = allData.nodes
+          .slice()
+          .sort((a, b) => degree.get(b.id) - degree.get(a.id))
+          .slice(0, N);
+        const rx = 900, ry = 600;
+        top.forEach((n, i) => {
+          const t = (i / top.length) * Math.PI * 2 - Math.PI / 2;
+          n.fx = Math.cos(t) * rx;
+          n.fy = Math.sin(t) * ry;
+        });
+      },
+
+      radial: () => {
+        // Concentric rings by degree (most-connected at center).
+        // Ring capacity scales with circumference so spacing per node stays
+        // roughly constant; outer rings hold more nodes than inner ones.
+        unpinAll();
+        const sorted = allData.nodes.slice().sort((a, b) => degree.get(b.id) - degree.get(a.id));
+        const minSpacing = 35;          // min pixels between adjacent nodes on a ring
+        const ringGap = 60;              // distance between successive rings
+        const startRadius = 80;
+        let placed = 0;
+        let ring = 0;
+        while (placed < sorted.length){
+          const r = startRadius + ring * ringGap;
+          const circumference = 2 * Math.PI * r;
+          const capacity = Math.max(1, Math.floor(circumference / minSpacing));
+          const count = Math.min(capacity, sorted.length - placed);
+          // Stagger ring rotation so labels don't all line up radially
+          const rotOffset = ring * 0.37;
+          for (let i = 0; i < count; i++){
+            const n = sorted[placed + i];
+            const t = (i / count) * Math.PI * 2 + rotOffset;
+            n.fx = Math.cos(t) * r;
+            n.fy = Math.sin(t) * r;
+          }
+          placed += count;
+          ring++;
+        }
+      },
+
+      cluster: () => {
+        // Community detection via degree-weighted label propagation. Each
+        // neighbor's vote is weighted by 1/sqrt(degree) so high-degree hubs
+        // don't dominate, which breaks the single giant component into
+        // tighter subgroups.
+        unpinAll();
+
+        const labels = new Map();
+        for (const n of allData.nodes) labels.set(n.id, n.id);
+        const order = allData.nodes.map(n => n.id);
+        const ROUNDS = 50;
+        for (let r = 0; r < ROUNDS; r++){
+          for (let i = order.length - 1; i > 0; i--){
+            const j = Math.floor(Math.random() * (i + 1));
+            [order[i], order[j]] = [order[j], order[i]];
+          }
+          let changed = false;
+          for (const id of order){
+            const neigh = adjacency.get(id);
+            if (!neigh || neigh.size === 0) continue;
+            const counts = new Map();
+            for (const nx of neigh){
+              const l = labels.get(nx);
+              const w = 1 / Math.sqrt(Math.max(degree.get(nx), 1));
+              counts.set(l, (counts.get(l) || 0) + w);
+            }
+            let best = null, bestCount = -Infinity;
+            for (const [l, c] of counts){
+              if (c > bestCount || (c === bestCount && best !== null && l < best)){
+                best = l; bestCount = c;
+              }
+            }
+            if (best !== null && best !== labels.get(id)){
+              labels.set(id, best);
+              changed = true;
+            }
+          }
+          if (!changed) break;
+        }
+
+        // Group nodes by final label
+        const groups = new Map();
+        for (const [id, l] of labels){
+          if (!groups.has(l)) groups.set(l, []);
+          groups.get(l).push(id);
+        }
+        const compList = Array.from(groups.entries())
+          .filter(([_, ids]) => ids.length >= 2) // ignore singletons in grid
+          .sort((a, b) => b[1].length - a[1].length);
+        const singletons = Array.from(groups.values()).flat().filter(id => groups.get(labels.get(id)).length < 2);
+
+        // Grid for community centers, with spacing scaled to community size
+        const cols = Math.ceil(Math.sqrt(compList.length));
+        const spacing = 550;
+        const idToNode = new Map(allData.nodes.map(n => [n.id, n]));
+        compList.forEach(([_, ids], i) => {
+          const cx = (i % cols) * spacing - ((cols - 1) * spacing) / 2;
+          const cy = Math.floor(i / cols) * spacing - (Math.floor((compList.length - 1) / cols) * spacing) / 2;
+          const r = 30 + Math.sqrt(ids.length) * 18;
+          ids.forEach((id, j) => {
+            const node = idToNode.get(id);
+            if (!node) return;
+            const t = (j / ids.length) * Math.PI * 2;
+            node.fx = cx + Math.cos(t) * r;
+            node.fy = cy + Math.sin(t) * r;
+          });
+        });
+        // Park singletons in a row above the grid
+        singletons.forEach((id, j) => {
+          const node = idToNode.get(id);
+          if (!node) return;
+          node.fx = (j - singletons.length / 2) * 25;
+          node.fy = -(Math.floor((compList.length - 1) / cols) * spacing) / 2 - 250;
+        });
+      },
+    };
+
+    let activeLayout = 'force';
+
+    // Fit the camera to the "central mass" of the graph: drop nodes whose
+    // distance from the median is past the 90th percentile, then frame the
+    // bounding box of what remains. Outliers are ignored so the dense middle
+    // fills the viewport instead of being shrunk to fit stragglers.
+    const recenterOnCentralMass = () => {
+      const nodes = allData.nodes.filter(n => Number.isFinite(n.x) && Number.isFinite(n.y));
+      if (nodes.length === 0) return;
+      const xs = nodes.map(n => n.x).sort((a, b) => a - b);
+      const ys = nodes.map(n => n.y).sort((a, b) => a - b);
+      const median = (arr) => arr[Math.floor(arr.length / 2)];
+      const cx = median(xs);
+      const cy = median(ys);
+      const dists = nodes.map(n => Math.hypot(n.x - cx, n.y - cy)).sort((a, b) => a - b);
+      const cutoff = dists[Math.floor(dists.length * 0.9)];
+      const kept = nodes.filter(n => Math.hypot(n.x - cx, n.y - cy) <= cutoff);
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+      for (const n of kept){
+        if (n.x < minX) minX = n.x;
+        if (n.x > maxX) maxX = n.x;
+        if (n.y < minY) minY = n.y;
+        if (n.y > maxY) maxY = n.y;
+      }
+      const w = maxX - minX, h = maxY - minY;
+      const vw = Graph.width(), vh = Graph.height();
+      const padding = 60;
+      const k = Math.min((vw - padding * 2) / Math.max(w, 1), (vh - padding * 2) / Math.max(h, 1));
+      Graph.centerAt((minX + maxX) / 2, (minY + maxY) / 2, 500);
+      Graph.zoom(k, 500);
+    };
+
+    const applyLayout = (name) => {
+      if (!layouts[name]) return;
+      activeLayout = name;
+      layouts[name]();
+      for (const btn of document.querySelectorAll('.layout-btn')){
+        btn.classList.toggle('active', btn.dataset.layout === name);
+      }
+      Graph.d3ReheatSimulation();
+      setTimeout(recenterOnCentralMass, 400);
+    };
+
+    for (const btn of document.querySelectorAll('.layout-btn')){
+      btn.addEventListener('click', () => applyLayout(btn.dataset.layout));
+    }
 
   </script>
 </body>

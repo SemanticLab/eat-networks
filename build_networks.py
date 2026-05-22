@@ -80,6 +80,15 @@ for doc in json.load(open('associated_entities_raw.json')):
 					})
 
 
+# Drop links pointing at nodes that were skipped (missing from people_lookup),
+# otherwise force-graph throws "node not found".
+node_ids = {n['id'] for n in nodes}
+clean_links = [l for l in links if l['source'] in node_ids and l['target'] in node_ids]
+dropped = len(links) - len(clean_links)
+if dropped:
+	print(f"dropped {dropped} links referencing missing nodes")
+links = clean_links
+
 json.dump({ 'nodes': nodes, 'links': links },open('people_network.json','w'))
 
 with open('people_network.js','w') as outfile:

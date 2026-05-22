@@ -1,735 +1,135 @@
 {
-  "Q66": {
-    "qid": "Q66",
-    "id": 66,
-    "label": "Max Roach",
-    "image": "https://linkedjazz.org/image/square/Max_Roach.png"
-  },
-  "Q724": {
-    "qid": "Q724",
-    "id": 724,
-    "label": "John Cage",
-    "image": "https://linkedjazz.org/image/square/John_Cage.png"
-  },
-  "Q1019": {
-    "qid": "Q1019",
-    "id": 1019,
-    "label": "Igor Stravinsky",
-    "image": "https://linkedjazz.org/image/square/Igor_Stravinsky.png"
-  },
-  "Q1906": {
-    "qid": "Q1906",
-    "id": 1906,
-    "label": "Lyndon Johnson",
-    "image": null
-  },
-  "Q1981": {
-    "qid": "Q1981",
-    "id": 1981,
-    "label": "Martha Graham",
-    "image": "https://linkedjazz.org/image/square/Martha_Graham.png"
-  },
-  "Q19119": {
-    "qid": "Q19119",
-    "id": 19119,
-    "label": "A.V. Robinett",
-    "image": null
-  },
-  "Q19121": {
-    "qid": "Q19121",
-    "id": 19121,
-    "label": "Adi Rischner",
-    "image": null
-  },
-  "Q19123": {
-    "qid": "Q19123",
-    "id": 19123,
-    "label": "Alex Grant",
-    "image": null
-  },
-  "Q19124": {
-    "qid": "Q19124",
-    "id": 19124,
-    "label": "Alex Hay",
-    "image": null
-  },
-  "Q19125": {
-    "qid": "Q19125",
-    "id": 19125,
-    "label": "Alexander Archipenko",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19125.jpg"
-  },
-  "Q19126": {
-    "qid": "Q19126",
-    "id": 19126,
-    "label": "Alexander Calder",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19126.jpg"
-  },
-  "Q19127": {
-    "qid": "Q19127",
-    "id": 19127,
-    "label": "Alfons Schilling",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19127.jpg"
-  },
-  "Q19128": {
-    "qid": "Q19128",
-    "id": 19128,
-    "label": "Alfred H. Barr",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19128.jpg"
-  },
-  "Q19129": {
-    "qid": "Q19129",
-    "id": 19129,
-    "label": "Alfred Kurchin",
-    "image": null
-  },
-  "Q19130": {
-    "qid": "Q19130",
-    "id": 19130,
-    "label": "Alfred Leslie",
-    "image": null
-  },
-  "Q19131": {
-    "qid": "Q19131",
-    "id": 19131,
-    "label": "Alice Denney",
-    "image": null
-  },
-  "Q19132": {
-    "qid": "Q19132",
-    "id": 19132,
-    "label": "Alice Schwebke",
-    "image": null
-  },
-  "Q19133": {
-    "qid": "Q19133",
-    "id": 19133,
-    "label": "Allan Kaprow",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19133.jpg"
-  },
-  "Q19139": {
-    "qid": "Q19139",
-    "id": 19139,
-    "label": "Amos Vogel",
-    "image": null
-  },
-  "Q19143": {
-    "qid": "Q19143",
-    "id": 19143,
-    "label": "Andy Warhol",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19143.jpg"
-  },
-  "Q19144": {
-    "qid": "Q19144",
-    "id": 19144,
-    "label": "Anita Reuben",
-    "image": null
-  },
-  "Q19145": {
-    "qid": "Q19145",
-    "id": 19145,
-    "label": "Anthony Gnazzo",
-    "image": null
-  },
-  "Q19146": {
-    "qid": "Q19146",
-    "id": 19146,
-    "label": "Anthony McCall",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19146.jpg"
-  },
-  "Q19150": {
-    "qid": "Q19150",
-    "id": 19150,
-    "label": "Arman",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19150.jpg"
-  },
-  "Q19151": {
-    "qid": "Q19151",
-    "id": 19151,
-    "label": "Armand Phillip Bartos",
-    "image": null
-  },
-  "Q19155": {
-    "qid": "Q19155",
-    "id": 19155,
-    "label": "Arthur A. Houghton Jr.",
-    "image": null
-  },
-  "Q19156": {
-    "qid": "Q19156",
-    "id": 19156,
-    "label": "Arthur Albiston",
-    "image": null
-  },
-  "Q19162": {
-    "qid": "Q19162",
-    "id": 19162,
-    "label": "Audrey Sabol",
-    "image": null
-  },
-  "Q19167": {
-    "qid": "Q19167",
-    "id": 19167,
-    "label": "Barbara Jarvis",
-    "image": null
-  },
-  "Q19168": {
-    "qid": "Q19168",
-    "id": 19168,
-    "label": "Barbro Fahlstrom",
-    "image": null
-  },
-  "Q19171": {
-    "qid": "Q19171",
-    "id": 19171,
-    "label": "Becky Arnold",
-    "image": null
-  },
-  "Q19172": {
-    "qid": "Q19172",
-    "id": 19172,
-    "label": "Bela Julesz",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19172.jpg"
-  },
-  "Q19174": {
-    "qid": "Q19174",
-    "id": 19174,
-    "label": "Ben Kramer",
-    "image": null
-  },
-  "Q19175": {
-    "qid": "Q19175",
-    "id": 19175,
-    "label": "Benjamin Lloyd",
-    "image": null
-  },
-  "Q19178": {
-    "qid": "Q19178",
-    "id": 19178,
-    "label": "Bill Hartig",
-    "image": null
-  },
-  "Q19179": {
-    "qid": "Q19179",
-    "id": 19179,
-    "label": "Bill Kaminski",
-    "image": null
-  },
-  "Q19180": {
-    "qid": "Q19180",
-    "id": 19180,
-    "label": "Billy Kl\u00fcver",
-    "image": null
-  },
-  "Q19183": {
-    "qid": "Q19183",
-    "id": 19183,
-    "label": "Bob DiLorenzo",
-    "image": null
-  },
-  "Q22369": {
-    "qid": "Q22369",
-    "id": 22369,
-    "label": "Sandy Daley",
-    "image": null
-  },
-  "Q22374": {
-    "qid": "Q22374",
-    "id": 22374,
-    "label": "Nicholas Quennell",
-    "image": null
-  },
-  "Q22378": {
-    "qid": "Q22378",
-    "id": 22378,
-    "label": "Medford Schwarz",
-    "image": null
-  },
-  "Q22379": {
-    "qid": "Q22379",
-    "id": 22379,
-    "label": "Jeremy Tribe",
-    "image": null
-  },
-  "Q22640": {
-    "qid": "Q22640",
-    "id": 22640,
-    "label": "Dean Brown",
-    "image": null
-  },
-  "Q22641": {
-    "qid": "Q22641",
-    "id": 22641,
-    "label": "Emelyn Honig",
-    "image": null
-  },
-  "Q22643": {
-    "qid": "Q22643",
-    "id": 22643,
-    "label": "Neal Boenzi",
-    "image": null
-  },
-  "Q22644": {
-    "qid": "Q22644",
-    "id": 22644,
-    "label": "Rudolph Burckhardt",
-    "image": "https://semlab.s3.amazonaws.com/images/Q22644.jpg"
-  },
-  "Q22645": {
-    "qid": "Q22645",
-    "id": 22645,
-    "label": "Ugo Mulas",
-    "image": "https://semlab.s3.amazonaws.com/images/Q22645.jpg"
-  },
-  "Q22657": {
-    "qid": "Q22657",
-    "id": 22657,
-    "label": "Eric Rawson",
-    "image": null
-  },
-  "Q22659": {
-    "qid": "Q22659",
-    "id": 22659,
-    "label": "Stan Vanderbeek",
-    "image": null
-  },
-  "Q22661": {
-    "qid": "Q22661",
-    "id": 22661,
-    "label": "Albert A. List",
-    "image": null
-  },
-  "Q22662": {
-    "qid": "Q22662",
-    "id": 22662,
-    "label": "Joseph C. Wilson",
-    "image": null
-  },
-  "Q22663": {
-    "qid": "Q22663",
-    "id": 22663,
-    "label": "Mrs. Albert A. List",
-    "image": null
-  },
-  "Q22664": {
-    "qid": "Q22664",
-    "id": 22664,
-    "label": "Fred Waldhauer",
-    "image": null
-  },
-  "Q22666": {
-    "qid": "Q22666",
-    "id": 22666,
-    "label": "Robert Kennedy",
-    "image": null
-  },
-  "Q22670": {
-    "qid": "Q22670",
-    "id": 22670,
-    "label": "Jay Bell",
-    "image": null
-  },
-  "Q22685": {
-    "qid": "Q22685",
-    "id": 22685,
-    "label": "Herwig Kogelnik",
-    "image": "https://semlab.s3.amazonaws.com/images/Q22685.jpg"
-  },
-  "Q22691": {
-    "qid": "Q22691",
-    "id": 22691,
-    "label": "Jay Huggins",
-    "image": null
-  },
-  "Q22692": {
-    "qid": "Q22692",
-    "id": 22692,
-    "label": "Neil Waldhauer",
-    "image": null
-  },
-  "Q19390": {
-    "qid": "Q19390",
-    "id": 19390,
-    "label": "Larry Aldrich",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19390.jpg"
-  },
-  "Q19391": {
-    "qid": "Q19391",
-    "id": 19391,
-    "label": "Larry Goldsmith",
-    "image": null
-  },
-  "Q19392": {
-    "qid": "Q19392",
-    "id": 19392,
-    "label": "Larry Heilos",
-    "image": null
-  },
-  "Q19393": {
-    "qid": "Q19393",
-    "id": 19393,
-    "label": "Larry Leitch",
-    "image": null
-  },
-  "Q19394": {
-    "qid": "Q19394",
-    "id": 19394,
-    "label": "Larry Owens",
-    "image": null
-  },
-  "Q19395": {
-    "qid": "Q19395",
-    "id": 19395,
-    "label": "L\u00e1szl\u00f3 Moholy-Nagy",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19395.jpg"
-  },
-  "Q19396": {
-    "qid": "Q19396",
-    "id": 19396,
-    "label": "Laura Ball",
-    "image": null
-  },
-  "Q19397": {
-    "qid": "Q19397",
-    "id": 19397,
-    "label": "Laurence Getford",
-    "image": null
-  },
-  "Q19399": {
-    "qid": "Q19399",
-    "id": 19399,
-    "label": "Leo Castelli",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19399.jpg"
-  },
-  "Q19401": {
-    "qid": "Q19401",
-    "id": 19401,
-    "label": "Leon Kraushar",
-    "image": null
-  },
-  "Q19402": {
-    "qid": "Q19402",
-    "id": 19402,
-    "label": "Leonardo da Vinci",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19402.jpg"
-  },
-  "Q19403": {
-    "qid": "Q19403",
-    "id": 19403,
-    "label": "Les Levine",
-    "image": null
-  },
-  "Q19404": {
-    "qid": "Q19404",
-    "id": 19404,
-    "label": "Lester Avnet",
-    "image": null
-  },
-  "Q19405": {
-    "qid": "Q19405",
-    "id": 19405,
-    "label": "Letty Lou Eisenhauer",
-    "image": null
-  },
-  "Q19406": {
-    "qid": "Q19406",
-    "id": 19406,
-    "label": "Lewis Lloyd",
-    "image": null
-  },
-  "Q19409": {
-    "qid": "Q19409",
-    "id": 19409,
-    "label": "Linda Millenstein",
-    "image": null
-  },
-  "Q19410": {
-    "qid": "Q19410",
-    "id": 19410,
-    "label": "Linda Perlman",
-    "image": null
-  },
-  "Q19412": {
-    "qid": "Q19412",
-    "id": 19412,
-    "label": "Liz Lerman",
-    "image": null
-  },
-  "Q19415": {
-    "qid": "Q19415",
-    "id": 19415,
-    "label": "Lucas Samaras",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19415.jpg"
-  },
-  "Q19418": {
-    "qid": "Q19418",
-    "id": 19418,
-    "label": "Lucinda Childs",
-    "image": null
-  },
-  "Q19419": {
-    "qid": "Q19419",
-    "id": 19419,
-    "label": "Lucy Jarvis",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19419.jpg"
-  },
-  "Q19420": {
-    "qid": "Q19420",
-    "id": 19420,
-    "label": "Lucy Lippard",
-    "image": null
-  },
-  "Q19421": {
-    "qid": "Q19421",
-    "id": 19421,
-    "label": "Ludwig Feuerbach",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19421.jpg"
-  },
-  "Q19422": {
-    "qid": "Q19422",
-    "id": 19422,
-    "label": "M. Shatadsky",
-    "image": null
-  },
-  "Q19427": {
-    "qid": "Q19427",
-    "id": 19427,
-    "label": "Mao Tse Tung",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19427.jpg"
-  },
-  "Q19429": {
-    "qid": "Q19429",
-    "id": 19429,
-    "label": "Marcel Duchamp",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19429.jpg"
-  },
-  "Q19430": {
-    "qid": "Q19430",
-    "id": 19430,
-    "label": "Margaret Hecht",
-    "image": null
-  },
-  "Q19431": {
-    "qid": "Q19431",
-    "id": 19431,
-    "label": "Margot Hahn",
-    "image": null
-  },
-  "Q19432": {
-    "qid": "Q19432",
-    "id": 19432,
-    "label": "Marian Javits",
-    "image": null
-  },
-  "Q19433": {
-    "qid": "Q19433",
-    "id": 19433,
-    "label": "Marie Christophe Thurman",
-    "image": null
-  },
-  "Q19434": {
-    "qid": "Q19434",
-    "id": 19434,
-    "label": "Marjorie Strider",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19434.jpg"
-  },
-  "Q19435": {
-    "qid": "Q19435",
-    "id": 19435,
-    "label": "Marshall McLuhan",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19435.jpg"
-  },
-  "Q19436": {
-    "qid": "Q19436",
-    "id": 19436,
-    "label": "Marta Minuj\u00edn",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19436.jpg"
-  },
-  "Q19438": {
-    "qid": "Q19438",
-    "id": 19438,
-    "label": "Martin Wazowicz",
-    "image": null
-  },
-  "Q19440": {
-    "qid": "Q19440",
-    "id": 19440,
-    "label": "Maurice Grossman",
-    "image": null
-  },
-  "Q19441": {
-    "qid": "Q19441",
-    "id": 19441,
-    "label": "Maurice Tuchman",
-    "image": null
-  },
-  "Q19442": {
-    "qid": "Q19442",
-    "id": 19442,
-    "label": "Max Baker",
-    "image": null
-  },
-  "Q19443": {
-    "qid": "Q19443",
-    "id": 19443,
-    "label": "Max Mathews",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19443.jpg"
-  },
-  "Q19444": {
-    "qid": "Q19444",
-    "id": 19444,
-    "label": "Max Neuhaus",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19444.jpg"
-  },
-  "Q19445": {
-    "qid": "Q19445",
-    "id": 19445,
-    "label": "Maya Deren",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19445.jpg"
-  },
-  "Q19446": {
-    "qid": "Q19446",
-    "id": 19446,
-    "label": "McNeali",
-    "image": null
-  },
-  "Q19448": {
-    "qid": "Q19448",
-    "id": 19448,
-    "label": "Merce Cunningham",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19448.jpg"
-  },
-  "Q19450": {
-    "qid": "Q19450",
-    "id": 19450,
-    "label": "Meredith Monk",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19450.jpg"
-  },
-  "Q19451": {
-    "qid": "Q19451",
-    "id": 19451,
-    "label": "Merle Fainsod",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19451.jpg"
-  },
-  "Q19452": {
-    "qid": "Q19452",
-    "id": 19452,
-    "label": "Michael Kirby",
-    "image": null
-  },
-  "Q19454": {
-    "qid": "Q19454",
-    "id": 19454,
-    "label": "Mildred Schmertz",
-    "image": null
-  },
-  "Q19455": {
-    "qid": "Q19455",
-    "id": 19455,
-    "label": "Mimi Kanarek",
-    "image": null
-  },
-  "Q19456": {
-    "qid": "Q19456",
-    "id": 19456,
-    "label": "Mimi Stark",
-    "image": null
-  },
-  "Q19458": {
-    "qid": "Q19458",
-    "id": 19458,
-    "label": "Miss Braut",
-    "image": null
-  },
-  "Q19459": {
-    "qid": "Q19459",
-    "id": 19459,
-    "label": "Miss Corso",
-    "image": null
-  },
-  "Q19460": {
-    "qid": "Q19460",
-    "id": 19460,
-    "label": "Miss Ducel",
-    "image": null
-  },
-  "Q19463": {
-    "qid": "Q19463",
-    "id": 19463,
-    "label": "Moses Znaimer",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19463.jpg"
-  },
-  "Q19466": {
-    "qid": "Q19466",
-    "id": 19466,
-    "label": "Mr. Felkes",
-    "image": null
-  },
-  "Q19467": {
-    "qid": "Q19467",
-    "id": 19467,
-    "label": "Mr. Margolies",
-    "image": null
-  },
-  "Q19468": {
-    "qid": "Q19468",
-    "id": 19468,
-    "label": "Mr. Shestack",
-    "image": null
-  },
-  "Q19469": {
-    "qid": "Q19469",
-    "id": 19469,
-    "label": "Mrs. Maurice Grossman",
-    "image": null
-  },
-  "Q19472": {
-    "qid": "Q19472",
-    "id": 19472,
-    "label": "Nam June Paik",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19472.jpg"
-  },
-  "Q19473": {
-    "qid": "Q19473",
-    "id": 19473,
-    "label": "Nancy Chandler",
-    "image": null
-  },
-  "Q19474": {
-    "qid": "Q19474",
-    "id": 19474,
-    "label": "Nat Snyderman",
-    "image": null
-  },
-  "Q19475": {
-    "qid": "Q19475",
-    "id": 19475,
-    "label": "Natalie Schram",
-    "image": null
-  },
-  "Q19478": {
-    "qid": "Q19478",
-    "id": 19478,
-    "label": "Naum Gabo",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19478.jpg"
-  },
-  "Q19489": {
-    "qid": "Q19489",
-    "id": 19489,
-    "label": "Niki de Saint Phalle",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19489.jpg"
-  },
-  "Q19490": {
-    "qid": "Q19490",
-    "id": 19490,
-    "label": "Nina Cullinan",
-    "image": null
-  },
-  "Q19491": {
-    "qid": "Q19491",
-    "id": 19491,
-    "label": "Nina Kaiden",
-    "image": null
+  "Q19246": {
+    "qid": "Q19246",
+    "id": 19246,
+    "label": "Ed Carpentor",
+    "image": null
+  },
+  "Q19247": {
+    "qid": "Q19247",
+    "id": 19247,
+    "label": "Ed Iverson",
+    "image": null
+  },
+  "Q19248": {
+    "qid": "Q19248",
+    "id": 19248,
+    "label": "Edwin S. Langsam",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19248.jpg"
+  },
+  "Q19249": {
+    "qid": "Q19249",
+    "id": 19249,
+    "label": "Eknath Vasant Chitnis",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19249.jpg"
+  },
+  "Q19250": {
+    "qid": "Q19250",
+    "id": 19250,
+    "label": "Elaine Summers",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19250.jpg"
+  },
+  "Q19251": {
+    "qid": "Q19251",
+    "id": 19251,
+    "label": "Eleanor Howard",
+    "image": null
+  },
+  "Q19254": {
+    "qid": "Q19254",
+    "id": 19254,
+    "label": "Elfink",
+    "image": null
+  },
+  "Q19256": {
+    "qid": "Q19256",
+    "id": 19256,
+    "label": "Ella Pincus",
+    "image": null
+  },
+  "Q19257": {
+    "qid": "Q19257",
+    "id": 19257,
+    "label": "Emily Heine",
+    "image": null
+  },
+  "Q19259": {
+    "qid": "Q19259",
+    "id": 19259,
+    "label": "Erik Satie",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19259.jpg"
+  },
+  "Q19260": {
+    "qid": "Q19260",
+    "id": 19260,
+    "label": "Ernst Rothkopf",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19260.jpg"
+  },
+  "Q19262": {
+    "qid": "Q19262",
+    "id": 19262,
+    "label": "Ethel Scull",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19262.jpg"
+  },
+  "Q19269": {
+    "qid": "Q19269",
+    "id": 19269,
+    "label": "Findley",
+    "image": null
+  },
+  "Q19276": {
+    "qid": "Q19276",
+    "id": 19276,
+    "label": "Francis Mason",
+    "image": null
+  },
+  "Q19277": {
+    "qid": "Q19277",
+    "id": 19277,
+    "label": "Frank Gehry",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19277.jpg"
+  },
+  "Q19278": {
+    "qid": "Q19278",
+    "id": 19278,
+    "label": "Frank Konigsberg",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19278.jpg"
+  },
+  "Q19279": {
+    "qid": "Q19279",
+    "id": 19279,
+    "label": "Frank Stanton",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19279.jpg"
+  },
+  "Q19280": {
+    "qid": "Q19280",
+    "id": 19280,
+    "label": "Frank Stella",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19280.jpg"
+  },
+  "Q19281": {
+    "qid": "Q19281",
+    "id": 19281,
+    "label": "Franny Breer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19281.jpg"
+  },
+  "Q19282": {
+    "qid": "Q19282",
+    "id": 19282,
+    "label": "Fred D. Waldhauer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19282.jpg"
+  },
+  "Q19283": {
+    "qid": "Q19283",
+    "id": 19283,
+    "label": "Fujiko Nakaya",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19283.jpg"
+  },
+  "Q19285": {
+    "qid": "Q19285",
+    "id": 19285,
+    "label": "Fyodor Dostoyevsky",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19285.jpg"
   },
   "Q19289": {
     "qid": "Q19289",
@@ -747,7 +147,7 @@
     "qid": "Q19291",
     "id": 19291,
     "label": "George Rostky",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19291.jpg"
   },
   "Q19292": {
     "qid": "Q19292",
@@ -777,7 +177,7 @@
     "qid": "Q19296",
     "id": 19296,
     "label": "Gloria Graves",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19296.jpg"
   },
   "Q19297": {
     "qid": "Q19297",
@@ -801,7 +201,7 @@
     "qid": "Q19301",
     "id": 19301,
     "label": "H. W. Janson",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19301.jpg"
   },
   "Q19302": {
     "qid": "Q19302",
@@ -813,13 +213,13 @@
     "qid": "Q19305",
     "id": 19305,
     "label": "Harold Hodges",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19305.jpg"
   },
   "Q19307": {
     "qid": "Q19307",
     "id": 19307,
     "label": "Harry Abrams",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19307.jpg"
   },
   "Q19308": {
     "qid": "Q19308",
@@ -843,13 +243,13 @@
     "qid": "Q19312",
     "id": 19312,
     "label": "Herb Schneider",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19312.jpg"
   },
   "Q19313": {
     "qid": "Q19313",
     "id": 19313,
     "label": "Herman D. Kenin",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19313.jpg"
   },
   "Q19316": {
     "qid": "Q19316",
@@ -933,7 +333,7 @@
     "qid": "Q19334",
     "id": 19334,
     "label": "James Whitney",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19334.jpg"
   },
   "Q19335": {
     "qid": "Q19335",
@@ -945,7 +345,7 @@
     "qid": "Q19336",
     "id": 19336,
     "label": "Jane Wilson",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19336.jpg"
   },
   "Q19337": {
     "qid": "Q19337",
@@ -975,7 +375,7 @@
     "qid": "Q19341",
     "id": 19341,
     "label": "Jennifer Tipton",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19341.jpg"
   },
   "Q19342": {
     "qid": "Q19342",
@@ -1001,6 +401,594 @@
     "label": "Jim Dine",
     "image": "https://semlab.s3.amazonaws.com/images/Q19346.jpg"
   },
+  "Q19563": {
+    "qid": "Q19563",
+    "id": 19563,
+    "label": "Roger L. Stevens",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19563.jpg"
+  },
+  "Q19564": {
+    "qid": "Q19564",
+    "id": 19564,
+    "label": "Roger Schoening",
+    "image": null
+  },
+  "Q19565": {
+    "qid": "Q19565",
+    "id": 19565,
+    "label": "Rolf de Mar\u00e9",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19565.jpg"
+  },
+  "Q19566": {
+    "qid": "Q19566",
+    "id": 19566,
+    "label": "Ron Bentey",
+    "image": null
+  },
+  "Q19567": {
+    "qid": "Q19567",
+    "id": 19567,
+    "label": "Rosalind Constable",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19567.jpg"
+  },
+  "Q19568": {
+    "qid": "Q19568",
+    "id": 19568,
+    "label": "Rose Marie Castoro",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19568.jpg"
+  },
+  "Q19569": {
+    "qid": "Q19569",
+    "id": 19569,
+    "label": "Rose Petrock",
+    "image": null
+  },
+  "Q19570": {
+    "qid": "Q19570",
+    "id": 19570,
+    "label": "Roy Lichtenstein",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19570.jpg"
+  },
+  "Q19571": {
+    "qid": "Q19571",
+    "id": 19571,
+    "label": "Rubin Gorewitz",
+    "image": null
+  },
+  "Q19573": {
+    "qid": "Q19573",
+    "id": 19573,
+    "label": "Rudy Kerl",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19573.jpg"
+  },
+  "Q19574": {
+    "qid": "Q19574",
+    "id": 19574,
+    "label": "Ruth Ansel",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19574.jpg"
+  },
+  "Q19575": {
+    "qid": "Q19575",
+    "id": 19575,
+    "label": "Ruth Volmer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19575.jpg"
+  },
+  "Q19576": {
+    "qid": "Q19576",
+    "id": 19576,
+    "label": "Ruth Wolfe",
+    "image": null
+  },
+  "Q19577": {
+    "qid": "Q19577",
+    "id": 19577,
+    "label": "Sam Francis",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19577.jpg"
+  },
+  "Q19587": {
+    "qid": "Q19587",
+    "id": 19587,
+    "label": "Sergei Diaghilev",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19587.jpg"
+  },
+  "Q19588": {
+    "qid": "Q19588",
+    "id": 19588,
+    "label": "Seymour Schweber",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19588.jpg"
+  },
+  "Q19591": {
+    "qid": "Q19591",
+    "id": 19591,
+    "label": "Sigvard Strandh",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19591.jpg"
+  },
+  "Q19594": {
+    "qid": "Q19594",
+    "id": 19594,
+    "label": "Simone Forti",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19594.jpg"
+  },
+  "Q19595": {
+    "qid": "Q19595",
+    "id": 19595,
+    "label": "Simone Swan",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19595.jpg"
+  },
+  "Q19600": {
+    "qid": "Q19600",
+    "id": 19600,
+    "label": "Soren Brunes",
+    "image": null
+  },
+  "Q19606": {
+    "qid": "Q19606",
+    "id": 19606,
+    "label": "Steve Paxton",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19606.jpg"
+  },
+  "Q19608": {
+    "qid": "Q19608",
+    "id": 19608,
+    "label": "Stretch Winslow",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19608.jpg"
+  },
+  "Q19609": {
+    "qid": "Q19609",
+    "id": 19609,
+    "label": "Sue Hartnett",
+    "image": null
+  },
+  "Q19613": {
+    "qid": "Q19613",
+    "id": 19613,
+    "label": "Ted Kennedy",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19613.jpg"
+  },
+  "Q19617": {
+    "qid": "Q19617",
+    "id": 19617,
+    "label": "Terry M. Riley",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19617.jpg"
+  },
+  "Q19627": {
+    "qid": "Q19627",
+    "id": 19627,
+    "label": "Thelma Schumacher",
+    "image": null
+  },
+  "Q19628": {
+    "qid": "Q19628",
+    "id": 19628,
+    "label": "Theodore W. Kheel",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19628.jpg"
+  },
+  "Q19630": {
+    "qid": "Q19630",
+    "id": 19630,
+    "label": "Thomas Buehler",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19630.jpg"
+  },
+  "Q19633": {
+    "qid": "Q19633",
+    "id": 19633,
+    "label": "Toby Mussman",
+    "image": null
+  },
+  "Q19634": {
+    "qid": "Q19634",
+    "id": 19634,
+    "label": "Tom Dissinger",
+    "image": null
+  },
+  "Q19635": {
+    "qid": "Q19635",
+    "id": 19635,
+    "label": "Tom Gormley",
+    "image": null
+  },
+  "Q19636": {
+    "qid": "Q19636",
+    "id": 19636,
+    "label": "Tom Mee",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19636.jpg"
+  },
+  "Q19637": {
+    "qid": "Q19637",
+    "id": 19637,
+    "label": "Tom Wesselmann",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19637.jpg"
+  },
+  "Q19638": {
+    "qid": "Q19638",
+    "id": 19638,
+    "label": "Tony Conrad",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19638.jpg"
+  },
+  "Q19639": {
+    "qid": "Q19639",
+    "id": 19639,
+    "label": "Tony Smith",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19639.jpg"
+  },
+  "Q19640": {
+    "qid": "Q19640",
+    "id": 19640,
+    "label": "Tony Trozzolo",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19640.jpg"
+  },
+  "Q19641": {
+    "qid": "Q19641",
+    "id": 19641,
+    "label": "Toshi Ichiyanagi",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19641.jpg"
+  },
+  "Q19642": {
+    "qid": "Q19642",
+    "id": 19642,
+    "label": "Treitel-Gratz",
+    "image": null
+  },
+  "Q19643": {
+    "qid": "Q19643",
+    "id": 19643,
+    "label": "Trisha Brown",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19643.jpg"
+  },
+  "Q19645": {
+    "qid": "Q19645",
+    "id": 19645,
+    "label": "Twyla Tharp",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19645.jpg"
+  },
+  "Q19647": {
+    "qid": "Q19647",
+    "id": 19647,
+    "label": "Ulla Lyttkens",
+    "image": null
+  },
+  "Q19648": {
+    "qid": "Q19648",
+    "id": 19648,
+    "label": "Ulla Wiggen",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19648.jpg"
+  },
+  "Q19652": {
+    "qid": "Q19652",
+    "id": 19652,
+    "label": "Vaslav Nijinsky",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19652.jpg"
+  },
+  "Q19654": {
+    "qid": "Q19654",
+    "id": 19654,
+    "label": "Vera G. List",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19654.jpg"
+  },
+  "Q19655": {
+    "qid": "Q19655",
+    "id": 19655,
+    "label": "Vernon Lobb",
+    "image": null
+  },
+  "Q19656": {
+    "qid": "Q19656",
+    "id": 19656,
+    "label": "Victor W. Ganz",
+    "image": null
+  },
+  "Q19657": {
+    "qid": "Q19657",
+    "id": 19657,
+    "label": "Vikram Sarabhai",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19657.jpg"
+  },
+  "Q19661": {
+    "qid": "Q19661",
+    "id": 19661,
+    "label": "Walter Allner",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19661.jpg"
+  },
+  "Q19662": {
+    "qid": "Q19662",
+    "id": 19662,
+    "label": "Walter Gutman",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19662.jpg"
+  },
+  "Q19663": {
+    "qid": "Q19663",
+    "id": 19663,
+    "label": "Walter W. Straley",
+    "image": null
+  },
+  "Q19664": {
+    "qid": "Q19664",
+    "id": 19664,
+    "label": "Warren Brodey",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19664.jpg"
+  },
+  "Q19669": {
+    "qid": "Q19669",
+    "id": 19669,
+    "label": "Wesley Barry",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19669.jpg"
+  },
+  "Q19672": {
+    "qid": "Q19672",
+    "id": 19672,
+    "label": "William Davis",
+    "image": null
+  },
+  "Q19673": {
+    "qid": "Q19673",
+    "id": 19673,
+    "label": "Witt Wittnebert",
+    "image": null
+  },
+  "Q19676": {
+    "qid": "Q19676",
+    "id": 19676,
+    "label": "Yale Joel",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19676.jpg"
+  },
+  "Q19677": {
+    "qid": "Q19677",
+    "id": 19677,
+    "label": "Yvonne Rainer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19677.jpg"
+  },
+  "Q19678": {
+    "qid": "Q19678",
+    "id": 19678,
+    "label": "Zbigniew Brzezinski",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19678.jpg"
+  },
+  "Q19842": {
+    "qid": "Q19842",
+    "id": 19842,
+    "label": "Alan Posner",
+    "image": null
+  },
+  "Q20514": {
+    "qid": "Q20514",
+    "id": 20514,
+    "label": "Pontus Hult\u00e9n",
+    "image": "https://semlab.s3.amazonaws.com/images/Q20514.jpg"
+  },
+  "Q20534": {
+    "qid": "Q20534",
+    "id": 20534,
+    "label": "Shriver",
+    "image": null
+  },
+  "Q20535": {
+    "qid": "Q20535",
+    "id": 20535,
+    "label": "Kramer",
+    "image": null
+  },
+  "Q20543": {
+    "qid": "Q20543",
+    "id": 20543,
+    "label": "Mrs. J. Brown",
+    "image": null
+  },
+  "Q21235": {
+    "qid": "Q21235",
+    "id": 21235,
+    "label": "Yoshiaki Tono",
+    "image": null
+  },
+  "Q21292": {
+    "qid": "Q21292",
+    "id": 21292,
+    "label": "Barbara Rose",
+    "image": "https://semlab.s3.amazonaws.com/images/Q21292.jpg"
+  },
+  "Q21307": {
+    "qid": "Q21307",
+    "id": 21307,
+    "label": "Erika Abeel",
+    "image": null
+  },
+  "Q22369": {
+    "qid": "Q22369",
+    "id": 22369,
+    "label": "Sandy Daley",
+    "image": null
+  },
+  "Q22374": {
+    "qid": "Q22374",
+    "id": 22374,
+    "label": "Nicholas Quennell",
+    "image": null
+  },
+  "Q22378": {
+    "qid": "Q22378",
+    "id": 22378,
+    "label": "Medford Schwarz",
+    "image": null
+  },
+  "Q22379": {
+    "qid": "Q22379",
+    "id": 22379,
+    "label": "Jeremy Tribe",
+    "image": null
+  },
+  "Q22393": {
+    "qid": "Q22393",
+    "id": 22393,
+    "label": "Dorothy Zeidman",
+    "image": null
+  },
+  "Q22457": {
+    "qid": "Q22457",
+    "id": 22457,
+    "label": "William Rivelli",
+    "image": null
+  },
+  "Q22640": {
+    "qid": "Q22640",
+    "id": 22640,
+    "label": "Dean Brown",
+    "image": null
+  },
+  "Q22641": {
+    "qid": "Q22641",
+    "id": 22641,
+    "label": "Emelyn Honig",
+    "image": null
+  },
+  "Q22643": {
+    "qid": "Q22643",
+    "id": 22643,
+    "label": "Neal Boenzi",
+    "image": null
+  },
+  "Q22644": {
+    "qid": "Q22644",
+    "id": 22644,
+    "label": "Rudolph Burckhardt",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22644.jpg"
+  },
+  "Q22645": {
+    "qid": "Q22645",
+    "id": 22645,
+    "label": "Ugo Mulas",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22645.jpg"
+  },
+  "Q22657": {
+    "qid": "Q22657",
+    "id": 22657,
+    "label": "Eric Rawson",
+    "image": null
+  },
+  "Q22659": {
+    "qid": "Q22659",
+    "id": 22659,
+    "label": "Stan Vanderbeek",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22659.jpg"
+  },
+  "Q22661": {
+    "qid": "Q22661",
+    "id": 22661,
+    "label": "Albert A. List",
+    "image": null
+  },
+  "Q22662": {
+    "qid": "Q22662",
+    "id": 22662,
+    "label": "Joseph C. Wilson",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22662.jpg"
+  },
+  "Q22663": {
+    "qid": "Q22663",
+    "id": 22663,
+    "label": "Mrs. Albert A. List",
+    "image": null
+  },
+  "Q22666": {
+    "qid": "Q22666",
+    "id": 22666,
+    "label": "Robert Kennedy",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22666.jpg"
+  },
+  "Q22670": {
+    "qid": "Q22670",
+    "id": 22670,
+    "label": "Jay Bell",
+    "image": null
+  },
+  "Q22685": {
+    "qid": "Q22685",
+    "id": 22685,
+    "label": "Herwig Kogelnik",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22685.jpg"
+  },
+  "Q22691": {
+    "qid": "Q22691",
+    "id": 22691,
+    "label": "Jay Huggins",
+    "image": null
+  },
+  "Q22692": {
+    "qid": "Q22692",
+    "id": 22692,
+    "label": "Neil Waldhauer",
+    "image": null
+  },
+  "Q22934": {
+    "qid": "Q22934",
+    "id": 22934,
+    "label": "John Lindsey",
+    "image": "https://semlab.s3.amazonaws.com/images/Q22934.jpg"
+  },
+  "Q23200": {
+    "qid": "Q23200",
+    "id": 23200,
+    "label": "Christine Williams",
+    "image": null
+  },
+  "Q23201": {
+    "qid": "Q23201",
+    "id": 23201,
+    "label": "Christopher Rauschenberg",
+    "image": "https://semlab.s3.amazonaws.com/images/Q23201.jpg"
+  },
+  "Q23213": {
+    "qid": "Q23213",
+    "id": 23213,
+    "label": "Elaine Sturtevant",
+    "image": "https://semlab.s3.amazonaws.com/images/Q23213.jpg"
+  },
+  "Q23214": {
+    "qid": "Q23214",
+    "id": 23214,
+    "label": "Marilyn Wood",
+    "image": "https://semlab.s3.amazonaws.com/images/Q23214.jpg"
+  },
+  "Q23215": {
+    "qid": "Q23215",
+    "id": 23215,
+    "label": "Judith Doty",
+    "image": null
+  },
+  "Q23354": {
+    "qid": "Q23354",
+    "id": 23354,
+    "label": "Pete Cummiskey",
+    "image": null
+  },
+  "Q23355": {
+    "qid": "Q23355",
+    "id": 23355,
+    "label": "Fred Cooper",
+    "image": null
+  },
+  "Q23511": {
+    "qid": "Q23511",
+    "id": 23511,
+    "label": "Masanaka Sato",
+    "image": null
+  },
+  "Q23521": {
+    "qid": "Q23521",
+    "id": 23521,
+    "label": "William Klauz",
+    "image": null
+  },
+  "Q23523": {
+    "qid": "Q23523",
+    "id": 23523,
+    "label": "Herman M. Lutz",
+    "image": null
+  },
+  "Q23537": {
+    "qid": "Q23537",
+    "id": 23537,
+    "label": "Jim Anderson",
+    "image": null
+  },
   "Q19347": {
     "qid": "Q19347",
     "id": 19347,
@@ -1017,7 +1005,7 @@
     "qid": "Q19349",
     "id": 19349,
     "label": "Joan Kron",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19349.jpg"
   },
   "Q19350": {
     "qid": "Q19350",
@@ -1029,7 +1017,7 @@
     "qid": "Q19351",
     "id": 19351,
     "label": "Joe Schlichter",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19351.jpg"
   },
   "Q19352": {
     "qid": "Q19352",
@@ -1041,7 +1029,7 @@
     "qid": "Q19353",
     "id": 19353,
     "label": "John B. Hightower",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19353.jpg"
   },
   "Q19354": {
     "qid": "Q19354",
@@ -1083,13 +1071,13 @@
     "qid": "Q19360",
     "id": 19360,
     "label": "John Loeb, Jr.",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19360.jpg"
   },
   "Q19361": {
     "qid": "Q19361",
     "id": 19361,
     "label": "John O'Connor",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19361.jpg"
   },
   "Q19362": {
     "qid": "Q19362",
@@ -1107,7 +1095,7 @@
     "qid": "Q19365",
     "id": 19365,
     "label": "John Whitney",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19365.jpg"
   },
   "Q19366": {
     "qid": "Q19366",
@@ -1119,25 +1107,25 @@
     "qid": "Q19367",
     "id": 19367,
     "label": "Judith Dunn",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19367.jpg"
   },
   "Q19370": {
     "qid": "Q19370",
     "id": 19370,
     "label": "Julie Judd",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19370.jpg"
   },
   "Q19371": {
     "qid": "Q19371",
     "id": 19371,
     "label": "Julie Martin",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19371.jpg"
   },
   "Q19372": {
     "qid": "Q19372",
     "id": 19372,
     "label": "June Ekman",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19372.jpg"
   },
   "Q19373": {
     "qid": "Q19373",
@@ -1149,7 +1137,7 @@
     "qid": "Q19374",
     "id": 19374,
     "label": "Karl Zerbe",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19374.jpg"
   },
   "Q19375": {
     "qid": "Q19375",
@@ -1173,7 +1161,7 @@
     "qid": "Q19379",
     "id": 19379,
     "label": "Ken Knowlton",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19379.jpg"
   },
   "Q19383": {
     "qid": "Q19383",
@@ -1191,13 +1179,13 @@
     "qid": "Q19385",
     "id": 19385,
     "label": "Kosugi",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19385.jpg"
   },
   "Q19387": {
     "qid": "Q19387",
     "id": 19387,
     "label": "L.D. Harmon",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19387.jpg"
   },
   "Q19389": {
     "qid": "Q19389",
@@ -1205,95 +1193,2207 @@
     "label": "Lane Kirkland",
     "image": "https://semlab.s3.amazonaws.com/images/Q19389.jpg"
   },
-  "Q23200": {
-    "qid": "Q23200",
-    "id": 23200,
-    "label": "Christine Williams",
+  "Q19390": {
+    "qid": "Q19390",
+    "id": 19390,
+    "label": "Larry Aldrich",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19390.jpg"
+  },
+  "Q19391": {
+    "qid": "Q19391",
+    "id": 19391,
+    "label": "Larry Goldsmith",
     "image": null
   },
-  "Q23201": {
-    "qid": "Q23201",
-    "id": 23201,
-    "label": "Christopher Rauschenberg",
+  "Q19392": {
+    "qid": "Q19392",
+    "id": 19392,
+    "label": "Larry Heilos",
     "image": null
   },
-  "Q23213": {
-    "qid": "Q23213",
-    "id": 23213,
-    "label": "Elaine Sturtevant",
+  "Q19393": {
+    "qid": "Q19393",
+    "id": 19393,
+    "label": "Larry Leitch",
     "image": null
   },
-  "Q23214": {
-    "qid": "Q23214",
-    "id": 23214,
-    "label": "Marilyn Wood",
+  "Q19394": {
+    "qid": "Q19394",
+    "id": 19394,
+    "label": "Larry Owens",
     "image": null
   },
-  "Q23215": {
-    "qid": "Q23215",
-    "id": 23215,
-    "label": "Judith Doty",
+  "Q19395": {
+    "qid": "Q19395",
+    "id": 19395,
+    "label": "L\u00e1szl\u00f3 Moholy-Nagy",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19395.jpg"
+  },
+  "Q19396": {
+    "qid": "Q19396",
+    "id": 19396,
+    "label": "Laura Ball",
     "image": null
   },
-  "Q23354": {
-    "qid": "Q23354",
-    "id": 23354,
-    "label": "Pete Cummiskey",
+  "Q19397": {
+    "qid": "Q19397",
+    "id": 19397,
+    "label": "Laurence Getford",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19397.jpg"
+  },
+  "Q19399": {
+    "qid": "Q19399",
+    "id": 19399,
+    "label": "Leo Castelli",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19399.jpg"
+  },
+  "Q19401": {
+    "qid": "Q19401",
+    "id": 19401,
+    "label": "Leon Kraushar",
     "image": null
   },
-  "Q23355": {
-    "qid": "Q23355",
-    "id": 23355,
-    "label": "Fred Cooper",
+  "Q19402": {
+    "qid": "Q19402",
+    "id": 19402,
+    "label": "Leonardo da Vinci",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19402.jpg"
+  },
+  "Q19403": {
+    "qid": "Q19403",
+    "id": 19403,
+    "label": "Les Levine",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19403.jpg"
+  },
+  "Q19404": {
+    "qid": "Q19404",
+    "id": 19404,
+    "label": "Lester Avnet",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19404.jpg"
+  },
+  "Q19405": {
+    "qid": "Q19405",
+    "id": 19405,
+    "label": "Letty Lou Eisenhauer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19405.jpg"
+  },
+  "Q19406": {
+    "qid": "Q19406",
+    "id": 19406,
+    "label": "Lewis Lloyd",
     "image": null
   },
-  "Q23511": {
-    "qid": "Q23511",
-    "id": 23511,
-    "label": "Masanaka Sato",
+  "Q19409": {
+    "qid": "Q19409",
+    "id": 19409,
+    "label": "Linda Millenstein",
     "image": null
   },
-  "Q23518": {
-    "qid": "Q23518",
-    "id": 23518,
-    "label": "Alice Schwebke",
+  "Q19410": {
+    "qid": "Q19410",
+    "id": 19410,
+    "label": "Linda Perlman",
     "image": null
   },
-  "Q23521": {
-    "qid": "Q23521",
-    "id": 23521,
-    "label": "William Klauz",
+  "Q19412": {
+    "qid": "Q19412",
+    "id": 19412,
+    "label": "Liz Lerman",
     "image": null
   },
-  "Q23523": {
-    "qid": "Q23523",
-    "id": 23523,
-    "label": "Herman M. Lutz",
+  "Q19415": {
+    "qid": "Q19415",
+    "id": 19415,
+    "label": "Lucas Samaras",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19415.jpg"
+  },
+  "Q19418": {
+    "qid": "Q19418",
+    "id": 19418,
+    "label": "Lucinda Childs",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19418.jpg"
+  },
+  "Q19419": {
+    "qid": "Q19419",
+    "id": 19419,
+    "label": "Lucy Jarvis",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19419.jpg"
+  },
+  "Q19420": {
+    "qid": "Q19420",
+    "id": 19420,
+    "label": "Lucy Lippard",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19420.jpg"
+  },
+  "Q19421": {
+    "qid": "Q19421",
+    "id": 19421,
+    "label": "Ludwig Feuerbach",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19421.jpg"
+  },
+  "Q19422": {
+    "qid": "Q19422",
+    "id": 19422,
+    "label": "M. Shatadsky",
     "image": null
   },
-  "Q23537": {
-    "qid": "Q23537",
-    "id": 23537,
-    "label": "Jim Anderson",
+  "Q19427": {
+    "qid": "Q19427",
+    "id": 19427,
+    "label": "Mao Tse Tung",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19427.jpg"
+  },
+  "Q19429": {
+    "qid": "Q19429",
+    "id": 19429,
+    "label": "Marcel Duchamp",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19429.jpg"
+  },
+  "Q19430": {
+    "qid": "Q19430",
+    "id": 19430,
+    "label": "Margaret Hecht",
     "image": null
   },
-  "Q19493": {
-    "qid": "Q19493",
-    "id": 19493,
-    "label": "Olga Adorno",
+  "Q19431": {
+    "qid": "Q19431",
+    "id": 19431,
+    "label": "Margot Hahn",
     "image": null
+  },
+  "Q19432": {
+    "qid": "Q19432",
+    "id": 19432,
+    "label": "Marian Javits",
+    "image": null
+  },
+  "Q19433": {
+    "qid": "Q19433",
+    "id": 19433,
+    "label": "Marie Christophe Thurman",
+    "image": null
+  },
+  "Q19434": {
+    "qid": "Q19434",
+    "id": 19434,
+    "label": "Marjorie Strider",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19434.jpg"
+  },
+  "Q19435": {
+    "qid": "Q19435",
+    "id": 19435,
+    "label": "Marshall McLuhan",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19435.jpg"
+  },
+  "Q19436": {
+    "qid": "Q19436",
+    "id": 19436,
+    "label": "Marta Minuj\u00edn",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19436.jpg"
+  },
+  "Q19438": {
+    "qid": "Q19438",
+    "id": 19438,
+    "label": "Martin Wazowicz",
+    "image": null
+  },
+  "Q19440": {
+    "qid": "Q19440",
+    "id": 19440,
+    "label": "Maurice Grossman",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19440.jpg"
+  },
+  "Q19441": {
+    "qid": "Q19441",
+    "id": 19441,
+    "label": "Maurice Tuchman",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19441.jpg"
+  },
+  "Q19442": {
+    "qid": "Q19442",
+    "id": 19442,
+    "label": "Max Baker",
+    "image": null
+  },
+  "Q19443": {
+    "qid": "Q19443",
+    "id": 19443,
+    "label": "Max Mathews",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19443.jpg"
+  },
+  "Q19444": {
+    "qid": "Q19444",
+    "id": 19444,
+    "label": "Max Neuhaus",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19444.jpg"
+  },
+  "Q19445": {
+    "qid": "Q19445",
+    "id": 19445,
+    "label": "Maya Deren",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19445.jpg"
+  },
+  "Q19446": {
+    "qid": "Q19446",
+    "id": 19446,
+    "label": "McNeali",
+    "image": null
+  },
+  "Q19448": {
+    "qid": "Q19448",
+    "id": 19448,
+    "label": "Merce Cunningham",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19448.jpg"
+  },
+  "Q19450": {
+    "qid": "Q19450",
+    "id": 19450,
+    "label": "Meredith Monk",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19450.jpg"
+  },
+  "Q26798": {
+    "qid": "Q26798",
+    "id": 26798,
+    "label": "Andre G. Riotte",
+    "image": null
+  },
+  "Q26799": {
+    "qid": "Q26799",
+    "id": 26799,
+    "label": "Benjamin E. Chi",
+    "image": null
+  },
+  "Q26800": {
+    "qid": "Q26800",
+    "id": 26800,
+    "label": "Botsworth",
+    "image": null
+  },
+  "Q26801": {
+    "qid": "Q26801",
+    "id": 26801,
+    "label": "F. D. Rogers",
+    "image": null
+  },
+  "Q26802": {
+    "qid": "Q26802",
+    "id": 26802,
+    "label": "Giuliana Pestagalli",
+    "image": null
+  },
+  "Q26803": {
+    "qid": "Q26803",
+    "id": 26803,
+    "label": "Ivon Robert",
+    "image": null
+  },
+  "Q26804": {
+    "qid": "Q26804",
+    "id": 26804,
+    "label": "Kenneth D. Garnjost",
+    "image": null
+  },
+  "Q26805": {
+    "qid": "Q26805",
+    "id": 26805,
+    "label": "Robert John Oliver",
+    "image": null
+  },
+  "Q26806": {
+    "qid": "Q26806",
+    "id": 26806,
+    "label": "Stan and Jane Jernow",
+    "image": null
+  },
+  "Q26807": {
+    "qid": "Q26807",
+    "id": 26807,
+    "label": "Stephen S. Livers",
+    "image": null
+  },
+  "Q26808": {
+    "qid": "Q26808",
+    "id": 26808,
+    "label": "Theodore Waddell",
+    "image": null
+  },
+  "Q26809": {
+    "qid": "Q26809",
+    "id": 26809,
+    "label": "Bo Hall",
+    "image": null
+  },
+  "Q26810": {
+    "qid": "Q26810",
+    "id": 26810,
+    "label": "C. I. Shelkofsky",
+    "image": null
+  },
+  "Q26811": {
+    "qid": "Q26811",
+    "id": 26811,
+    "label": "Clive P. Hohberger",
+    "image": null
+  },
+  "Q26812": {
+    "qid": "Q26812",
+    "id": 26812,
+    "label": "Dr. Robert H. Pry",
+    "image": null
+  },
+  "Q26813": {
+    "qid": "Q26813",
+    "id": 26813,
+    "label": "Francesco Passanti",
+    "image": null
+  },
+  "Q26814": {
+    "qid": "Q26814",
+    "id": 26814,
+    "label": "George Winter",
+    "image": null
+  },
+  "Q26815": {
+    "qid": "Q26815",
+    "id": 26815,
+    "label": "John E. Hoel",
+    "image": null
+  },
+  "Q26816": {
+    "qid": "Q26816",
+    "id": 26816,
+    "label": "L. Mezei",
+    "image": null
+  },
+  "Q26817": {
+    "qid": "Q26817",
+    "id": 26817,
+    "label": "Richard Strnad",
+    "image": null
+  },
+  "Q26818": {
+    "qid": "Q26818",
+    "id": 26818,
+    "label": "Russel Fernald",
+    "image": null
+  },
+  "Q26819": {
+    "qid": "Q26819",
+    "id": 26819,
+    "label": "Seth R. Banks",
+    "image": null
+  },
+  "Q26820": {
+    "qid": "Q26820",
+    "id": 26820,
+    "label": "Wynn Chamberlain",
+    "image": null
+  },
+  "Q27740": {
+    "qid": "Q27740",
+    "id": 27740,
+    "label": "Carl Adams",
+    "image": null
+  },
+  "Q27741": {
+    "qid": "Q27741",
+    "id": 27741,
+    "label": "Edward Adams",
+    "image": null
+  },
+  "Q27742": {
+    "qid": "Q27742",
+    "id": 27742,
+    "label": "Tadanori Akiyama",
+    "image": null
+  },
+  "Q27743": {
+    "qid": "Q27743",
+    "id": 27743,
+    "label": "Melynda Albrecht",
+    "image": null
+  },
+  "Q27744": {
+    "qid": "Q27744",
+    "id": 27744,
+    "label": "Stephen Antonakos",
+    "image": null
+  },
+  "Q27745": {
+    "qid": "Q27745",
+    "id": 27745,
+    "label": "T. Asada",
+    "image": null
+  },
+  "Q27746": {
+    "qid": "Q27746",
+    "id": 27746,
+    "label": "Michel Auder",
+    "image": null
+  },
+  "Q27747": {
+    "qid": "Q27747",
+    "id": 27747,
+    "label": "Kiyoshi Awazu",
+    "image": null
+  },
+  "Q27748": {
+    "qid": "Q27748",
+    "id": 27748,
+    "label": "Teruo Baba",
+    "image": null
+  },
+  "Q27749": {
+    "qid": "Q27749",
+    "id": 27749,
+    "label": "Karen Bacon",
+    "image": null
+  },
+  "Q27750": {
+    "qid": "Q27750",
+    "id": 27750,
+    "label": "F. Bailey",
+    "image": null
+  },
+  "Q27751": {
+    "qid": "Q27751",
+    "id": 27751,
+    "label": "Bo Beck",
+    "image": null
+  },
+  "Q27752": {
+    "qid": "Q27752",
+    "id": 27752,
+    "label": "Joseph Block",
+    "image": null
+  },
+  "Q27753": {
+    "qid": "Q27753",
+    "id": 27753,
+    "label": "Bruce Blugerman",
+    "image": null
+  },
+  "Q27754": {
+    "qid": "Q27754",
+    "id": 27754,
+    "label": "Lee Bontecou",
+    "image": null
+  },
+  "Q27755": {
+    "qid": "Q27755",
+    "id": 27755,
+    "label": "George Brecht",
+    "image": null
+  },
+  "Q27756": {
+    "qid": "Q27756",
+    "id": 27756,
+    "label": "Herbert Brill",
+    "image": null
+  },
+  "Q27757": {
+    "qid": "Q27757",
+    "id": 27757,
+    "label": "Sy Brockway",
+    "image": null
+  },
+  "Q27758": {
+    "qid": "Q27758",
+    "id": 27758,
+    "label": "George Carr",
+    "image": null
+  },
+  "Q27759": {
+    "qid": "Q27759",
+    "id": 27759,
+    "label": "John Chamberlain",
+    "image": null
+  },
+  "Q27760": {
+    "qid": "Q27760",
+    "id": 27760,
+    "label": "Chandralekha",
+    "image": null
+  },
+  "Q27761": {
+    "qid": "Q27761",
+    "id": 27761,
+    "label": "Robert Cheney",
+    "image": null
+  },
+  "Q27762": {
+    "qid": "Q27762",
+    "id": 27762,
+    "label": "Mimi Clementi",
+    "image": null
+  },
+  "Q27763": {
+    "qid": "Q27763",
+    "id": 27763,
+    "label": "Richard Collins",
+    "image": null
+  },
+  "Q27764": {
+    "qid": "Q27764",
+    "id": 27764,
+    "label": "Ralph Cooper",
+    "image": null
+  },
+  "Q27765": {
+    "qid": "Q27765",
+    "id": 27765,
+    "label": "Robert Cox",
+    "image": null
+  },
+  "Q27766": {
+    "qid": "Q27766",
+    "id": 27766,
+    "label": "Robert Creeley",
+    "image": null
+  },
+  "Q27767": {
+    "qid": "Q27767",
+    "id": 27767,
+    "label": "David Davis",
+    "image": null
+  },
+  "Q27768": {
+    "qid": "Q27768",
+    "id": 27768,
+    "label": "Jeff Davis",
+    "image": null
+  },
+  "Q27769": {
+    "qid": "Q27769",
+    "id": 27769,
+    "label": "Chris Dawson",
+    "image": null
+  },
+  "Q27770": {
+    "qid": "Q27770",
+    "id": 27770,
+    "label": "Emile De Antonio",
+    "image": null
+  },
+  "Q27771": {
+    "qid": "Q27771",
+    "id": 27771,
+    "label": "Harriet DeLong",
+    "image": null
+  },
+  "Q27772": {
+    "qid": "Q27772",
+    "id": 27772,
+    "label": "Walter De Maria",
+    "image": null
+  },
+  "Q27773": {
+    "qid": "Q27773",
+    "id": 27773,
+    "label": "Richard Demierre",
+    "image": null
+  },
+  "Q27774": {
+    "qid": "Q27774",
+    "id": 27774,
+    "label": "Cronin Dermott",
+    "image": null
+  },
+  "Q27775": {
+    "qid": "Q27775",
+    "id": 27775,
+    "label": "Carlos De Sola",
+    "image": null
+  },
+  "Q27776": {
+    "qid": "Q27776",
+    "id": 27776,
+    "label": "Kaaba Dijon",
+    "image": null
+  },
+  "Q27778": {
+    "qid": "Q27778",
+    "id": 27778,
+    "label": "Mark Di Suvero",
+    "image": null
+  },
+  "Q27779": {
+    "qid": "Q27779",
+    "id": 27779,
+    "label": "Tadashi Doi",
+    "image": null
+  },
+  "Q27780": {
+    "qid": "Q27780",
+    "id": 27780,
+    "label": "Julie Doty",
+    "image": null
+  },
+  "Q27781": {
+    "qid": "Q27781",
+    "id": 27781,
+    "label": "R\u00e9gis Durand",
+    "image": null
+  },
+  "Q27782": {
+    "qid": "Q27782",
+    "id": 27782,
+    "label": "George Edwards",
+    "image": null
+  },
+  "Q27783": {
+    "qid": "Q27783",
+    "id": 27783,
+    "label": "Kazukuki Eguchi",
+    "image": null
+  },
+  "Q27784": {
+    "qid": "Q27784",
+    "id": 27784,
+    "label": "Lewis Ellmore",
+    "image": null
+  },
+  "Q27785": {
+    "qid": "Q27785",
+    "id": 27785,
+    "label": "Beverly Emmons",
+    "image": null
+  },
+  "Q27786": {
+    "qid": "Q27786",
+    "id": 27786,
+    "label": "Roger Epworth",
+    "image": null
+  },
+  "Q27787": {
+    "qid": "Q27787",
+    "id": 27787,
+    "label": "Thomas Fabry",
+    "image": null
+  },
+  "Q27788": {
+    "qid": "Q27788",
+    "id": 27788,
+    "label": "Jacquelyn Farrell",
+    "image": null
+  },
+  "Q27789": {
+    "qid": "Q27789",
+    "id": 27789,
+    "label": "Roger Ferragallo",
+    "image": null
+  },
+  "Q27790": {
+    "qid": "Q27790",
+    "id": 27790,
+    "label": "Bill Finley",
+    "image": null
+  },
+  "Q27791": {
+    "qid": "Q27791",
+    "id": 27791,
+    "label": "Toby Fitch",
+    "image": null
+  },
+  "Q27792": {
+    "qid": "Q27792",
+    "id": 27792,
+    "label": "John Forkner",
+    "image": null
+  },
+  "Q27793": {
+    "qid": "Q27793",
+    "id": 27793,
+    "label": "Hollis Frampton",
+    "image": null
+  },
+  "Q27794": {
+    "qid": "Q27794",
+    "id": 27794,
+    "label": "Karl Erik Friberg",
+    "image": null
+  },
+  "Q27795": {
+    "qid": "Q27795",
+    "id": 27795,
+    "label": "Mariko Fujii",
+    "image": null
+  },
+  "Q27796": {
+    "qid": "Q27796",
+    "id": 27796,
+    "label": "Ikuo Fujita",
+    "image": null
+  },
+  "Q27797": {
+    "qid": "Q27797",
+    "id": 27797,
+    "label": "Tsutomu Fujiwara",
+    "image": null
+  },
+  "Q27798": {
+    "qid": "Q27798",
+    "id": 27798,
+    "label": "Walter Gelb",
+    "image": null
+  },
+  "Q27799": {
+    "qid": "Q27799",
+    "id": 27799,
+    "label": "Alphonsus Grant",
+    "image": null
+  },
+  "Q27800": {
+    "qid": "Q27800",
+    "id": 27800,
+    "label": "Nancy Graves",
+    "image": null
+  },
+  "Q27801": {
+    "qid": "Q27801",
+    "id": 27801,
+    "label": "Ann Halprin",
+    "image": null
+  },
+  "Q27802": {
+    "qid": "Q27802",
+    "id": 27802,
+    "label": "Takeshi Hanasaka",
+    "image": null
+  },
+  "Q27803": {
+    "qid": "Q27803",
+    "id": 27803,
+    "label": "Jim Hardy",
+    "image": null
+  },
+  "Q27806": {
+    "qid": "Q27806",
+    "id": 27806,
+    "label": "Cyril Harris",
+    "image": null
+  },
+  "Q27807": {
+    "qid": "Q27807",
+    "id": 27807,
+    "label": "Ted Dillenkofer",
+    "image": null
+  },
+  "Q27808": {
+    "qid": "Q27808",
+    "id": 27808,
+    "label": "John Harris",
+    "image": null
+  },
+  "Q27810": {
+    "qid": "Q27810",
+    "id": 27810,
+    "label": "Paul Hasigawa",
+    "image": null
+  },
+  "Q27811": {
+    "qid": "Q27811",
+    "id": 27811,
+    "label": "Richard Haymes",
+    "image": null
+  },
+  "Q27812": {
+    "qid": "Q27812",
+    "id": 27812,
+    "label": "Takumi Hijikata",
+    "image": null
+  },
+  "Q27813": {
+    "qid": "Q27813",
+    "id": 27813,
+    "label": "Yoshiyuki Hijikata",
+    "image": null
+  },
+  "Q26789": {
+    "qid": "Q26789",
+    "id": 26789,
+    "label": "Gerald Robinson",
+    "image": null
+  },
+  "Q26790": {
+    "qid": "Q26790",
+    "id": 26790,
+    "label": "Herbert B. Versaw",
+    "image": null
+  },
+  "Q26791": {
+    "qid": "Q26791",
+    "id": 26791,
+    "label": "James Martin",
+    "image": null
+  },
+  "Q26792": {
+    "qid": "Q26792",
+    "id": 26792,
+    "label": "Jan Leviton",
+    "image": null
+  },
+  "Q26793": {
+    "qid": "Q26793",
+    "id": 26793,
+    "label": "Joerg Gutzeit",
+    "image": null
+  },
+  "Q26794": {
+    "qid": "Q26794",
+    "id": 26794,
+    "label": "Oscar D. Turner",
+    "image": null
+  },
+  "Q26795": {
+    "qid": "Q26795",
+    "id": 26795,
+    "label": "Shabty Levy",
+    "image": null
+  },
+  "Q26796": {
+    "qid": "Q26796",
+    "id": 26796,
+    "label": "Tosimasa Tsurumi",
+    "image": null
+  },
+  "Q26797": {
+    "qid": "Q26797",
+    "id": 26797,
+    "label": "Will Connell",
+    "image": null
+  },
+  "Q23887": {
+    "qid": "Q23887",
+    "id": 23887,
+    "label": "George Manupelli",
+    "image": "https://semlab.s3.amazonaws.com/images/Q23887.jpg"
+  },
+  "Q23888": {
+    "qid": "Q23888",
+    "id": 23888,
+    "label": "Joseph Wehrer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q23888.jpg"
+  },
+  "Q23900": {
+    "qid": "Q23900",
+    "id": 23900,
+    "label": "Harry Hewes",
+    "image": null
+  },
+  "Q23902": {
+    "qid": "Q23902",
+    "id": 23902,
+    "label": "Mr. Margolies",
+    "image": "https://semlab.s3.amazonaws.com/images/Q23902.jpg"
+  },
+  "Q24016": {
+    "qid": "Q24016",
+    "id": 24016,
+    "label": "Irene Svensson",
+    "image": null
+  },
+  "Q24017": {
+    "qid": "Q24017",
+    "id": 24017,
+    "label": "Olof Lagercrantz",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24017.jpg"
+  },
+  "Q24018": {
+    "qid": "Q24018",
+    "id": 24018,
+    "label": "Alfredo Bonino",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24018.jpg"
+  },
+  "Q24044": {
+    "qid": "Q24044",
+    "id": 24044,
+    "label": "Ben F. Waple",
+    "image": null
+  },
+  "Q24047": {
+    "qid": "Q24047",
+    "id": 24047,
+    "label": "Virginia Kondratief",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24047.jpg"
+  },
+  "Q24072": {
+    "qid": "Q24072",
+    "id": 24072,
+    "label": "Steve Mark",
+    "image": null
+  },
+  "Q24073": {
+    "qid": "Q24073",
+    "id": 24073,
+    "label": "Gautam Sarabhai",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24073.jpg"
+  },
+  "Q24074": {
+    "qid": "Q24074",
+    "id": 24074,
+    "label": "Aline Saarinen",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24074.jpg"
+  },
+  "Q24075": {
+    "qid": "Q24075",
+    "id": 24075,
+    "label": "Suzi Gablik",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24075.jpg"
+  },
+  "Q24076": {
+    "qid": "Q24076",
+    "id": 24076,
+    "label": "Ed Langsam",
+    "image": null
+  },
+  "Q24077": {
+    "qid": "Q24077",
+    "id": 24077,
+    "label": "Bill Mier",
+    "image": null
+  },
+  "Q24078": {
+    "qid": "Q24078",
+    "id": 24078,
+    "label": "Don Bekerman",
+    "image": null
+  },
+  "Q24080": {
+    "qid": "Q24080",
+    "id": 24080,
+    "label": "David Haxton",
+    "image": null
+  },
+  "Q24175": {
+    "qid": "Q24175",
+    "id": 24175,
+    "label": "Rube Goldberg",
+    "image": null
+  },
+  "Q24177": {
+    "qid": "Q24177",
+    "id": 24177,
+    "label": "Robert Frank",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24177.jpg"
+  },
+  "Q24178": {
+    "qid": "Q24178",
+    "id": 24178,
+    "label": "Dorothy Miller",
+    "image": null
+  },
+  "Q24179": {
+    "qid": "Q24179",
+    "id": 24179,
+    "label": "Ann \"Acey\" Wolgin",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24179.jpg"
+  },
+  "Q24180": {
+    "qid": "Q24180",
+    "id": 24180,
+    "label": "Alan Solomon",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24180.jpg"
+  },
+  "Q24181": {
+    "qid": "Q24181",
+    "id": 24181,
+    "label": "Barbro Ostlihn",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24181.jpg"
+  },
+  "Q24183": {
+    "qid": "Q24183",
+    "id": 24183,
+    "label": "Will Wittnebert",
+    "image": null
+  },
+  "Q24186": {
+    "qid": "Q24186",
+    "id": 24186,
+    "label": "James Rosenquist",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24186.jpg"
+  },
+  "Q24187": {
+    "qid": "Q24187",
+    "id": 24187,
+    "label": "Gordon Mumma",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24187.jpg"
+  },
+  "Q24188": {
+    "qid": "Q24188",
+    "id": 24188,
+    "label": "Lowell Cross",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24188.jpg"
+  },
+  "Q24190": {
+    "qid": "Q24190",
+    "id": 24190,
+    "label": "Jim Tenney",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24190.jpg"
+  },
+  "Q24191": {
+    "qid": "Q24191",
+    "id": 24191,
+    "label": "Jackie Leavitt",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24191.jpg"
+  },
+  "Q24192": {
+    "qid": "Q24192",
+    "id": 24192,
+    "label": "Susanne De Maria",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24192.jpg"
+  },
+  "Q24193": {
+    "qid": "Q24193",
+    "id": 24193,
+    "label": "Ken Dewey",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24193.jpg"
+  },
+  "Q24194": {
+    "qid": "Q24194",
+    "id": 24194,
+    "label": "Bertrand Russel",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24194.jpg"
+  },
+  "Q24196": {
+    "qid": "Q24196",
+    "id": 24196,
+    "label": "W.C. Fields",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24196.jpg"
+  },
+  "Q24197": {
+    "qid": "Q24197",
+    "id": 24197,
+    "label": "Carlo Derkert",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24197.jpg"
+  },
+  "Q24217": {
+    "qid": "Q24217",
+    "id": 24217,
+    "label": "Hans Nordenstr\u00f6m",
+    "image": null
+  },
+  "Q24387": {
+    "qid": "Q24387",
+    "id": 24387,
+    "label": "Hans Haacke",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24387.jpg"
+  },
+  "Q24407": {
+    "qid": "Q24407",
+    "id": 24407,
+    "label": "David Thomas",
+    "image": null
+  },
+  "Q24409": {
+    "qid": "Q24409",
+    "id": 24409,
+    "label": "Forrest Myers",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24409.jpg"
+  },
+  "Q24410": {
+    "qid": "Q24410",
+    "id": 24410,
+    "label": "Tony Martin",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24410.jpg"
+  },
+  "Q24416": {
+    "qid": "Q24416",
+    "id": 24416,
+    "label": "Ardison Phillips",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24416.jpg"
+  },
+  "Q24417": {
+    "qid": "Q24417",
+    "id": 24417,
+    "label": "John Pearce",
+    "image": null
+  },
+  "Q24418": {
+    "qid": "Q24418",
+    "id": 24418,
+    "label": "Ritty Burchfield",
+    "image": null
+  },
+  "Q24419": {
+    "qid": "Q24419",
+    "id": 24419,
+    "label": "Jackie Serwer",
+    "image": null
+  },
+  "Q24420": {
+    "qid": "Q24420",
+    "id": 24420,
+    "label": "Dore Weiner",
+    "image": null
+  },
+  "Q24421": {
+    "qid": "Q24421",
+    "id": 24421,
+    "label": "Sachiko Tamai",
+    "image": null
+  },
+  "Q24422": {
+    "qid": "Q24422",
+    "id": 24422,
+    "label": "John Ryde",
+    "image": null
+  },
+  "Q24423": {
+    "qid": "Q24423",
+    "id": 24423,
+    "label": "Carla Harrison",
+    "image": null
+  },
+  "Q24424": {
+    "qid": "Q24424",
+    "id": 24424,
+    "label": "Gordon Garmire",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24424.jpg"
+  },
+  "Q24425": {
+    "qid": "Q24425",
+    "id": 24425,
+    "label": "Lori Van\u2019t Slot",
+    "image": null
+  },
+  "Q24426": {
+    "qid": "Q24426",
+    "id": 24426,
+    "label": "Harry Harper",
+    "image": null
+  },
+  "Q24427": {
+    "qid": "Q24427",
+    "id": 24427,
+    "label": "Howard Chesney",
+    "image": null
+  },
+  "Q24428": {
+    "qid": "Q24428",
+    "id": 24428,
+    "label": "Maja Kl\u00fcver",
+    "image": null
+  },
+  "Q24429": {
+    "qid": "Q24429",
+    "id": 24429,
+    "label": "Sig Stenlund",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24429.jpg"
+  },
+  "Q24431": {
+    "qid": "Q24431",
+    "id": 24431,
+    "label": "Porter MacCray",
+    "image": null
+  },
+  "Q24432": {
+    "qid": "Q24432",
+    "id": 24432,
+    "label": "Jeffrey Lew",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24432.jpg"
+  },
+  "Q24433": {
+    "qid": "Q24433",
+    "id": 24433,
+    "label": "Kate Rediker",
+    "image": null
+  },
+  "Q24434": {
+    "qid": "Q24434",
+    "id": 24434,
+    "label": "Marion Zazeela",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24434.jpg"
+  },
+  "Q24435": {
+    "qid": "Q24435",
+    "id": 24435,
+    "label": "John Krauskopf",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24435.jpg"
+  },
+  "Q24436": {
+    "qid": "Q24436",
+    "id": 24436,
+    "label": "Uchikiro Nakaya",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24436.jpg"
+  },
+  "Q24437": {
+    "qid": "Q24437",
+    "id": 24437,
+    "label": "Julie Magura",
+    "image": null
+  },
+  "Q24438": {
+    "qid": "Q24438",
+    "id": 24438,
+    "label": "Sakiko Nakaya",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24438.jpg"
+  },
+  "Q24439": {
+    "qid": "Q24439",
+    "id": 24439,
+    "label": "Col. Robert Cox",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24439.jpg"
+  },
+  "Q24440": {
+    "qid": "Q24440",
+    "id": 24440,
+    "label": "Barbro Schultz Lundestam",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24440.jpg"
+  },
+  "Q24441": {
+    "qid": "Q24441",
+    "id": 24441,
+    "label": "Hedi Sorger",
+    "image": null
+  },
+  "Q24442": {
+    "qid": "Q24442",
+    "id": 24442,
+    "label": "John Tormey",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24442.jpg"
+  },
+  "Q24443": {
+    "qid": "Q24443",
+    "id": 24443,
+    "label": "Jill Krauskopf Gellene",
+    "image": null
+  },
+  "Q24447": {
+    "qid": "Q24447",
+    "id": 24447,
+    "label": "Elsa Garmire",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24447.jpg"
+  },
+  "Q24448": {
+    "qid": "Q24448",
+    "id": 24448,
+    "label": "Remy Charlip",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24448.jpg"
+  },
+  "Q24461": {
+    "qid": "Q24461",
+    "id": 24461,
+    "label": "Lowell Van\u2019t Slot",
+    "image": null
+  },
+  "Q24462": {
+    "qid": "Q24462",
+    "id": 24462,
+    "label": "Eric Saarinen",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24462.jpg"
+  },
+  "Q24476": {
+    "qid": "Q24476",
+    "id": 24476,
+    "label": "David McDermott",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24476.jpg"
+  },
+  "Q24477": {
+    "qid": "Q24477",
+    "id": 24477,
+    "label": "Jared Bark",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24477.jpg"
+  },
+  "Q24478": {
+    "qid": "Q24478",
+    "id": 24478,
+    "label": "La Monte Young",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24478.jpg"
+  },
+  "Q24529": {
+    "qid": "Q24529",
+    "id": 24529,
+    "label": "children",
+    "image": null
+  },
+  "Q24538": {
+    "qid": "Q24538",
+    "id": 24538,
+    "label": "Willem Sandberg",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24538.jpg"
+  },
+  "Q24666": {
+    "qid": "Q24666",
+    "id": 24666,
+    "label": "Gilmore Schjeldahl",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24666.jpg"
+  },
+  "Q24681": {
+    "qid": "Q24681",
+    "id": 24681,
+    "label": "Princess Christina, Mrs. Magnuson",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24681.jpg"
+  },
+  "Q24682": {
+    "qid": "Q24682",
+    "id": 24682,
+    "label": "Ellsworth Kelly",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24682.jpg"
+  },
+  "Q24683": {
+    "qid": "Q24683",
+    "id": 24683,
+    "label": "Dan Flavin",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24683.jpg"
+  },
+  "Q24686": {
+    "qid": "Q24686",
+    "id": 24686,
+    "label": "Jacqueline Matisse Monnier",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24686.jpg"
+  },
+  "Q24688": {
+    "qid": "Q24688",
+    "id": 24688,
+    "label": "Margaretha Asberg",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24688.jpg"
+  },
+  "Q24690": {
+    "qid": "Q24690",
+    "id": 24690,
+    "label": "Manfred Schneider",
+    "image": null
+  },
+  "Q24699": {
+    "qid": "Q24699",
+    "id": 24699,
+    "label": "Irina Nakhova",
+    "image": "https://semlab.s3.amazonaws.com/images/Q24699.jpg"
+  },
+  "Q24712": {
+    "qid": "Q24712",
+    "id": 24712,
+    "label": "Lucy Jackson Young",
+    "image": null
+  },
+  "Q24713": {
+    "qid": "Q24713",
+    "id": 24713,
+    "label": "Niels O. Young",
+    "image": null
+  },
+  "Q25525": {
+    "qid": "Q25525",
+    "id": 25525,
+    "label": "Nina Sundell",
+    "image": "https://semlab.s3.amazonaws.com/images/Q25525.jpg"
+  },
+  "Q25640": {
+    "qid": "Q25640",
+    "id": 25640,
+    "label": "Marti Mayo",
+    "image": null
+  },
+  "Q25736": {
+    "qid": "Q25736",
+    "id": 25736,
+    "label": "Laurie Anderson",
+    "image": "https://semlab.s3.amazonaws.com/images/Q25736.jpg"
+  },
+  "Q25737": {
+    "qid": "Q25737",
+    "id": 25737,
+    "label": "Richard Rutledge",
+    "image": null
+  },
+  "Q25742": {
+    "qid": "Q25742",
+    "id": 25742,
+    "label": "Isamu Noguchi",
+    "image": "https://semlab.s3.amazonaws.com/images/Q25742.jpg"
+  },
+  "Q25763": {
+    "qid": "Q25763",
+    "id": 25763,
+    "label": "DeWitt Godfrey",
+    "image": null
+  },
+  "Q25766": {
+    "qid": "Q25766",
+    "id": 25766,
+    "label": "Maja Kl\u00fcver",
+    "image": null
+  },
+  "Q25767": {
+    "qid": "Q25767",
+    "id": 25767,
+    "label": "Kristian Patrik Kl\u00fcver",
+    "image": null
+  },
+  "Q25806": {
+    "qid": "Q25806",
+    "id": 25806,
+    "label": "Gunnar Fant",
+    "image": null
+  },
+  "Q25808": {
+    "qid": "Q25808",
+    "id": 25808,
+    "label": "Bengt Emil Johnson",
+    "image": null
+  },
+  "Q25809": {
+    "qid": "Q25809",
+    "id": 25809,
+    "label": "Lars Gunnar Schmitt",
+    "image": null
+  },
+  "Q25810": {
+    "qid": "Q25810",
+    "id": 25810,
+    "label": "Jan Mortensen",
+    "image": null
+  },
+  "Q26297": {
+    "qid": "Q26297",
+    "id": 26297,
+    "label": "Daniel Rothenburg",
+    "image": null
+  },
+  "Q26374": {
+    "qid": "Q26374",
+    "id": 26374,
+    "label": "Barry Feiss",
+    "image": null
+  },
+  "Q27814": {
+    "qid": "Q27814",
+    "id": 27814,
+    "label": "Sebastian Hiraga",
+    "image": null
+  },
+  "Q27815": {
+    "qid": "Q27815",
+    "id": 27815,
+    "label": "James Hobart",
+    "image": null
+  },
+  "Q27816": {
+    "qid": "Q27816",
+    "id": 27816,
+    "label": "Ralph Hocking",
+    "image": null
+  },
+  "Q27817": {
+    "qid": "Q27817",
+    "id": 27817,
+    "label": "Tony Holder",
+    "image": null
+  },
+  "Q27818": {
+    "qid": "Q27818",
+    "id": 27818,
+    "label": "Terrie Holland",
+    "image": null
+  },
+  "Q27819": {
+    "qid": "Q27819",
+    "id": 27819,
+    "label": "Cassandra Hughs",
+    "image": null
+  },
+  "Q27821": {
+    "qid": "Q27821",
+    "id": 27821,
+    "label": "Thomas Huseby",
+    "image": null
+  },
+  "Q27822": {
+    "qid": "Q27822",
+    "id": 27822,
+    "label": "Harris Hyman",
+    "image": null
+  },
+  "Q27823": {
+    "qid": "Q27823",
+    "id": 27823,
+    "label": "Philip Idone",
+    "image": null
+  },
+  "Q27824": {
+    "qid": "Q27824",
+    "id": 27824,
+    "label": "Khalil Issa",
+    "image": null
+  },
+  "Q27825": {
+    "qid": "Q27825",
+    "id": 27825,
+    "label": "Carson Jeffries",
+    "image": null
+  },
+  "Q27826": {
+    "qid": "Q27826",
+    "id": 27826,
+    "label": "James Jiusto",
+    "image": null
+  },
+  "Q27827": {
+    "qid": "Q27827",
+    "id": 27827,
+    "label": "Dennis Johnson",
+    "image": null
+  },
+  "Q27828": {
+    "qid": "Q27828",
+    "id": 27828,
+    "label": "Joan Jonas",
+    "image": null
+  },
+  "Q27829": {
+    "qid": "Q27829",
+    "id": 27829,
+    "label": "Howard Jones",
+    "image": null
+  },
+  "Q27830": {
+    "qid": "Q27830",
+    "id": 27830,
+    "label": "Elizabeth Joyce",
+    "image": null
+  },
+  "Q27831": {
+    "qid": "Q27831",
+    "id": 27831,
+    "label": "Nancy Kahan",
+    "image": null
+  },
+  "Q27832": {
+    "qid": "Q27832",
+    "id": 27832,
+    "label": "Toyohisa Kamei",
+    "image": null
+  },
+  "Q27833": {
+    "qid": "Q27833",
+    "id": 27833,
+    "label": "Perry Keats",
+    "image": null
+  },
+  "Q27834": {
+    "qid": "Q27834",
+    "id": 27834,
+    "label": "Robert Kelly",
+    "image": null
+  },
+  "Q27835": {
+    "qid": "Q27835",
+    "id": 27835,
+    "label": "Donald M. Kendall",
+    "image": null
+  },
+  "Q27836": {
+    "qid": "Q27836",
+    "id": 27836,
+    "label": "? Kender",
+    "image": null
+  },
+  "Q27837": {
+    "qid": "Q27837",
+    "id": 27837,
+    "label": "Robert V. Kieronski",
+    "image": "https://semlab.s3.amazonaws.com/images/Q27837.jpg"
+  },
+  "Q27839": {
+    "qid": "Q27839",
+    "id": 27839,
+    "label": "Asahi Kogyo",
+    "image": null
+  },
+  "Q27840": {
+    "qid": "Q27840",
+    "id": 27840,
+    "label": "Etsuji Komoguchi",
+    "image": null
+  },
+  "Q27841": {
+    "qid": "Q27841",
+    "id": 27841,
+    "label": "Jane Kramer",
+    "image": null
+  },
+  "Q27842": {
+    "qid": "Q27842",
+    "id": 27842,
+    "label": "Peter Kubik",
+    "image": null
+  },
+  "Q27843": {
+    "qid": "Q27843",
+    "id": 27843,
+    "label": "Tatsuo Kubo",
+    "image": null
+  },
+  "Q27844": {
+    "qid": "Q27844",
+    "id": 27844,
+    "label": "Penelope Kullaway",
+    "image": null
+  },
+  "Q27845": {
+    "qid": "Q27845",
+    "id": 27845,
+    "label": "Hideo Kuraishi",
+    "image": null
+  },
+  "Q27846": {
+    "qid": "Q27846",
+    "id": 27846,
+    "label": "Fumio Kuwahara",
+    "image": null
+  },
+  "Q27847": {
+    "qid": "Q27847",
+    "id": 27847,
+    "label": "Frank La Haye",
+    "image": null
+  },
+  "Q27848": {
+    "qid": "Q27848",
+    "id": 27848,
+    "label": "Stanley Landsman",
+    "image": null
+  },
+  "Q27849": {
+    "qid": "Q27849",
+    "id": 27849,
+    "label": "Anne-Olivia Le Cornec",
+    "image": null
+  },
+  "Q27850": {
+    "qid": "Q27850",
+    "id": 27850,
+    "label": "Sol LeWitt",
+    "image": null
+  },
+  "Q27851": {
+    "qid": "Q27851",
+    "id": 27851,
+    "label": "Robert Lippman",
+    "image": null
+  },
+  "Q27852": {
+    "qid": "Q27852",
+    "id": 27852,
+    "label": "Norma Loewen",
+    "image": null
+  },
+  "Q27853": {
+    "qid": "Q27853",
+    "id": 27853,
+    "label": "Lynn Lonidier",
+    "image": null
+  },
+  "Q27854": {
+    "qid": "Q27854",
+    "id": 27854,
+    "label": "Denny Lord",
+    "image": null
+  },
+  "Q27855": {
+    "qid": "Q27855",
+    "id": 27855,
+    "label": "Alvin Lucier",
+    "image": null
+  },
+  "Q27856": {
+    "qid": "Q27856",
+    "id": 27856,
+    "label": "Mary Lucier",
+    "image": null
+  },
+  "Q27857": {
+    "qid": "Q27857",
+    "id": 27857,
+    "label": "Len Lye",
+    "image": null
+  },
+  "Q27858": {
+    "qid": "Q27858",
+    "id": 27858,
+    "label": "Yutaka Maeda",
+    "image": null
+  },
+  "Q27859": {
+    "qid": "Q27859",
+    "id": 27859,
+    "label": "Gloria Malerba",
+    "image": null
+  },
+  "Q27860": {
+    "qid": "Q27860",
+    "id": 27860,
+    "label": "Ellen Marcus",
+    "image": null
+  },
+  "Q27861": {
+    "qid": "Q27861",
+    "id": 27861,
+    "label": "Marisol",
+    "image": null
+  },
+  "Q27862": {
+    "qid": "Q27862",
+    "id": 27862,
+    "label": "Agnes Martin",
+    "image": null
+  },
+  "Q27863": {
+    "qid": "Q27863",
+    "id": 27863,
+    "label": "Anthony Martin",
+    "image": null
+  },
+  "Q27864": {
+    "qid": "Q27864",
+    "id": 27864,
+    "label": "Petrie Mason",
+    "image": null
+  },
+  "Q27865": {
+    "qid": "Q27865",
+    "id": 27865,
+    "label": "Kiyoshi Masuda",
+    "image": null
+  },
+  "Q27866": {
+    "qid": "Q27866",
+    "id": 27866,
+    "label": "Mizuho Masuda",
+    "image": null
+  },
+  "Q27867": {
+    "qid": "Q27867",
+    "id": 27867,
+    "label": "Ravi Matthai",
+    "image": null
+  },
+  "Q27868": {
+    "qid": "Q27868",
+    "id": 27868,
+    "label": "Robert McFarland",
+    "image": null
+  },
+  "Q27869": {
+    "qid": "Q27869",
+    "id": 27869,
+    "label": "Lys McLaughlin",
+    "image": null
+  },
+  "Q27870": {
+    "qid": "Q27870",
+    "id": 27870,
+    "label": "Boyd Mefferd",
+    "image": null
+  },
+  "Q27871": {
+    "qid": "Q27871",
+    "id": 27871,
+    "label": "Robert Merkle",
+    "image": null
+  },
+  "Q27872": {
+    "qid": "Q27872",
+    "id": 27872,
+    "label": "Theodore Michel",
+    "image": null
+  },
+  "Q27873": {
+    "qid": "Q27873",
+    "id": 27873,
+    "label": "Yoshiaki Mihara",
+    "image": null
+  },
+  "Q27874": {
+    "qid": "Q27874",
+    "id": 27874,
+    "label": "Y. Mitsuda",
+    "image": null
+  },
+  "Q27875": {
+    "qid": "Q27875",
+    "id": 27875,
+    "label": "Yasushi Mitsuta",
+    "image": null
+  },
+  "Q27876": {
+    "qid": "Q27876",
+    "id": 27876,
+    "label": "Rikuro Miyai",
+    "image": null
+  },
+  "Q27877": {
+    "qid": "Q27877",
+    "id": 27877,
+    "label": "K. Mizumoto",
+    "image": null
+  },
+  "Q27878": {
+    "qid": "Q27878",
+    "id": 27878,
+    "label": "Robert Moog",
+    "image": null
+  },
+  "Q27879": {
+    "qid": "Q27879",
+    "id": 27879,
+    "label": "Russell Mooney",
+    "image": null
+  },
+  "Q27880": {
+    "qid": "Q27880",
+    "id": 27880,
+    "label": "Robert Morris",
+    "image": null
+  },
+  "Q27881": {
+    "qid": "Q27881",
+    "id": 27881,
+    "label": "Norma Muller",
+    "image": null
+  },
+  "Q27882": {
+    "qid": "Q27882",
+    "id": 27882,
+    "label": "Paul Muller",
+    "image": null
+  },
+  "Q27883": {
+    "qid": "Q27883",
+    "id": 27883,
+    "label": "Robert Mulreany",
+    "image": null
+  },
+  "Q27884": {
+    "qid": "Q27884",
+    "id": 27884,
+    "label": "Yvette Nachmias",
+    "image": null
+  },
+  "Q27885": {
+    "qid": "Q27885",
+    "id": 27885,
+    "label": "Koichi Nagai",
+    "image": null
+  },
+  "Q27886": {
+    "qid": "Q27886",
+    "id": 27886,
+    "label": "Kyoko Nagai",
+    "image": null
+  },
+  "Q27887": {
+    "qid": "Q27887",
+    "id": 27887,
+    "label": "Yasunori Nakajima",
+    "image": null
+  },
+  "Q27888": {
+    "qid": "Q27888",
+    "id": 27888,
+    "label": "Takeshi Nakamura",
+    "image": null
+  },
+  "Q27889": {
+    "qid": "Q27889",
+    "id": 27889,
+    "label": "Sakako Nakaya",
+    "image": null
+  },
+  "Q27890": {
+    "qid": "Q27890",
+    "id": 27890,
+    "label": "Michael Netter, Michael",
+    "image": null
+  },
+  "Q27891": {
+    "qid": "Q27891",
+    "id": 27891,
+    "label": "Louise Nevelson, Louise",
+    "image": null
+  },
+  "Q27892": {
+    "qid": "Q27892",
+    "id": 27892,
+    "label": "Marcia Newfield",
+    "image": null
+  },
+  "Q27893": {
+    "qid": "Q27893",
+    "id": 27893,
+    "label": "Fujio Nishikawa",
+    "image": null
+  },
+  "Q27894": {
+    "qid": "Q27894",
+    "id": 27894,
+    "label": "Kenneth Noland",
+    "image": null
+  },
+  "Q27895": {
+    "qid": "Q27895",
+    "id": 27895,
+    "label": "David Novros",
+    "image": null
+  },
+  "Q27896": {
+    "qid": "Q27896",
+    "id": 27896,
+    "label": "Minoru Oda",
+    "image": null
+  },
+  "Q27897": {
+    "qid": "Q27897",
+    "id": 27897,
+    "label": "Ann Ohlmacher",
+    "image": null
+  },
+  "Q27898": {
+    "qid": "Q27898",
+    "id": 27898,
+    "label": "Nobuyuki Oku",
+    "image": null
+  },
+  "Q27899": {
+    "qid": "Q27899",
+    "id": 27899,
+    "label": "Junosuke Okuyama",
+    "image": null
+  },
+  "Q27900": {
+    "qid": "Q27900",
+    "id": 27900,
+    "label": "Pauline Oliveros",
+    "image": null
+  },
+  "Q27901": {
+    "qid": "Q27901",
+    "id": 27901,
+    "label": "Alfred Pacquement",
+    "image": null
+  },
+  "Q27902": {
+    "qid": "Q27902",
+    "id": 27902,
+    "label": "John W. Pan",
+    "image": null
+  },
+  "Q27903": {
+    "qid": "Q27903",
+    "id": 27903,
+    "label": "Peter Pearce",
+    "image": null
+  },
+  "Q27904": {
+    "qid": "Q27904",
+    "id": 27904,
+    "label": "Rudy Perez",
+    "image": null
+  },
+  "Q27905": {
+    "qid": "Q27905",
+    "id": 27905,
+    "label": "Alain Peron",
+    "image": null
+  },
+  "Q27906": {
+    "qid": "Q27906",
+    "id": 27906,
+    "label": "Herbert Perr",
+    "image": null
+  },
+  "Q27907": {
+    "qid": "Q27907",
+    "id": 27907,
+    "label": "Gunter Perry",
+    "image": null
+  },
+  "Q27908": {
+    "qid": "Q27908",
+    "id": 27908,
+    "label": "Marlowe Pichel",
+    "image": null
+  },
+  "Q27909": {
+    "qid": "Q27909",
+    "id": 27909,
+    "label": "Hala Pietkiewicz",
+    "image": null
+  },
+  "Q27910": {
+    "qid": "Q27910",
+    "id": 27910,
+    "label": "Brigid Polk",
+    "image": null
+  },
+  "Q27911": {
+    "qid": "Q27911",
+    "id": 27911,
+    "label": "Thalia Poons",
+    "image": null
+  },
+  "Q27912": {
+    "qid": "Q27912",
+    "id": 27912,
+    "label": "Alan Pottasch",
+    "image": null
+  },
+  "Q27913": {
+    "qid": "Q27913",
+    "id": 27913,
+    "label": "Charles Quigley",
+    "image": null
+  },
+  "Q27916": {
+    "qid": "Q27916",
+    "id": 27916,
+    "label": "Tonie Roos",
+    "image": null
+  },
+  "Q27917": {
+    "qid": "Q27917",
+    "id": 27917,
+    "label": "Charles Ross",
+    "image": null
+  },
+  "Q19451": {
+    "qid": "Q19451",
+    "id": 19451,
+    "label": "Merle Fainsod",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19451.jpg"
+  },
+  "Q19452": {
+    "qid": "Q19452",
+    "id": 19452,
+    "label": "Michael Kirby",
+    "image": null
+  },
+  "Q19454": {
+    "qid": "Q19454",
+    "id": 19454,
+    "label": "Mildred Schmertz",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19454.jpg"
+  },
+  "Q19455": {
+    "qid": "Q19455",
+    "id": 19455,
+    "label": "Mimi Kanarek",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19455.jpg"
+  },
+  "Q19456": {
+    "qid": "Q19456",
+    "id": 19456,
+    "label": "Mimi Stark",
+    "image": null
+  },
+  "Q19458": {
+    "qid": "Q19458",
+    "id": 19458,
+    "label": "Miss Braut",
+    "image": null
+  },
+  "Q19459": {
+    "qid": "Q19459",
+    "id": 19459,
+    "label": "Miss Corso",
+    "image": null
+  },
+  "Q19460": {
+    "qid": "Q19460",
+    "id": 19460,
+    "label": "Miss Ducel",
+    "image": null
+  },
+  "Q19463": {
+    "qid": "Q19463",
+    "id": 19463,
+    "label": "Moses Znaimer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19463.jpg"
+  },
+  "Q19466": {
+    "qid": "Q19466",
+    "id": 19466,
+    "label": "Mr. Felkes",
+    "image": null
+  },
+  "Q19467": {
+    "qid": "Q19467",
+    "id": 19467,
+    "label": "Mr. Margolies",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19467.jpg"
+  },
+  "Q19468": {
+    "qid": "Q19468",
+    "id": 19468,
+    "label": "Mr. Shestack",
+    "image": null
+  },
+  "Q19469": {
+    "qid": "Q19469",
+    "id": 19469,
+    "label": "Mrs. Maurice Grossman",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19469.jpg"
+  },
+  "Q19472": {
+    "qid": "Q19472",
+    "id": 19472,
+    "label": "Nam June Paik",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19472.jpg"
+  },
+  "Q19473": {
+    "qid": "Q19473",
+    "id": 19473,
+    "label": "Nancy Chandler",
+    "image": null
+  },
+  "Q19474": {
+    "qid": "Q19474",
+    "id": 19474,
+    "label": "Nat Snyderman",
+    "image": null
+  },
+  "Q19475": {
+    "qid": "Q19475",
+    "id": 19475,
+    "label": "Natalie Schram",
+    "image": null
+  },
+  "Q19478": {
+    "qid": "Q19478",
+    "id": 19478,
+    "label": "Naum Gabo",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19478.jpg"
+  },
+  "Q19489": {
+    "qid": "Q19489",
+    "id": 19489,
+    "label": "Niki de Saint Phalle",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19489.jpg"
+  },
+  "Q19490": {
+    "qid": "Q19490",
+    "id": 19490,
+    "label": "Nina Cullinan",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19490.jpg"
+  },
+  "Q19491": {
+    "qid": "Q19491",
+    "id": 19491,
+    "label": "Nina Kaiden",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19491.jpg"
   },
   "Q19494": {
     "qid": "Q19494",
     "id": 19494,
     "label": "Olga Kl\u00fcver",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19493.jpg"
   },
   "Q19497": {
     "qid": "Q19497",
     "id": 19497,
     "label": "\u00d6yvind Fahlstr\u00f6m",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19497.jpg"
+    "image": "https://semlab.s3.amazonaws.com/images/Q21245.jpg"
   },
   "Q19498": {
     "qid": "Q19498",
@@ -1305,19 +3405,19 @@
     "qid": "Q19501",
     "id": 19501,
     "label": "Patty Mucha",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19501.jpg"
   },
   "Q19502": {
     "qid": "Q19502",
     "id": 19502,
     "label": "Paul A. Lepercq",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19502.jpg"
   },
   "Q19503": {
     "qid": "Q19503",
     "id": 19503,
     "label": "Paul Libin",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19503.jpg"
   },
   "Q19504": {
     "qid": "Q19504",
@@ -1329,13 +3429,13 @@
     "qid": "Q19505",
     "id": 19505,
     "label": "Paul Tishman",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19505.jpg"
   },
   "Q19508": {
     "qid": "Q19508",
     "id": 19508,
     "label": "Per Biorn",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19508.jpg"
   },
   "Q19509": {
     "qid": "Q19509",
@@ -1359,7 +3459,7 @@
     "qid": "Q19512",
     "id": 19512,
     "label": "Peter Ballantine",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19512.jpg"
   },
   "Q19513": {
     "qid": "Q19513",
@@ -1401,7 +3501,7 @@
     "qid": "Q19523",
     "id": 19523,
     "label": "Porter A. McCray",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19523.jpg"
   },
   "Q19524": {
     "qid": "Q19524",
@@ -1455,7 +3555,7 @@
     "qid": "Q19542",
     "id": 19542,
     "label": "Richard Bellamy",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19542.jpg"
   },
   "Q19543": {
     "qid": "Q19543",
@@ -1467,7 +3567,7 @@
     "qid": "Q19544",
     "id": 19544,
     "label": "Richard Hennessy",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19544.jpg"
   },
   "Q19545": {
     "qid": "Q19545",
@@ -1491,31 +3591,25 @@
     "qid": "Q19548",
     "id": 19548,
     "label": "L.J. Robinson",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19548.jpg"
   },
   "Q19550": {
     "qid": "Q19550",
     "id": 19550,
     "label": "Robert Breer",
-    "image": null
-  },
-  "Q19551": {
-    "qid": "Q19551",
-    "id": 19551,
-    "label": "Robert Breer",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19550.jpg"
   },
   "Q19552": {
     "qid": "Q19552",
     "id": 19552,
     "label": "Robert Cooper Scull",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19552.jpg"
   },
   "Q19553": {
     "qid": "Q19553",
     "id": 19553,
     "label": "Robert Ellis Dunn",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19553.jpg"
   },
   "Q19554": {
     "qid": "Q19554",
@@ -1559,191 +3653,239 @@
     "label": "Robyn Richmond",
     "image": null
   },
-  "Q19563": {
-    "qid": "Q19563",
-    "id": 19563,
-    "label": "Roger L. Stevens",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19563.jpg"
+  "Q724": {
+    "qid": "Q724",
+    "id": 724,
+    "label": "John Cage",
+    "image": "https://linkedjazz.org/image/square/John_Cage.png"
   },
-  "Q19564": {
-    "qid": "Q19564",
-    "id": 19564,
-    "label": "Roger Schoening",
+  "Q1019": {
+    "qid": "Q1019",
+    "id": 1019,
+    "label": "Igor Stravinsky",
+    "image": "https://linkedjazz.org/image/square/Igor_Stravinsky.png"
+  },
+  "Q1906": {
+    "qid": "Q1906",
+    "id": 1906,
+    "label": "Lyndon Johnson",
+    "image": "https://semlab.s3.amazonaws.com/images/Q1906.jpg"
+  },
+  "Q1981": {
+    "qid": "Q1981",
+    "id": 1981,
+    "label": "Martha Graham",
+    "image": "https://linkedjazz.org/image/square/Martha_Graham.png"
+  },
+  "Q19119": {
+    "qid": "Q19119",
+    "id": 19119,
+    "label": "A.V. Robinett",
     "image": null
   },
-  "Q19565": {
-    "qid": "Q19565",
-    "id": 19565,
-    "label": "Rolf de Mar\u00e9",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19565.jpg"
-  },
-  "Q19566": {
-    "qid": "Q19566",
-    "id": 19566,
-    "label": "Ron Bentey",
+  "Q19121": {
+    "qid": "Q19121",
+    "id": 19121,
+    "label": "Adi Rischner",
     "image": null
   },
-  "Q19567": {
-    "qid": "Q19567",
-    "id": 19567,
-    "label": "Rosalind Constable",
+  "Q19123": {
+    "qid": "Q19123",
+    "id": 19123,
+    "label": "Alex Grant",
     "image": null
   },
-  "Q19568": {
-    "qid": "Q19568",
-    "id": 19568,
-    "label": "Rose Marie Castoro",
+  "Q19124": {
+    "qid": "Q19124",
+    "id": 19124,
+    "label": "Alex Hay",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19124.jpg"
+  },
+  "Q19125": {
+    "qid": "Q19125",
+    "id": 19125,
+    "label": "Alexander Archipenko",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19125.jpg"
+  },
+  "Q19126": {
+    "qid": "Q19126",
+    "id": 19126,
+    "label": "Alexander Calder",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19126.jpg"
+  },
+  "Q19127": {
+    "qid": "Q19127",
+    "id": 19127,
+    "label": "Alfons Schilling",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19127.jpg"
+  },
+  "Q19128": {
+    "qid": "Q19128",
+    "id": 19128,
+    "label": "Alfred H. Barr",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19128.jpg"
+  },
+  "Q19129": {
+    "qid": "Q19129",
+    "id": 19129,
+    "label": "Alfred Kurchin",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19129.jpg"
+  },
+  "Q19130": {
+    "qid": "Q19130",
+    "id": 19130,
+    "label": "Alfred Leslie",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19130.jpg"
+  },
+  "Q19131": {
+    "qid": "Q19131",
+    "id": 19131,
+    "label": "Alice Denney",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19131.jpg"
+  },
+  "Q19132": {
+    "qid": "Q19132",
+    "id": 19132,
+    "label": "Alice Schwebke",
     "image": null
   },
-  "Q19569": {
-    "qid": "Q19569",
-    "id": 19569,
-    "label": "Rose Petrock",
+  "Q19133": {
+    "qid": "Q19133",
+    "id": 19133,
+    "label": "Allan Kaprow",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19133.jpg"
+  },
+  "Q19139": {
+    "qid": "Q19139",
+    "id": 19139,
+    "label": "Amos Vogel",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19139.jpg"
+  },
+  "Q19143": {
+    "qid": "Q19143",
+    "id": 19143,
+    "label": "Andy Warhol",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19143.jpg"
+  },
+  "Q19144": {
+    "qid": "Q19144",
+    "id": 19144,
+    "label": "Anita Reuben",
     "image": null
   },
-  "Q19570": {
-    "qid": "Q19570",
-    "id": 19570,
-    "label": "Roy Lichtenstein",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19570.jpg"
+  "Q19145": {
+    "qid": "Q19145",
+    "id": 19145,
+    "label": "Anthony Gnazzo",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19145.jpg"
   },
-  "Q19571": {
-    "qid": "Q19571",
-    "id": 19571,
-    "label": "Rubin Gorewitz",
+  "Q19146": {
+    "qid": "Q19146",
+    "id": 19146,
+    "label": "Anthony McCall",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19146.jpg"
+  },
+  "Q19150": {
+    "qid": "Q19150",
+    "id": 19150,
+    "label": "Arman",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19150.jpg"
+  },
+  "Q19151": {
+    "qid": "Q19151",
+    "id": 19151,
+    "label": "Armand Phillip Bartos",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19151.jpg"
+  },
+  "Q19155": {
+    "qid": "Q19155",
+    "id": 19155,
+    "label": "Arthur A. Houghton Jr.",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19155.jpg"
+  },
+  "Q19156": {
+    "qid": "Q19156",
+    "id": 19156,
+    "label": "Arthur Albiston",
     "image": null
   },
-  "Q19573": {
-    "qid": "Q19573",
-    "id": 19573,
-    "label": "Rudy Kerl",
+  "Q19162": {
+    "qid": "Q19162",
+    "id": 19162,
+    "label": "Audrey Sabol",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19162.jpg"
+  },
+  "Q19167": {
+    "qid": "Q19167",
+    "id": 19167,
+    "label": "Barbara Jarvis",
     "image": null
   },
-  "Q19574": {
-    "qid": "Q19574",
-    "id": 19574,
-    "label": "Ruth Ansel",
+  "Q19168": {
+    "qid": "Q19168",
+    "id": 19168,
+    "label": "Barbro Fahlstrom",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19168.jpg"
+  },
+  "Q19171": {
+    "qid": "Q19171",
+    "id": 19171,
+    "label": "Becky Arnold",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19171.jpg"
+  },
+  "Q19172": {
+    "qid": "Q19172",
+    "id": 19172,
+    "label": "Bela Julesz",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19172.jpg"
+  },
+  "Q19174": {
+    "qid": "Q19174",
+    "id": 19174,
+    "label": "Ben Kramer",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19174.jpg"
+  },
+  "Q19175": {
+    "qid": "Q19175",
+    "id": 19175,
+    "label": "Benjamin Lloyd",
     "image": null
   },
-  "Q19575": {
-    "qid": "Q19575",
-    "id": 19575,
-    "label": "Ruth Volmer",
+  "Q19178": {
+    "qid": "Q19178",
+    "id": 19178,
+    "label": "Bill Hartig",
     "image": null
   },
-  "Q19576": {
-    "qid": "Q19576",
-    "id": 19576,
-    "label": "Ruth Wolfe",
+  "Q19179": {
+    "qid": "Q19179",
+    "id": 19179,
+    "label": "Bill Kaminski",
     "image": null
   },
-  "Q19577": {
-    "qid": "Q19577",
-    "id": 19577,
-    "label": "Sam Francis",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19577.jpg"
+  "Q19180": {
+    "qid": "Q19180",
+    "id": 19180,
+    "label": "Billy Kl\u00fcver",
+    "image": "https://semlab.s3.amazonaws.com/images/Q19180.jpg"
   },
-  "Q19587": {
-    "qid": "Q19587",
-    "id": 19587,
-    "label": "Sergei Diaghilev",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19587.jpg"
-  },
-  "Q19588": {
-    "qid": "Q19588",
-    "id": 19588,
-    "label": "Seymour Schweber",
-    "image": null
-  },
-  "Q19591": {
-    "qid": "Q19591",
-    "id": 19591,
-    "label": "Sigvard Strandh",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19591.jpg"
-  },
-  "Q19594": {
-    "qid": "Q19594",
-    "id": 19594,
-    "label": "Simone Forti",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19594.jpg"
-  },
-  "Q23887": {
-    "qid": "Q23887",
-    "id": 23887,
-    "label": "George Manupelli",
-    "image": null
-  },
-  "Q23888": {
-    "qid": "Q23888",
-    "id": 23888,
-    "label": "Joseph Wehrer",
-    "image": null
-  },
-  "Q23900": {
-    "qid": "Q23900",
-    "id": 23900,
-    "label": "Harry Hewes",
-    "image": null
-  },
-  "Q23902": {
-    "qid": "Q23902",
-    "id": 23902,
-    "label": "Mr. Margolies",
-    "image": null
-  },
-  "Q24016": {
-    "qid": "Q24016",
-    "id": 24016,
-    "label": "Irene Svensson",
-    "image": null
-  },
-  "Q24017": {
-    "qid": "Q24017",
-    "id": 24017,
-    "label": "Olof Lagercrantz",
-    "image": null
-  },
-  "Q24018": {
-    "qid": "Q24018",
-    "id": 24018,
-    "label": "Alfredo Bonino",
-    "image": null
-  },
-  "Q24044": {
-    "qid": "Q24044",
-    "id": 24044,
-    "label": "Ben F. Waple",
-    "image": null
-  },
-  "Q24047": {
-    "qid": "Q24047",
-    "id": 24047,
-    "label": "Virginia Kondratief",
-    "image": null
-  },
-  "Q24072": {
-    "qid": "Q24072",
-    "id": 24072,
-    "label": "Steve Mark",
-    "image": null
-  },
-  "Q19184": {
-    "qid": "Q19184",
-    "id": 19184,
-    "label": "Bob Kieronski",
+  "Q19183": {
+    "qid": "Q19183",
+    "id": 19183,
+    "label": "Bob DiLorenzo",
     "image": null
   },
   "Q19185": {
     "qid": "Q19185",
     "id": 19185,
     "label": "Bob Schuler",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19185.jpg"
   },
   "Q19187": {
     "qid": "Q19187",
     "id": 19187,
     "label": "Brice Marden",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19187.jpg"
   },
   "Q19189": {
     "qid": "Q19189",
@@ -1760,7 +3902,7 @@
   "Q19191": {
     "qid": "Q19191",
     "id": 19191,
-    "label": "Burns",
+    "label": "Jim Burns",
     "image": null
   },
   "Q19193": {
@@ -1773,13 +3915,13 @@
     "qid": "Q19194",
     "id": 19194,
     "label": "C. Ray Smith",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19194.jpg"
   },
   "Q19195": {
     "qid": "Q19195",
     "id": 19195,
     "label": "Calvin Tompkins",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19195.jpg"
   },
   "Q19196": {
     "qid": "Q19196",
@@ -1797,7 +3939,7 @@
     "qid": "Q19200",
     "id": 19200,
     "label": "Carol Summers",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19200.jpg"
   },
   "Q19201": {
     "qid": "Q19201",
@@ -1809,25 +3951,25 @@
     "qid": "Q19202",
     "id": 19202,
     "label": "Carolyn Brown",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19202.jpg"
   },
   "Q19204": {
     "qid": "Q19204",
     "id": 19204,
     "label": "Cecil Coker",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19204.jpg"
   },
   "Q19208": {
     "qid": "Q19208",
     "id": 19208,
     "label": "Christine Frohnert",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19208.jpg"
   },
   "Q19209": {
     "qid": "Q19209",
     "id": 19209,
     "label": "Christophe de Menil",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19209.jpg"
   },
   "Q19210": {
     "qid": "Q19210",
@@ -1851,13 +3993,13 @@
     "qid": "Q19216",
     "id": 19216,
     "label": "Clark Poling",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19216.jpg"
   },
   "Q19217": {
     "qid": "Q19217",
     "id": 19217,
     "label": "Clay Felker",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19217.jpg"
   },
   "Q19219": {
     "qid": "Q19219",
@@ -1905,7 +4047,7 @@
     "qid": "Q19231",
     "id": 19231,
     "label": "David Gordon",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19231.jpg"
   },
   "Q19232": {
     "qid": "Q19232",
@@ -1923,13 +4065,13 @@
     "qid": "Q19234",
     "id": 19234,
     "label": "David White",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19234.jpg"
   },
   "Q19235": {
     "qid": "Q19235",
     "id": 19235,
     "label": "Deborah Hay",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19235.jpg"
   },
   "Q19236": {
     "qid": "Q19236",
@@ -1947,7 +4089,7 @@
     "qid": "Q19238",
     "id": 19238,
     "label": "Dick Wolff",
-    "image": null
+    "image": "https://semlab.s3.amazonaws.com/images/Q19238.jpg"
   },
   "Q19240": {
     "qid": "Q19240",
@@ -1973,922 +4115,2680 @@
     "label": "Dore Ashton",
     "image": "https://semlab.s3.amazonaws.com/images/Q19243.jpg"
   },
-  "Q19246": {
-    "qid": "Q19246",
-    "id": 19246,
-    "label": "Ed Carpentor",
+  "Q27918": {
+    "qid": "Q27918",
+    "id": 27918,
+    "label": "Phyllis Santis",
     "image": null
   },
-  "Q19247": {
-    "qid": "Q19247",
-    "id": 19247,
-    "label": "Ed Iverson",
+  "Q27919": {
+    "qid": "Q27919",
+    "id": 27919,
+    "label": "Mana Sarabhai",
     "image": null
   },
-  "Q19248": {
-    "qid": "Q19248",
-    "id": 19248,
-    "label": "Edwin S. Langsam",
+  "Q27920": {
+    "qid": "Q27920",
+    "id": 27920,
+    "label": "Robert Savage",
     "image": null
   },
-  "Q19249": {
-    "qid": "Q19249",
-    "id": 19249,
-    "label": "Eknath Vasant Chitnis",
+  "Q27921": {
+    "qid": "Q27921",
+    "id": 27921,
+    "label": "Skip Savard",
     "image": null
   },
-  "Q19250": {
-    "qid": "Q19250",
-    "id": 19250,
-    "label": "Elaine Summers",
+  "Q27922": {
+    "qid": "Q27922",
+    "id": 27922,
+    "label": "Karl Schenzer",
     "image": null
   },
-  "Q19251": {
-    "qid": "Q19251",
-    "id": 19251,
-    "label": "Eleanor Howard",
+  "Q27923": {
+    "qid": "Q27923",
+    "id": 27923,
+    "label": "Carlota Schoolman",
     "image": null
   },
-  "Q19254": {
-    "qid": "Q19254",
-    "id": 19254,
-    "label": "Elfink",
+  "Q27924": {
+    "qid": "Q27924",
+    "id": 27924,
+    "label": "Robert Schuler",
     "image": null
   },
-  "Q19256": {
-    "qid": "Q19256",
-    "id": 19256,
-    "label": "Ella Pincus",
+  "Q27925": {
+    "qid": "Q27925",
+    "id": 27925,
+    "label": "James Seawright",
     "image": null
   },
-  "Q19257": {
-    "qid": "Q19257",
-    "id": 19257,
-    "label": "Emily Heine",
+  "Q27926": {
+    "qid": "Q27926",
+    "id": 27926,
+    "label": "Phyllis Selzer",
     "image": null
   },
-  "Q19259": {
-    "qid": "Q19259",
-    "id": 19259,
-    "label": "Erik Satie",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19259.jpg"
+  "Q27927": {
+    "qid": "Q27927",
+    "id": 27927,
+    "label": "Jacquelyn D. Serwer",
+    "image": null
+  },
+  "Q27928": {
+    "qid": "Q27928",
+    "id": 27928,
+    "label": "Toni Shfrazi",
+    "image": null
+  },
+  "Q27929": {
+    "qid": "Q27929",
+    "id": 27929,
+    "label": "Hitoshi Shimada",
+    "image": null
+  },
+  "Q27930": {
+    "qid": "Q27930",
+    "id": 27930,
+    "label": "Kimio Shimada",
+    "image": null
+  },
+  "Q27931": {
+    "qid": "Q27931",
+    "id": 27931,
+    "label": "Hiromi Shiratori",
+    "image": null
+  },
+  "Q27932": {
+    "qid": "Q27932",
+    "id": 27932,
+    "label": "Harry Shunk",
+    "image": null
+  },
+  "Q27933": {
+    "qid": "Q27933",
+    "id": 27933,
+    "label": "Lawrence Silverstein",
+    "image": null
+  },
+  "Q27934": {
+    "qid": "Q27934",
+    "id": 27934,
+    "label": "Joseph Slater",
+    "image": null
+  },
+  "Q27935": {
+    "qid": "Q27935",
+    "id": 27935,
+    "label": "Michael Snow",
+    "image": null
+  },
+  "Q27936": {
+    "qid": "Q27936",
+    "id": 27936,
+    "label": "Boris Sojka",
+    "image": null
+  },
+  "Q27937": {
+    "qid": "Q27937",
+    "id": 27937,
+    "label": "Keith Sonnier",
+    "image": null
+  },
+  "Q27938": {
+    "qid": "Q27938",
+    "id": 27938,
+    "label": "Rapha\u00ebl Sorin",
+    "image": null
+  },
+  "Q27939": {
+    "qid": "Q27939",
+    "id": 27939,
+    "label": "Marvin Spindler",
+    "image": null
+  },
+  "Q27940": {
+    "qid": "Q27940",
+    "id": 27940,
+    "label": "Gunnar Spons",
+    "image": null
+  },
+  "Q27941": {
+    "qid": "Q27941",
+    "id": 27941,
+    "label": "Stan Stanciewicz",
+    "image": null
+  },
+  "Q27942": {
+    "qid": "Q27942",
+    "id": 27942,
+    "label": "Alan Stanton",
+    "image": null
+  },
+  "Q27943": {
+    "qid": "Q27943",
+    "id": 27943,
+    "label": "Karl Steck",
+    "image": null
+  },
+  "Q27944": {
+    "qid": "Q27944",
+    "id": 27944,
+    "label": "Gerd Stern",
+    "image": null
+  },
+  "Q27945": {
+    "qid": "Q27945",
+    "id": 27945,
+    "label": "Merlin Stone",
+    "image": null
+  },
+  "Q27946": {
+    "qid": "Q27946",
+    "id": 27946,
+    "label": "Rosemary Stroer",
+    "image": null
+  },
+  "Q27947": {
+    "qid": "Q27947",
+    "id": 27947,
+    "label": "Michael Strumpf",
+    "image": null
+  },
+  "Q27948": {
+    "qid": "Q27948",
+    "id": 27948,
+    "label": "David Stuart",
+    "image": null
+  },
+  "Q27949": {
+    "qid": "Q27949",
+    "id": 27949,
+    "label": "Makiya Takagi",
+    "image": null
+  },
+  "Q27950": {
+    "qid": "Q27950",
+    "id": 27950,
+    "label": "Yuji Takahashi",
+    "image": null
+  },
+  "Q27951": {
+    "qid": "Q27951",
+    "id": 27951,
+    "label": "Kazuaki Takayama",
+    "image": null
+  },
+  "Q27952": {
+    "qid": "Q27952",
+    "id": 27952,
+    "label": "Renichi Takenaka",
+    "image": null
+  },
+  "Q27953": {
+    "qid": "Q27953",
+    "id": 27953,
+    "label": "Yasuharu Tamiya",
+    "image": null
+  },
+  "Q27954": {
+    "qid": "Q27954",
+    "id": 27954,
+    "label": "Yoshikazu Tanaka",
+    "image": null
+  },
+  "Q27955": {
+    "qid": "Q27955",
+    "id": 27955,
+    "label": "Euchi Taniyama",
+    "image": null
+  },
+  "Q27956": {
+    "qid": "Q27956",
+    "id": 27956,
+    "label": "Malinda Teel",
+    "image": null
+  },
+  "Q27957": {
+    "qid": "Q27957",
+    "id": 27957,
+    "label": "Shuji Terayama",
+    "image": null
+  },
+  "Q27958": {
+    "qid": "Q27958",
+    "id": 27958,
+    "label": "Yoshio Tsukio",
+    "image": null
+  },
+  "Q27959": {
+    "qid": "Q27959",
+    "id": 27959,
+    "label": "Richard Tum Seden",
+    "image": null
+  },
+  "Q27960": {
+    "qid": "Q27960",
+    "id": 27960,
+    "label": "Cy Twombly",
+    "image": "https://semlab.s3.amazonaws.com/images/Q27960.jpg"
+  },
+  "Q27961": {
+    "qid": "Q27961",
+    "id": 27961,
+    "label": "Jack Tworkov",
+    "image": null
+  },
+  "Q27962": {
+    "qid": "Q27962",
+    "id": 27962,
+    "label": "Morihiko Ueda",
+    "image": null
+  },
+  "Q27963": {
+    "qid": "Q27963",
+    "id": 27963,
+    "label": "Sylvie Vog",
+    "image": null
+  },
+  "Q27964": {
+    "qid": "Q27964",
+    "id": 27964,
+    "label": "Alexander Warren",
+    "image": null
+  },
+  "Q27965": {
+    "qid": "Q27965",
+    "id": 27965,
+    "label": "Peter Warren",
+    "image": null
+  },
+  "Q27966": {
+    "qid": "Q27966",
+    "id": 27966,
+    "label": "Robert Watts",
+    "image": null
+  },
+  "Q27967": {
+    "qid": "Q27967",
+    "id": 27967,
+    "label": "John Wesley",
+    "image": null
+  },
+  "Q27968": {
+    "qid": "Q27968",
+    "id": 27968,
+    "label": "David Whitney",
+    "image": null
+  },
+  "Q27969": {
+    "qid": "Q27969",
+    "id": 27969,
+    "label": "Jim Wilkinson",
+    "image": null
+  },
+  "Q27970": {
+    "qid": "Q27970",
+    "id": 27970,
+    "label": "Robert Wilson",
+    "image": null
+  },
+  "Q27971": {
+    "qid": "Q27971",
+    "id": 27971,
+    "label": "Gosta Wolin",
+    "image": null
+  },
+  "Q27972": {
+    "qid": "Q27972",
+    "id": 27972,
+    "label": "David Woodbridge",
+    "image": null
+  },
+  "Q27973": {
+    "qid": "Q27973",
+    "id": 27973,
+    "label": "Morion Wurtele",
+    "image": null
+  },
+  "Q27974": {
+    "qid": "Q27974",
+    "id": 27974,
+    "label": "Masanobu Yoshimura",
+    "image": null
+  },
+  "Q27975": {
+    "qid": "Q27975",
+    "id": 27975,
+    "label": "Nicholas Zettlemoyer",
+    "image": null
+  },
+  "Q28056": {
+    "qid": "Q28056",
+    "id": 28056,
+    "label": "The Paris-Match Correspondant",
+    "image": null
+  },
+  "Q28057": {
+    "qid": "Q28057",
+    "id": 28057,
+    "label": "A Museum of Modern Art Photographer",
+    "image": null
+  },
+  "Q28058": {
+    "qid": "Q28058",
+    "id": 28058,
+    "label": "Meredith Morse",
+    "image": null
+  },
+  "Q28060": {
+    "qid": "Q28060",
+    "id": 28060,
+    "label": "Anonym",
+    "image": null
+  },
+  "Q28065": {
+    "qid": "Q28065",
+    "id": 28065,
+    "label": "Anthony Tadona",
+    "image": null
+  },
+  "Q28066": {
+    "qid": "Q28066",
+    "id": 28066,
+    "label": "Logan Hargrave",
+    "image": null
+  },
+  "Q28067": {
+    "qid": "Q28067",
+    "id": 28067,
+    "label": "Robert Coops",
+    "image": null
+  },
+  "Q28068": {
+    "qid": "Q28068",
+    "id": 28068,
+    "label": "Richard Deaver",
+    "image": null
+  },
+  "Q28069": {
+    "qid": "Q28069",
+    "id": 28069,
+    "label": "Edward Dziedzic",
+    "image": null
+  },
+  "Q28070": {
+    "qid": "Q28070",
+    "id": 28070,
+    "label": "Lee Huber",
+    "image": null
+  },
+  "Q28071": {
+    "qid": "Q28071",
+    "id": 28071,
+    "label": "Mark Salas",
+    "image": null
+  },
+  "Q28072": {
+    "qid": "Q28072",
+    "id": 28072,
+    "label": "Bates Lowry",
+    "image": null
+  },
+  "Q28074": {
+    "qid": "Q28074",
+    "id": 28074,
+    "label": "F.H. Winslow",
+    "image": null
+  },
+  "Q28075": {
+    "qid": "Q28075",
+    "id": 28075,
+    "label": "P. Bruins",
+    "image": null
+  },
+  "Q28076": {
+    "qid": "Q28076",
+    "id": 28076,
+    "label": "Martha Turi",
+    "image": null
+  },
+  "Q28077": {
+    "qid": "Q28077",
+    "id": 28077,
+    "label": "Louis Kellum",
+    "image": null
+  },
+  "Q28078": {
+    "qid": "Q28078",
+    "id": 28078,
+    "label": "J.W. Sellers",
+    "image": null
+  },
+  "Q28079": {
+    "qid": "Q28079",
+    "id": 28079,
+    "label": "Parke Schaeffer",
+    "image": null
+  },
+  "Q28080": {
+    "qid": "Q28080",
+    "id": 28080,
+    "label": "Norman Nelson",
+    "image": null
+  },
+  "Q28081": {
+    "qid": "Q28081",
+    "id": 28081,
+    "label": "R. Baecker",
+    "image": null
+  },
+  "Q28082": {
+    "qid": "Q28082",
+    "id": 28082,
+    "label": "J. Tonndorf",
+    "image": null
+  },
+  "Q28083": {
+    "qid": "Q28083",
+    "id": 28083,
+    "label": "Edward. S. Seeley",
+    "image": null
+  },
+  "Q28084": {
+    "qid": "Q28084",
+    "id": 28084,
+    "label": "Herbert Bohnert",
+    "image": null
+  },
+  "Q28085": {
+    "qid": "Q28085",
+    "id": 28085,
+    "label": "Seymour Papert",
+    "image": null
+  },
+  "Q28086": {
+    "qid": "Q28086",
+    "id": 28086,
+    "label": "Ralph Evans",
+    "image": null
+  },
+  "Q28087": {
+    "qid": "Q28087",
+    "id": 28087,
+    "label": "Dean Judd",
+    "image": null
+  },
+  "Q28088": {
+    "qid": "Q28088",
+    "id": 28088,
+    "label": "Jerome Ysroael Lettvin",
+    "image": null
+  },
+  "Q28089": {
+    "qid": "Q28089",
+    "id": 28089,
+    "label": "B. Hunter",
+    "image": null
+  },
+  "Q28090": {
+    "qid": "Q28090",
+    "id": 28090,
+    "label": "R. Feller",
+    "image": null
+  },
+  "Q28091": {
+    "qid": "Q28091",
+    "id": 28091,
+    "label": "William R. Bennett",
+    "image": null
+  },
+  "Q28092": {
+    "qid": "Q28092",
+    "id": 28092,
+    "label": "Ralph Martel",
+    "image": null
+  },
+  "Q28093": {
+    "qid": "Q28093",
+    "id": 28093,
+    "label": "Frank T. Turner",
+    "image": null
+  },
+  "Q28094": {
+    "qid": "Q28094",
+    "id": 28094,
+    "label": "Amy Martin",
+    "image": null
+  },
+  "Q28095": {
+    "qid": "Q28095",
+    "id": 28095,
+    "label": "Thomas Buechner",
+    "image": null
+  },
+  "Q28096": {
+    "qid": "Q28096",
+    "id": 28096,
+    "label": "Lawrence Silvenstein",
+    "image": null
+  },
+  "Q28098": {
+    "qid": "Q28098",
+    "id": 28098,
+    "label": "D. Berkman",
+    "image": null
+  },
+  "Q28099": {
+    "qid": "Q28099",
+    "id": 28099,
+    "label": "E.V. Chitnis",
+    "image": null
+  },
+  "Q28100": {
+    "qid": "Q28100",
+    "id": 28100,
+    "label": "P. K. Garg",
+    "image": null
+  },
+  "Q28101": {
+    "qid": "Q28101",
+    "id": 28101,
+    "label": "K.S. Karnik",
+    "image": null
+  },
+  "Q28102": {
+    "qid": "Q28102",
+    "id": 28102,
+    "label": "Bhavaraju Sarveswara Rao",
+    "image": null
+  },
+  "Q28103": {
+    "qid": "Q28103",
+    "id": 28103,
+    "label": "N. Maccoby",
+    "image": null
+  },
+  "Q28104": {
+    "qid": "Q28104",
+    "id": 28104,
+    "label": "K. B. Shah",
+    "image": null
+  },
+  "Q28106": {
+    "qid": "Q28106",
+    "id": 28106,
+    "label": "Anne Riley",
+    "image": null
+  },
+  "Q28107": {
+    "qid": "Q28107",
+    "id": 28107,
+    "label": "Nora Cross",
+    "image": null
+  },
+  "Q28109": {
+    "qid": "Q28109",
+    "id": 28109,
+    "label": "Pandit  Pran Nath",
+    "image": null
+  },
+  "Q28110": {
+    "qid": "Q28110",
+    "id": 28110,
+    "label": "Barry Kaplan",
+    "image": null
+  },
+  "Q28122": {
+    "qid": "Q28122",
+    "id": 28122,
+    "label": "Kobayashi Hakudo",
+    "image": null
+  },
+  "Q28123": {
+    "qid": "Q28123",
+    "id": 28123,
+    "label": "Yuji Morioka",
+    "image": null
+  },
+  "Q28124": {
+    "qid": "Q28124",
+    "id": 28124,
+    "label": "S\u00e0o Schlumberger",
+    "image": null
+  },
+  "Q28126": {
+    "qid": "Q28126",
+    "id": 28126,
+    "label": "Dorothy Seckler",
+    "image": null
+  },
+  "Q28146": {
+    "qid": "Q28146",
+    "id": 28146,
+    "label": "Jackson Mac Low",
+    "image": null
+  },
+  "Q28147": {
+    "qid": "Q28147",
+    "id": 28147,
+    "label": "Chester Bowles",
+    "image": null
+  },
+  "Q28148": {
+    "qid": "Q28148",
+    "id": 28148,
+    "label": "Noam Chomsky",
+    "image": null
+  },
+  "Q28149": {
+    "qid": "Q28149",
+    "id": 28149,
+    "label": "Kenneth Clark",
+    "image": null
+  },
+  "Q28150": {
+    "qid": "Q28150",
+    "id": 28150,
+    "label": "Alva Myrdal",
+    "image": null
+  },
+  "Q28151": {
+    "qid": "Q28151",
+    "id": 28151,
+    "label": "Meyer Shapiro",
+    "image": null
+  },
+  "Q28152": {
+    "qid": "Q28152",
+    "id": 28152,
+    "label": "Kenzo Tange",
+    "image": null
+  },
+  "Q28153": {
+    "qid": "Q28153",
+    "id": 28153,
+    "label": "Jerome Wiesner",
+    "image": null
+  },
+  "Q28154": {
+    "qid": "Q28154",
+    "id": 28154,
+    "label": "Nihon Columbia",
+    "image": null
+  },
+  "Q28155": {
+    "qid": "Q28155",
+    "id": 28155,
+    "label": "Kanto Denki",
+    "image": null
+  },
+  "Q28157": {
+    "qid": "Q28157",
+    "id": 28157,
+    "label": "Mitsui Kansetsu",
+    "image": null
+  },
+  "Q28160": {
+    "qid": "Q28160",
+    "id": 28160,
+    "label": "Ronald Hobbs",
+    "image": null
+  },
+  "Q28161": {
+    "qid": "Q28161",
+    "id": 28161,
+    "label": "Tom Slater",
+    "image": null
+  },
+  "Q28162": {
+    "qid": "Q28162",
+    "id": 28162,
+    "label": "Chuck Ross",
+    "image": null
+  },
+  "Q28163": {
+    "qid": "Q28163",
+    "id": 28163,
+    "label": "Malinda Peel",
+    "image": null
+  },
+  "Q28166": {
+    "qid": "Q28166",
+    "id": 28166,
+    "label": "Melynda Abrecht",
+    "image": null
+  },
+  "Q28167": {
+    "qid": "Q28167",
+    "id": 28167,
+    "label": "Oliver Selfridge",
+    "image": null
+  },
+  "Q28169": {
+    "qid": "Q28169",
+    "id": 28169,
+    "label": "Richard P. Brandt",
+    "image": null
+  },
+  "Q28170": {
+    "qid": "Q28170",
+    "id": 28170,
+    "label": "Jack Masey",
+    "image": null
+  },
+  "Q28171": {
+    "qid": "Q28171",
+    "id": 28171,
+    "label": "Paul Girard",
+    "image": null
+  },
+  "Q28172": {
+    "qid": "Q28172",
+    "id": 28172,
+    "label": "Andrew Forge",
+    "image": null
+  },
+  "Q28173": {
+    "qid": "Q28173",
+    "id": 28173,
+    "label": "Photographer unknown",
+    "image": null
+  },
+  "Q28174": {
+    "qid": "Q28174",
+    "id": 28174,
+    "label": "Kathy Baker",
+    "image": null
+  },
+  "Q28175": {
+    "qid": "Q28175",
+    "id": 28175,
+    "label": "Howard J. Sloane",
+    "image": null
+  },
+  "Q28176": {
+    "qid": "Q28176",
+    "id": 28176,
+    "label": "Paul E. Stephens",
+    "image": null
+  },
+  "Q28177": {
+    "qid": "Q28177",
+    "id": 28177,
+    "label": "Siegfried Albrecht",
+    "image": null
+  },
+  "Q28178": {
+    "qid": "Q28178",
+    "id": 28178,
+    "label": "Kurd Alsleben",
+    "image": null
+  },
+  "Q28179": {
+    "qid": "Q28179",
+    "id": 28179,
+    "label": "Cord Passow",
+    "image": null
+  },
+  "Q28180": {
+    "qid": "Q28180",
+    "id": 28180,
+    "label": "John Anthes",
+    "image": null
+  },
+  "Q28181": {
+    "qid": "Q28181",
+    "id": 28181,
+    "label": "Tracy S. Kinsel",
+    "image": "https://semlab.s3.amazonaws.com/images/Q28181.jpg"
+  },
+  "Q28182": {
+    "qid": "Q28182",
+    "id": 28182,
+    "label": "Mary Ashley",
+    "image": null
+  },
+  "Q28183": {
+    "qid": "Q28183",
+    "id": 28183,
+    "label": "John Mirageas",
+    "image": null
+  },
+  "Q28185": {
+    "qid": "Q28185",
+    "id": 28185,
+    "label": "Gertrude  Barnstone",
+    "image": null
+  },
+  "Q28186": {
+    "qid": "Q28186",
+    "id": 28186,
+    "label": "Dan Bloxum",
+    "image": null
+  },
+  "Q28188": {
+    "qid": "Q28188",
+    "id": 28188,
+    "label": "Joseph L. Goldman",
+    "image": null
+  },
+  "Q28190": {
+    "qid": "Q28190",
+    "id": 28190,
+    "label": "Rachel Bas-Cohain",
+    "image": null
+  },
+  "Q28191": {
+    "qid": "Q28191",
+    "id": 28191,
+    "label": "Alan Litke",
+    "image": null
+  },
+  "Q28192": {
+    "qid": "Q28192",
+    "id": 28192,
+    "label": "Mary Bean",
+    "image": null
+  },
+  "Q28193": {
+    "qid": "Q28193",
+    "id": 28193,
+    "label": "William S. Bean",
+    "image": null
+  },
+  "Q28195": {
+    "qid": "Q28195",
+    "id": 28195,
+    "label": "John Benedict",
+    "image": null
+  },
+  "Q28196": {
+    "qid": "Q28196",
+    "id": 28196,
+    "label": "John Newton",
+    "image": null
+  },
+  "Q28200": {
+    "qid": "Q28200",
+    "id": 28200,
+    "label": "Mary Guyer Berg",
+    "image": null
+  },
+  "Q28201": {
+    "qid": "Q28201",
+    "id": 28201,
+    "label": "Howard Berg",
+    "image": null
+  },
+  "Q28202": {
+    "qid": "Q28202",
+    "id": 28202,
+    "label": "Sheila Berkley",
+    "image": null
+  },
+  "Q28203": {
+    "qid": "Q28203",
+    "id": 28203,
+    "label": "Graydon Cairl",
+    "image": null
+  },
+  "Q28205": {
+    "qid": "Q28205",
+    "id": 28205,
+    "label": "Jose Bermudez",
+    "image": null
+  },
+  "Q28206": {
+    "qid": "Q28206",
+    "id": 28206,
+    "label": "Geny Dignac",
+    "image": null
+  },
+  "Q28207": {
+    "qid": "Q28207",
+    "id": 28207,
+    "label": "Hernan I. Otano",
+    "image": null
+  },
+  "Q28209": {
+    "qid": "Q28209",
+    "id": 28209,
+    "label": "Richard E. Martin",
+    "image": null
+  },
+  "Q28210": {
+    "qid": "Q28210",
+    "id": 28210,
+    "label": "Adrienne Bordes",
+    "image": null
+  },
+  "Q28211": {
+    "qid": "Q28211",
+    "id": 28211,
+    "label": "Benjamin Koenig",
+    "image": null
+  },
+  "Q28213": {
+    "qid": "Q28213",
+    "id": 28213,
+    "label": "Robert Fox",
+    "image": null
+  },
+  "Q28214": {
+    "qid": "Q28214",
+    "id": 28214,
+    "label": "George B. Bush",
+    "image": null
+  },
+  "Q28215": {
+    "qid": "Q28215",
+    "id": 28215,
+    "label": "Lawrence J. Viernstein",
+    "image": null
+  },
+  "Q28217": {
+    "qid": "Q28217",
+    "id": 28217,
+    "label": "Jackie Cassen",
+    "image": null
+  },
+  "Q28218": {
+    "qid": "Q28218",
+    "id": 28218,
+    "label": "Rudi Stern",
+    "image": null
+  },
+  "Q28219": {
+    "qid": "Q28219",
+    "id": 28219,
+    "label": "Edwin Hodder",
+    "image": null
+  },
+  "Q28221": {
+    "qid": "Q28221",
+    "id": 28221,
+    "label": "Samuel Chaikofsky",
+    "image": null
+  },
+  "Q28222": {
+    "qid": "Q28222",
+    "id": 28222,
+    "label": "David Chapin",
+    "image": null
+  },
+  "Q28223": {
+    "qid": "Q28223",
+    "id": 28223,
+    "label": "Jacques Pankove",
+    "image": null
+  },
+  "Q28225": {
+    "qid": "Q28225",
+    "id": 28225,
+    "label": "Sheldon Cohen",
+    "image": null
+  },
+  "Q28226": {
+    "qid": "Q28226",
+    "id": 28226,
+    "label": "Franck J. Costa",
+    "image": null
+  },
+  "Q28227": {
+    "qid": "Q28227",
+    "id": 28227,
+    "label": "Tilo Samter",
+    "image": null
+  },
+  "Q28228": {
+    "qid": "Q28228",
+    "id": 28228,
+    "label": "Roger Doering",
+    "image": null
+  },
+  "Q28230": {
+    "qid": "Q28230",
+    "id": 28230,
+    "label": "Arturo Cuetara",
+    "image": null
+  },
+  "Q28231": {
+    "qid": "Q28231",
+    "id": 28231,
+    "label": "Walter Delaney",
+    "image": null
+  },
+  "Q28232": {
+    "qid": "Q28232",
+    "id": 28232,
+    "label": "Peter Wilde",
+    "image": null
+  },
+  "Q28233": {
+    "qid": "Q28233",
+    "id": 28233,
+    "label": "Royce Dendler",
+    "image": null
+  },
+  "Q28234": {
+    "qid": "Q28234",
+    "id": 28234,
+    "label": "Arthur Dodge",
+    "image": null
+  },
+  "Q28235": {
+    "qid": "Q28235",
+    "id": 28235,
+    "label": "Juan Downey",
+    "image": null
+  },
+  "Q28236": {
+    "qid": "Q28236",
+    "id": 28236,
+    "label": "Fred Pitts",
+    "image": null
+  },
+  "Q28238": {
+    "qid": "Q28238",
+    "id": 28238,
+    "label": "Robert James  Downing",
+    "image": null
+  },
+  "Q28239": {
+    "qid": "Q28239",
+    "id": 28239,
+    "label": "David Johnston",
+    "image": null
+  },
+  "Q28243": {
+    "qid": "Q28243",
+    "id": 28243,
+    "label": "Don Edson",
+    "image": null
+  },
+  "Q28244": {
+    "qid": "Q28244",
+    "id": 28244,
+    "label": "Olive Freud",
+    "image": null
+  },
+  "Q28246": {
+    "qid": "Q28246",
+    "id": 28246,
+    "label": "Claire Falkenstein",
+    "image": null
+  },
+  "Q28247": {
+    "qid": "Q28247",
+    "id": 28247,
+    "label": "Irving  Weiman",
+    "image": null
   },
-  "Q19260": {
-    "qid": "Q19260",
-    "id": 19260,
-    "label": "Ernst Rothkopf",
+  "Q28249": {
+    "qid": "Q28249",
+    "id": 28249,
+    "label": "Carl Fernbach-Flarsheim",
     "image": null
   },
-  "Q19262": {
-    "qid": "Q19262",
-    "id": 19262,
-    "label": "Ethel Scull",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19262.jpg"
+  "Q28250": {
+    "qid": "Q28250",
+    "id": 28250,
+    "label": "Robert M. Goodman",
+    "image": null
+  },
+  "Q28252": {
+    "qid": "Q28252",
+    "id": 28252,
+    "label": "Virginio  Ferrari",
+    "image": null
+  },
+  "Q28253": {
+    "qid": "Q28253",
+    "id": 28253,
+    "label": "Teodoro  Halpern",
+    "image": null
+  },
+  "Q28255": {
+    "qid": "Q28255",
+    "id": 28255,
+    "label": "John  Fowski",
+    "image": null
+  },
+  "Q28256": {
+    "qid": "Q28256",
+    "id": 28256,
+    "label": "Walter Fowski",
+    "image": null
+  },
+  "Q28258": {
+    "qid": "Q28258",
+    "id": 28258,
+    "label": "Ronald Fox",
+    "image": null
+  },
+  "Q28259": {
+    "qid": "Q28259",
+    "id": 28259,
+    "label": "E. R. Hagen",
+    "image": null
+  },
+  "Q28261": {
+    "qid": "Q28261",
+    "id": 28261,
+    "label": "Richard Fraenkel",
+    "image": null
+  },
+  "Q28262": {
+    "qid": "Q28262",
+    "id": 28262,
+    "label": "Jeffrey  Raskin",
+    "image": null
+  },
+  "Q28264": {
+    "qid": "Q28264",
+    "id": 28264,
+    "label": "Ruth Francken",
+    "image": null
+  },
+  "Q28265": {
+    "qid": "Q28265",
+    "id": 28265,
+    "label": "Edward  Franklin",
+    "image": null
+  },
+  "Q28266": {
+    "qid": "Q28266",
+    "id": 28266,
+    "label": "Gary  Rieveschl",
+    "image": null
+  },
+  "Q28267": {
+    "qid": "Q28267",
+    "id": 28267,
+    "label": "John  Brookes",
+    "image": null
+  },
+  "Q28268": {
+    "qid": "Q28268",
+    "id": 28268,
+    "label": "Charlotte  Gilbertson",
+    "image": null
+  },
+  "Q28269": {
+    "qid": "Q28269",
+    "id": 28269,
+    "label": "Eugene R.  Gladston",
+    "image": null
+  },
+  "Q28270": {
+    "qid": "Q28270",
+    "id": 28270,
+    "label": "Michael  Goldberg",
+    "image": null
+  },
+  "Q28271": {
+    "qid": "Q28271",
+    "id": 28271,
+    "label": "William  Hadfield",
+    "image": null
+  },
+  "Q28272": {
+    "qid": "Q28272",
+    "id": 28272,
+    "label": "Alfred  Heinz",
+    "image": null
+  },
+  "Q28274": {
+    "qid": "Q28274",
+    "id": 28274,
+    "label": "Amy  Hamouda",
+    "image": null
+  },
+  "Q28275": {
+    "qid": "Q28275",
+    "id": 28275,
+    "label": "Albert  Hamowy",
+    "image": null
+  },
+  "Q28276": {
+    "qid": "Q28276",
+    "id": 28276,
+    "label": "Howard H. Oldenburg",
+    "image": null
+  },
+  "Q28278": {
+    "qid": "Q28278",
+    "id": 28278,
+    "label": "Robert Harlow",
+    "image": null
+  },
+  "Q28279": {
+    "qid": "Q28279",
+    "id": 28279,
+    "label": "Hilary Harris",
+    "image": null
+  },
+  "Q28280": {
+    "qid": "Q28280",
+    "id": 28280,
+    "label": "James Macaulay",
+    "image": null
+  },
+  "Q28281": {
+    "qid": "Q28281",
+    "id": 28281,
+    "label": "Fred Stern",
+    "image": null
+  },
+  "Q28283": {
+    "qid": "Q28283",
+    "id": 28283,
+    "label": "John Hassell",
+    "image": null
+  },
+  "Q28284": {
+    "qid": "Q28284",
+    "id": 28284,
+    "label": "Mike Hinge",
+    "image": null
+  },
+  "Q28285": {
+    "qid": "Q28285",
+    "id": 28285,
+    "label": "Arthur  Hoener",
+    "image": null
+  },
+  "Q28286": {
+    "qid": "Q28286",
+    "id": 28286,
+    "label": "Leon  Wilde",
+    "image": null
+  },
+  "Q28289": {
+    "qid": "Q28289",
+    "id": 28289,
+    "label": "Yukihisa Isobe",
+    "image": null
+  },
+  "Q28290": {
+    "qid": "Q28290",
+    "id": 28290,
+    "label": "Masanori Oe",
+    "image": null
+  },
+  "Q28292": {
+    "qid": "Q28292",
+    "id": 28292,
+    "label": "James  Calonis",
+    "image": null
+  },
+  "Q28294": {
+    "qid": "Q28294",
+    "id": 28294,
+    "label": "Gottfried Jaeger",
+    "image": null
+  },
+  "Q28295": {
+    "qid": "Q28295",
+    "id": 28295,
+    "label": "George J. Kafka",
+    "image": null
+  },
+  "Q28296": {
+    "qid": "Q28296",
+    "id": 28296,
+    "label": "Walter Kafka",
+    "image": null
+  },
+  "Q28298": {
+    "qid": "Q28298",
+    "id": 28298,
+    "label": "Bernard Kahn",
+    "image": null
+  },
+  "Q28299": {
+    "qid": "Q28299",
+    "id": 28299,
+    "label": "Muriel Kaplan",
+    "image": null
+  },
+  "Q28300": {
+    "qid": "Q28300",
+    "id": 28300,
+    "label": "Irwin Feiner",
+    "image": null
+  },
+  "Q28302": {
+    "qid": "Q28302",
+    "id": 28302,
+    "label": "Kasoundra",
+    "image": null
+  },
+  "Q28303": {
+    "qid": "Q28303",
+    "id": 28303,
+    "label": "George Klauber",
+    "image": null
+  },
+  "Q28304": {
+    "qid": "Q28304",
+    "id": 28304,
+    "label": "Guillaume Sebastian  Vos",
+    "image": null
+  },
+  "Q28305": {
+    "qid": "Q28305",
+    "id": 28305,
+    "label": "Justin  Knowles",
+    "image": null
+  },
+  "Q28306": {
+    "qid": "Q28306",
+    "id": 28306,
+    "label": "Peter Chappell",
+    "image": null
+  },
+  "Q28308": {
+    "qid": "Q28308",
+    "id": 28308,
+    "label": "Robert  Kragen",
+    "image": null
+  },
+  "Q28310": {
+    "qid": "Q28310",
+    "id": 28310,
+    "label": "Irv  Rosner",
+    "image": null
+  },
+  "Q28312": {
+    "qid": "Q28312",
+    "id": 28312,
+    "label": "Irene  Krugman",
+    "image": null
+  },
+  "Q28313": {
+    "qid": "Q28313",
+    "id": 28313,
+    "label": "Ben F.  Laposky",
+    "image": null
+  },
+  "Q28314": {
+    "qid": "Q28314",
+    "id": 28314,
+    "label": "Norman  Larkin",
+    "image": null
+  },
+  "Q28315": {
+    "qid": "Q28315",
+    "id": 28315,
+    "label": "Jean-Jacques Rivard",
+    "image": null
+  },
+  "Q28316": {
+    "qid": "Q28316",
+    "id": 28316,
+    "label": "John  Bimshas",
+    "image": null
+  },
+  "Q28318": {
+    "qid": "Q28318",
+    "id": 28318,
+    "label": "David  Lawner",
+    "image": null
+  },
+  "Q28319": {
+    "qid": "Q28319",
+    "id": 28319,
+    "label": "Gary  Furgeson",
+    "image": null
+  },
+  "Q28321": {
+    "qid": "Q28321",
+    "id": 28321,
+    "label": "Marc  Lepage",
+    "image": null
+  },
+  "Q28322": {
+    "qid": "Q28322",
+    "id": 28322,
+    "label": "Roger  Carrigan",
+    "image": null
+  },
+  "Q28324": {
+    "qid": "Q28324",
+    "id": 28324,
+    "label": "Guillaume  Leunens",
+    "image": null
+  },
+  "Q28325": {
+    "qid": "Q28325",
+    "id": 28325,
+    "label": "Mon  Levinson",
+    "image": null
+  },
+  "Q28327": {
+    "qid": "Q28327",
+    "id": 28327,
+    "label": "Charles  Livingstone",
+    "image": null
+  },
+  "Q28328": {
+    "qid": "Q28328",
+    "id": 28328,
+    "label": "Emil  Hammer",
+    "image": null
+  },
+  "Q28329": {
+    "qid": "Q28329",
+    "id": 28329,
+    "label": "John Lobell",
+    "image": null
+  },
+  "Q28331": {
+    "qid": "Q28331",
+    "id": 28331,
+    "label": "Lewandowski  Lois",
+    "image": null
+  },
+  "Q28332": {
+    "qid": "Q28332",
+    "id": 28332,
+    "label": "William Hayett",
+    "image": null
+  },
+  "Q28333": {
+    "qid": "Q28333",
+    "id": 28333,
+    "label": "Pedro  Lujan",
+    "image": null
+  },
+  "Q28334": {
+    "qid": "Q28334",
+    "id": 28334,
+    "label": "E. C.  Hyde",
+    "image": null
+  },
+  "Q28335": {
+    "qid": "Q28335",
+    "id": 28335,
+    "label": "Martyl",
+    "image": null
+  },
+  "Q28336": {
+    "qid": "Q28336",
+    "id": 28336,
+    "label": "Giselle  Mauer",
+    "image": null
+  },
+  "Q28339": {
+    "qid": "Q28339",
+    "id": 28339,
+    "label": "Preston MccLanahan",
+    "image": null
+  },
+  "Q28340": {
+    "qid": "Q28340",
+    "id": 28340,
+    "label": "F. H.  Roberts",
+    "image": null
+  },
+  "Q28342": {
+    "qid": "Q28342",
+    "id": 28342,
+    "label": "William Edward McGowin",
+    "image": null
+  },
+  "Q28343": {
+    "qid": "Q28343",
+    "id": 28343,
+    "label": "Victor Millonzi",
+    "image": null
+  },
+  "Q28344": {
+    "qid": "Q28344",
+    "id": 28344,
+    "label": "Edward  Samuels",
+    "image": null
+  },
+  "Q28346": {
+    "qid": "Q28346",
+    "id": 28346,
+    "label": "Agnes  Mills",
+    "image": null
+  },
+  "Q28347": {
+    "qid": "Q28347",
+    "id": 28347,
+    "label": "Michael C. Presnick",
+    "image": null
+  },
+  "Q28349": {
+    "qid": "Q28349",
+    "id": 28349,
+    "label": "Verner  Molin",
+    "image": null
+  },
+  "Q28351": {
+    "qid": "Q28351",
+    "id": 28351,
+    "label": "Ralph K.  Morrill",
+    "image": null
+  },
+  "Q28352": {
+    "qid": "Q28352",
+    "id": 28352,
+    "label": "Norton  Wise",
+    "image": null
+  },
+  "Q28354": {
+    "qid": "Q28354",
+    "id": 28354,
+    "label": "Peter L.  Myer",
+    "image": null
+  },
+  "Q28355": {
+    "qid": "Q28355",
+    "id": 28355,
+    "label": "George  Wolffe",
+    "image": null
+  },
+  "Q28357": {
+    "qid": "Q28357",
+    "id": 28357,
+    "label": "Leah  Noland",
+    "image": null
+  },
+  "Q28358": {
+    "qid": "Q28358",
+    "id": 28358,
+    "label": "Duane Palyka",
+    "image": null
+  },
+  "Q28359": {
+    "qid": "Q28359",
+    "id": 28359,
+    "label": "Robin Parkinson",
+    "image": null
+  },
+  "Q28360": {
+    "qid": "Q28360",
+    "id": 28360,
+    "label": "Eric Martin",
+    "image": null
+  },
+  "Q28361": {
+    "qid": "Q28361",
+    "id": 28361,
+    "label": "Gianfranco  Pennisi",
+    "image": null
+  },
+  "Q28362": {
+    "qid": "Q28362",
+    "id": 28362,
+    "label": "Roberta Phillips",
+    "image": null
+  },
+  "Q28363": {
+    "qid": "Q28363",
+    "id": 28363,
+    "label": "Copthorne MacDonald",
+    "image": null
+  },
+  "Q28366": {
+    "qid": "Q28366",
+    "id": 28366,
+    "label": "John F. Puskas",
+    "image": null
+  },
+  "Q28367": {
+    "qid": "Q28367",
+    "id": 28367,
+    "label": "J. Reece Roth",
+    "image": null
+  },
+  "Q28368": {
+    "qid": "Q28368",
+    "id": 28368,
+    "label": "Earl M. Reiback",
+    "image": null
+  },
+  "Q28369": {
+    "qid": "Q28369",
+    "id": 28369,
+    "label": "Fred Hertzfeld",
+    "image": null
+  },
+  "Q28370": {
+    "qid": "Q28370",
+    "id": 28370,
+    "label": "Ingeborg A. Richter",
+    "image": null
+  },
+  "Q28371": {
+    "qid": "Q28371",
+    "id": 28371,
+    "label": "George Quittner",
+    "image": null
+  },
+  "Q28373": {
+    "qid": "Q28373",
+    "id": 28373,
+    "label": "Raymond Ring",
+    "image": null
+  },
+  "Q28374": {
+    "qid": "Q28374",
+    "id": 28374,
+    "label": "Joel Katzen",
+    "image": null
+  },
+  "Q28376": {
+    "qid": "Q28376",
+    "id": 28376,
+    "label": "Alan Hayes",
+    "image": null
+  },
+  "Q28378": {
+    "qid": "Q28378",
+    "id": 28378,
+    "label": "Francine Rochon",
+    "image": null
+  },
+  "Q28379": {
+    "qid": "Q28379",
+    "id": 28379,
+    "label": "Eugen Roth",
+    "image": null
+  },
+  "Q28380": {
+    "qid": "Q28380",
+    "id": 28380,
+    "label": "Bela Sandor",
+    "image": null
+  },
+  "Q28381": {
+    "qid": "Q28381",
+    "id": 28381,
+    "label": "Joseph  Scala",
+    "image": null
+  },
+  "Q28382": {
+    "qid": "Q28382",
+    "id": 28382,
+    "label": "Susan Hanauer",
+    "image": null
+  },
+  "Q28383": {
+    "qid": "Q28383",
+    "id": 28383,
+    "label": "Ira W. Schwartz",
+    "image": null
+  },
+  "Q28384": {
+    "qid": "Q28384",
+    "id": 28384,
+    "label": "Sy Wassyng",
+    "image": null
+  },
+  "Q28386": {
+    "qid": "Q28386",
+    "id": 28386,
+    "label": "Charles A. Vance",
+    "image": null
+  },
+  "Q28388": {
+    "qid": "Q28388",
+    "id": 28388,
+    "label": "Joan H. Koslan  Schwartz",
+    "image": null
+  },
+  "Q28389": {
+    "qid": "Q28389",
+    "id": 28389,
+    "label": "Benjamin L. Schwartz",
+    "image": null
+  },
+  "Q28391": {
+    "qid": "Q28391",
+    "id": 28391,
+    "label": "Lillian Schwartz",
+    "image": null
+  },
+  "Q28392": {
+    "qid": "Q28392",
+    "id": 28392,
+    "label": "Johan  Severtson",
+    "image": null
+  },
+  "Q28393": {
+    "qid": "Q28393",
+    "id": 28393,
+    "label": "G. Putman  Barber",
+    "image": null
+  },
+  "Q28395": {
+    "qid": "Q28395",
+    "id": 28395,
+    "label": "Harriet  Casdin-Silver",
+    "image": null
+  },
+  "Q28396": {
+    "qid": "Q28396",
+    "id": 28396,
+    "label": "Alyce Simon",
+    "image": null
+  },
+  "Q28397": {
+    "qid": "Q28397",
+    "id": 28397,
+    "label": "Kennard H. Morganstern",
+    "image": null
+  },
+  "Q28399": {
+    "qid": "Q28399",
+    "id": 28399,
+    "label": "Scotty Snyder",
+    "image": null
+  },
+  "Q28400": {
+    "qid": "Q28400",
+    "id": 28400,
+    "label": "Jerry Spivack",
+    "image": null
+  },
+  "Q28401": {
+    "qid": "Q28401",
+    "id": 28401,
+    "label": "Clard Svenson",
+    "image": null
+  },
+  "Q28402": {
+    "qid": "Q28402",
+    "id": 28402,
+    "label": "Larry Lard",
+    "image": null
+  },
+  "Q28403": {
+    "qid": "Q28403",
+    "id": 28403,
+    "label": "Charles Tafra",
+    "image": null
+  },
+  "Q29743": {
+    "qid": "Q29743",
+    "id": 29743,
+    "label": "White House",
+    "image": null
+  },
+  "Q29744": {
+    "qid": "Q29744",
+    "id": 29744,
+    "label": "Ed Zajac",
+    "image": null
+  },
+  "Q29747": {
+    "qid": "Q29747",
+    "id": 29747,
+    "label": "op art",
+    "image": null
+  },
+  "Q29750": {
+    "qid": "Q29750",
+    "id": 29750,
+    "label": "Helen Keller",
+    "image": null
   },
-  "Q19269": {
-    "qid": "Q19269",
-    "id": 19269,
-    "label": "Findley",
+  "Q29755": {
+    "qid": "Q29755",
+    "id": 29755,
+    "label": "John Edmark",
     "image": null
   },
-  "Q19276": {
-    "qid": "Q19276",
-    "id": 19276,
-    "label": "Francis Mason",
+  "Q29756": {
+    "qid": "Q29756",
+    "id": 29756,
+    "label": "MUSIC MASTER",
     "image": null
   },
-  "Q19277": {
-    "qid": "Q19277",
-    "id": 19277,
-    "label": "Frank Gehry",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19277.jpg"
+  "Q29789": {
+    "qid": "Q29789",
+    "id": 29789,
+    "label": "Mimi Garrard",
+    "image": null
   },
-  "Q19278": {
-    "qid": "Q19278",
-    "id": 19278,
-    "label": "Frank Konigsberg",
+  "Q30115": {
+    "qid": "Q30115",
+    "id": 30115,
+    "label": "Phil Zimmermann",
     "image": null
   },
-  "Q19279": {
-    "qid": "Q19279",
-    "id": 19279,
-    "label": "Frank Stanton",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19279.jpg"
+  "Q30116": {
+    "qid": "Q30116",
+    "id": 30116,
+    "label": "Patty Wood",
+    "image": null
   },
-  "Q19280": {
-    "qid": "Q19280",
-    "id": 19280,
-    "label": "Frank Stella",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19280.jpg"
+  "Q30243": {
+    "qid": "Q30243",
+    "id": 30243,
+    "label": "Ben-ami Kadish",
+    "image": null
   },
-  "Q19281": {
-    "qid": "Q19281",
-    "id": 19281,
-    "label": "Franny Breer",
+  "Q30739": {
+    "qid": "Q30739",
+    "id": 30739,
+    "label": "Larry Rivers",
     "image": null
   },
-  "Q19282": {
-    "qid": "Q19282",
-    "id": 19282,
-    "label": "Fred D. Waldhauer",
+  "Q30764": {
+    "qid": "Q30764",
+    "id": 30764,
+    "label": "Domenico Ghirlandaio",
     "image": null
   },
-  "Q19283": {
-    "qid": "Q19283",
-    "id": 19283,
-    "label": "Fujiko Nakaya",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19283.jpg"
+  "Q28404": {
+    "qid": "Q28404",
+    "id": 28404,
+    "label": "Joshua Friedman",
+    "image": null
   },
-  "Q19285": {
-    "qid": "Q19285",
-    "id": 19285,
-    "label": "Fyodor Dostoyevsky",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19285.jpg"
+  "Q28405": {
+    "qid": "Q28405",
+    "id": 28405,
+    "label": "Aldo Tambellini",
+    "image": null
   },
-  "Q22934": {
-    "qid": "Q22934",
-    "id": 22934,
-    "label": "John Lindsey",
-    "image": "https://semlab.s3.amazonaws.com/images/Q22934.jpg"
+  "Q28406": {
+    "qid": "Q28406",
+    "id": 28406,
+    "label": "Kenneth Wise",
+    "image": null
   },
-  "Q24073": {
-    "qid": "Q24073",
-    "id": 24073,
-    "label": "Gautam Sarabhai",
+  "Q28408": {
+    "qid": "Q28408",
+    "id": 28408,
+    "label": "Tania",
     "image": null
   },
-  "Q24074": {
-    "qid": "Q24074",
-    "id": 24074,
-    "label": "Aline Saarinen",
+  "Q28409": {
+    "qid": "Q28409",
+    "id": 28409,
+    "label": "Daniel J. Smoley",
     "image": null
   },
-  "Q24075": {
-    "qid": "Q24075",
-    "id": 24075,
-    "label": "Suzi Gablik",
+  "Q28410": {
+    "qid": "Q28410",
+    "id": 28410,
+    "label": "Jean Toche",
     "image": null
   },
-  "Q24076": {
-    "qid": "Q24076",
-    "id": 24076,
-    "label": "Ed Langsam",
+  "Q28411": {
+    "qid": "Q28411",
+    "id": 28411,
+    "label": "Gerd Seegers",
     "image": null
   },
-  "Q24077": {
-    "qid": "Q24077",
-    "id": 24077,
-    "label": "Bill Mier",
+  "Q28412": {
+    "qid": "Q28412",
+    "id": 28412,
+    "label": "Wen-Ying Tsai",
     "image": null
   },
-  "Q24078": {
-    "qid": "Q24078",
-    "id": 24078,
-    "label": "Don Bekerman",
+  "Q28414": {
+    "qid": "Q28414",
+    "id": 28414,
+    "label": "G\u00fcnther Uecker",
     "image": null
   },
-  "Q24080": {
-    "qid": "Q24080",
-    "id": 24080,
-    "label": "David Haxton",
+  "Q28415": {
+    "qid": "Q28415",
+    "id": 28415,
+    "label": "James Umland",
     "image": null
   },
-  "Q24177": {
-    "qid": "Q24177",
-    "id": 24177,
-    "label": "Robert Frank",
+  "Q28416": {
+    "qid": "Q28416",
+    "id": 28416,
+    "label": "Kenji Usami",
     "image": null
   },
-  "Q24179": {
-    "qid": "Q24179",
-    "id": 24179,
-    "label": "Ann \"Acey\" Wolgin",
+  "Q28418": {
+    "qid": "Q28418",
+    "id": 28418,
+    "label": "Bernard Venet",
     "image": null
   },
-  "Q24180": {
-    "qid": "Q24180",
-    "id": 24180,
-    "label": "Alan Solomon",
+  "Q28419": {
+    "qid": "Q28419",
+    "id": 28419,
+    "label": "Michael Venezia",
     "image": null
   },
-  "Q24181": {
-    "qid": "Q24181",
-    "id": 24181,
-    "label": "Barbro Ostlihn",
+  "Q28420": {
+    "qid": "Q28420",
+    "id": 28420,
+    "label": "Roger Vilder",
     "image": null
   },
-  "Q24183": {
-    "qid": "Q24183",
-    "id": 24183,
-    "label": "Will Wittnebert",
+  "Q28421": {
+    "qid": "Q28421",
+    "id": 28421,
+    "label": "David Melamed",
     "image": null
   },
-  "Q24186": {
-    "qid": "Q24186",
-    "id": 24186,
-    "label": "James Rosenquist",
+  "Q28423": {
+    "qid": "Q28423",
+    "id": 28423,
+    "label": "Carolyn Walther",
     "image": null
   },
-  "Q24187": {
-    "qid": "Q24187",
-    "id": 24187,
-    "label": "Gordon Mumma",
+  "Q28424": {
+    "qid": "Q28424",
+    "id": 28424,
+    "label": "Michael Paluska",
     "image": null
   },
-  "Q24188": {
-    "qid": "Q24188",
-    "id": 24188,
-    "label": "Lowell Cross",
+  "Q28426": {
+    "qid": "Q28426",
+    "id": 28426,
+    "label": "Theodore Watkin",
     "image": null
   },
-  "Q24189": {
-    "qid": "Q24189",
-    "id": 24189,
-    "label": "Pete Kaminski",
+  "Q28427": {
+    "qid": "Q28427",
+    "id": 28427,
+    "label": "Jack Weisberg",
     "image": null
   },
-  "Q24190": {
-    "qid": "Q24190",
-    "id": 24190,
-    "label": "Jim Tenney",
+  "Q28428": {
+    "qid": "Q28428",
+    "id": 28428,
+    "label": "Norman T. White",
     "image": null
   },
-  "Q24191": {
-    "qid": "Q24191",
-    "id": 24191,
-    "label": "Jackie Leavitt",
+  "Q28429": {
+    "qid": "Q28429",
+    "id": 28429,
+    "label": "Charles J. Grandmaison",
     "image": null
   },
-  "Q24192": {
-    "qid": "Q24192",
-    "id": 24192,
-    "label": "Susanne De Maria",
+  "Q28431": {
+    "qid": "Q28431",
+    "id": 28431,
+    "label": "Iain Whitecross",
     "image": null
   },
-  "Q24193": {
-    "qid": "Q24193",
-    "id": 24193,
-    "label": "Ken Dewey",
+  "Q28432": {
+    "qid": "Q28432",
+    "id": 28432,
+    "label": "Theodore Wolff",
     "image": null
   },
-  "Q24194": {
-    "qid": "Q24194",
-    "id": 24194,
-    "label": "Bertrand Russel",
+  "Q28434": {
+    "qid": "Q28434",
+    "id": 28434,
+    "label": "Forbes Whiteside",
     "image": null
   },
-  "Q24196": {
-    "qid": "Q24196",
-    "id": 24196,
-    "label": "W.C. Fields",
+  "Q28435": {
+    "qid": "Q28435",
+    "id": 28435,
+    "label": "Stanley Elliot",
     "image": null
   },
-  "Q24197": {
-    "qid": "Q24197",
-    "id": 24197,
-    "label": "Carlo Derkert",
+  "Q28436": {
+    "qid": "Q28436",
+    "id": 28436,
+    "label": "Robert Wiegand",
     "image": null
   },
-  "Q24343": {
-    "qid": "Q24343",
-    "id": 24343,
-    "label": "Space Girl",
+  "Q28437": {
+    "qid": "Q28437",
+    "id": 28437,
+    "label": "Lloyd Kreuzer",
     "image": null
   },
-  "Q24387": {
-    "qid": "Q24387",
-    "id": 24387,
-    "label": "Hans Haacke",
+  "Q28454": {
+    "qid": "Q28454",
+    "id": 28454,
+    "label": "Herman E. Cooper",
     "image": null
   },
-  "Q24407": {
-    "qid": "Q24407",
-    "id": 24407,
-    "label": "David Thomas",
+  "Q28461": {
+    "qid": "Q28461",
+    "id": 28461,
+    "label": "James F. O'Brien",
     "image": null
   },
-  "Q24409": {
-    "qid": "Q24409",
-    "id": 24409,
-    "label": "Forrest Myers",
+  "Q28462": {
+    "qid": "Q28462",
+    "id": 28462,
+    "label": "Jaan A. Loger",
     "image": null
   },
-  "Q24410": {
-    "qid": "Q24410",
-    "id": 24410,
-    "label": "Tony Martin",
+  "Q28463": {
+    "qid": "Q28463",
+    "id": 28463,
+    "label": "Wilder Green",
     "image": null
   },
-  "Q24416": {
-    "qid": "Q24416",
-    "id": 24416,
-    "label": "Ardison Phillips",
+  "Q28464": {
+    "qid": "Q28464",
+    "id": 28464,
+    "label": "Jennifer Licht",
     "image": null
   },
-  "Q24417": {
-    "qid": "Q24417",
-    "id": 24417,
-    "label": "John Pearce",
+  "Q28465": {
+    "qid": "Q28465",
+    "id": 28465,
+    "label": "Elizabeth Shaw",
     "image": null
   },
-  "Q24418": {
-    "qid": "Q24418",
-    "id": 24418,
-    "label": "Ritty Burchfield",
+  "Q28466": {
+    "qid": "Q28466",
+    "id": 28466,
+    "label": "Jean Edith Weiffenbach",
     "image": null
   },
-  "Q24419": {
-    "qid": "Q24419",
-    "id": 24419,
-    "label": "Jackie Serwer",
+  "Q28467": {
+    "qid": "Q28467",
+    "id": 28467,
+    "label": "Joan Weiggins",
     "image": null
   },
-  "Q24420": {
-    "qid": "Q24420",
-    "id": 24420,
-    "label": "Dore Weiner",
+  "Q28468": {
+    "qid": "Q28468",
+    "id": 28468,
+    "label": "David Saltonstall",
     "image": null
   },
-  "Q24421": {
-    "qid": "Q24421",
-    "id": 24421,
-    "label": "Sachiko Tamai",
+  "Q28469": {
+    "qid": "Q28469",
+    "id": 28469,
+    "label": "Florence Beller",
     "image": null
   },
-  "Q24422": {
-    "qid": "Q24422",
-    "id": 24422,
-    "label": "John Ryde",
+  "Q28470": {
+    "qid": "Q28470",
+    "id": 28470,
+    "label": "Barbara Lasalle",
     "image": null
   },
-  "Q24423": {
-    "qid": "Q24423",
-    "id": 24423,
-    "label": "Carla Harrison",
+  "Q28471": {
+    "qid": "Q28471",
+    "id": 28471,
+    "label": "Sally Mchale",
     "image": null
   },
-  "Q24424": {
-    "qid": "Q24424",
-    "id": 24424,
-    "label": "Gordon Garmire",
+  "Q28472": {
+    "qid": "Q28472",
+    "id": 28472,
+    "label": "Robert Hayden",
     "image": null
   },
-  "Q24425": {
-    "qid": "Q24425",
-    "id": 24425,
-    "label": "Lori Van\u2019t Slot",
+  "Q28473": {
+    "qid": "Q28473",
+    "id": 28473,
+    "label": "Donelson Hoopes",
     "image": null
   },
-  "Q24426": {
-    "qid": "Q24426",
-    "id": 24426,
-    "label": "Harry Harper",
+  "Q28474": {
+    "qid": "Q28474",
+    "id": 28474,
+    "label": "Charles Smith",
     "image": null
   },
-  "Q24427": {
-    "qid": "Q24427",
-    "id": 24427,
-    "label": "Howard Chesney",
+  "Q28475": {
+    "qid": "Q28475",
+    "id": 28475,
+    "label": "Peter Jannace",
     "image": null
   },
-  "Q24428": {
-    "qid": "Q24428",
-    "id": 24428,
-    "label": "Maja Kl\u00fcver",
+  "Q28476": {
+    "qid": "Q28476",
+    "id": 28476,
+    "label": "Leo Murphy",
     "image": null
   },
-  "Q24429": {
-    "qid": "Q24429",
-    "id": 24429,
-    "label": "Sig Stenlund",
+  "Q28477": {
+    "qid": "Q28477",
+    "id": 28477,
+    "label": "Dominic Blasi",
     "image": null
   },
-  "Q24430": {
-    "qid": "Q24430",
-    "id": 24430,
-    "label": "Vikram Sarabhai",
+  "Q28478": {
+    "qid": "Q28478",
+    "id": 28478,
+    "label": "Harry Cohen",
     "image": null
   },
-  "Q24431": {
-    "qid": "Q24431",
-    "id": 24431,
-    "label": "Porter MacCray",
+  "Q28479": {
+    "qid": "Q28479",
+    "id": 28479,
+    "label": "Joker Newton",
     "image": null
   },
-  "Q24432": {
-    "qid": "Q24432",
-    "id": 24432,
-    "label": "Jeffrey Lew",
+  "Q28480": {
+    "qid": "Q28480",
+    "id": 28480,
+    "label": "Marianne Barcellona",
     "image": null
   },
-  "Q24433": {
-    "qid": "Q24433",
-    "id": 24433,
-    "label": "Kate Rediker",
+  "Q28481": {
+    "qid": "Q28481",
+    "id": 28481,
+    "label": "Bob Brennan",
     "image": null
   },
-  "Q24434": {
-    "qid": "Q24434",
-    "id": 24434,
-    "label": "Marion Zazeela",
+  "Q28482": {
+    "qid": "Q28482",
+    "id": 28482,
+    "label": "Scot Gardiner",
     "image": null
   },
-  "Q24435": {
-    "qid": "Q24435",
-    "id": 24435,
-    "label": "John Krauskopf",
+  "Q28483": {
+    "qid": "Q28483",
+    "id": 28483,
+    "label": "Barry Green",
     "image": null
   },
-  "Q24436": {
-    "qid": "Q24436",
-    "id": 24436,
-    "label": "Uchikiro Nakaya",
+  "Q28484": {
+    "qid": "Q28484",
+    "id": 28484,
+    "label": "Alexander Kasuba",
     "image": null
   },
-  "Q24437": {
-    "qid": "Q24437",
-    "id": 24437,
-    "label": "Julie Magura",
+  "Q28485": {
+    "qid": "Q28485",
+    "id": 28485,
+    "label": "Michael Robbins",
     "image": null
   },
-  "Q24438": {
-    "qid": "Q24438",
-    "id": 24438,
-    "label": "Sakiko Nakaya",
+  "Q28486": {
+    "qid": "Q28486",
+    "id": 28486,
+    "label": "William Schwartz",
     "image": null
   },
-  "Q24439": {
-    "qid": "Q24439",
-    "id": 24439,
-    "label": "Col. Robert Cox",
+  "Q28487": {
+    "qid": "Q28487",
+    "id": 28487,
+    "label": "Becky Young",
     "image": null
   },
-  "Q24440": {
-    "qid": "Q24440",
-    "id": 24440,
-    "label": "Barbro Schultz Lundestam",
+  "Q28488": {
+    "qid": "Q28488",
+    "id": 28488,
+    "label": "Bob Spiegel",
     "image": null
   },
-  "Q24441": {
-    "qid": "Q24441",
-    "id": 24441,
-    "label": "Hedi Sorger",
+  "Q28489": {
+    "qid": "Q28489",
+    "id": 28489,
+    "label": "Laurie Glasgow",
     "image": null
   },
-  "Q24442": {
-    "qid": "Q24442",
-    "id": 24442,
-    "label": "John Tormey",
+  "Q28490": {
+    "qid": "Q28490",
+    "id": 28490,
+    "label": "Lorinda Cherry",
     "image": null
   },
-  "Q24443": {
-    "qid": "Q24443",
-    "id": 24443,
-    "label": "Jill Krauskopf Gellene",
+  "Q28491": {
+    "qid": "Q28491",
+    "id": 28491,
+    "label": "Betty Humphreys",
     "image": null
   },
-  "Q24447": {
-    "qid": "Q24447",
-    "id": 24447,
-    "label": "Elsa Garmire",
+  "Q28493": {
+    "qid": "Q28493",
+    "id": 28493,
+    "label": "Jim Norris",
     "image": null
   },
-  "Q24448": {
-    "qid": "Q24448",
-    "id": 24448,
-    "label": "Remy Charlip",
+  "Q28494": {
+    "qid": "Q28494",
+    "id": 28494,
+    "label": "Susan Brockman",
     "image": null
   },
-  "Q24461": {
-    "qid": "Q24461",
-    "id": 24461,
-    "label": "Lowell Van\u2019t Slot",
+  "Q28495": {
+    "qid": "Q28495",
+    "id": 28495,
+    "label": "Mel Bochner",
     "image": null
   },
-  "Q24462": {
-    "qid": "Q24462",
-    "id": 24462,
-    "label": "Eric Saarinen",
+  "Q28496": {
+    "qid": "Q28496",
+    "id": 28496,
+    "label": "John Brundo",
     "image": null
   },
-  "Q24476": {
-    "qid": "Q24476",
-    "id": 24476,
-    "label": "David McDermott",
+  "Q28497": {
+    "qid": "Q28497",
+    "id": 28497,
+    "label": "Claudio Badal",
     "image": null
   },
-  "Q24477": {
-    "qid": "Q24477",
-    "id": 24477,
-    "label": "Jared Bark",
+  "Q28498": {
+    "qid": "Q28498",
+    "id": 28498,
+    "label": "Susan Edgerton",
     "image": null
   },
-  "Q24478": {
-    "qid": "Q24478",
-    "id": 24478,
-    "label": "La Monte Young",
+  "Q28499": {
+    "qid": "Q28499",
+    "id": 28499,
+    "label": "Jean-Jacques Erlichman",
     "image": null
   },
-  "Q24529": {
-    "qid": "Q24529",
-    "id": 24529,
-    "label": "children",
+  "Q28500": {
+    "qid": "Q28500",
+    "id": 28500,
+    "label": "Terry Martin",
     "image": null
   },
-  "Q24538": {
-    "qid": "Q24538",
-    "id": 24538,
-    "label": "Willem Sandberg",
+  "Q28501": {
+    "qid": "Q28501",
+    "id": 28501,
+    "label": "Susan Munshower",
     "image": null
   },
-  "Q24666": {
-    "qid": "Q24666",
-    "id": 24666,
-    "label": "Gilmore Schjeldahl",
+  "Q28502": {
+    "qid": "Q28502",
+    "id": 28502,
+    "label": "Tamara Vidos",
     "image": null
   },
-  "Q24681": {
-    "qid": "Q24681",
-    "id": 24681,
-    "label": "Princess Christina, Mrs. Magnuson",
+  "Q28503": {
+    "qid": "Q28503",
+    "id": 28503,
+    "label": "G.R. Swenson",
     "image": null
   },
-  "Q24682": {
-    "qid": "Q24682",
-    "id": 24682,
-    "label": "Ellsworth Kelly",
+  "Q28969": {
+    "qid": "Q28969",
+    "id": 28969,
+    "label": "Germano Celant",
     "image": null
   },
-  "Q24683": {
-    "qid": "Q24683",
-    "id": 24683,
-    "label": "Dan Flavin",
+  "Q28976": {
+    "qid": "Q28976",
+    "id": 28976,
+    "label": "Michelle Kuo",
     "image": null
   },
-  "Q24686": {
-    "qid": "Q24686",
-    "id": 24686,
-    "label": "Jacqueline Matisse Monnier",
+  "Q29220": {
+    "qid": "Q29220",
+    "id": 29220,
+    "label": "Art Albiston",
     "image": null
   },
-  "Q24688": {
-    "qid": "Q24688",
-    "id": 24688,
-    "label": "Margaretha Asberg",
+  "Q29265": {
+    "qid": "Q29265",
+    "id": 29265,
+    "label": "Sally Wile Ganz",
     "image": null
   },
-  "Q24690": {
-    "qid": "Q24690",
-    "id": 24690,
-    "label": "Manfred Schneider",
+  "Q29308": {
+    "qid": "Q29308",
+    "id": 29308,
+    "label": "Ted Kirby",
     "image": null
   },
-  "Q24699": {
-    "qid": "Q24699",
-    "id": 24699,
-    "label": "Irina Nakhova",
+  "Q29311": {
+    "qid": "Q29311",
+    "id": 29311,
+    "label": "Joe Fallica",
     "image": null
   },
-  "Q24712": {
-    "qid": "Q24712",
-    "id": 24712,
-    "label": "Lucy Young",
+  "Q29312": {
+    "qid": "Q29312",
+    "id": 29312,
+    "label": "Ron Hobbs",
     "image": null
   },
-  "Q24713": {
-    "qid": "Q24713",
-    "id": 24713,
-    "label": "Neils Young",
+  "Q29313": {
+    "qid": "Q29313",
+    "id": 29313,
+    "label": "Jacky Grant",
     "image": null
   },
-  "Q25525": {
-    "qid": "Q25525",
-    "id": 25525,
-    "label": "Nina Sundell",
+  "Q29388": {
+    "qid": "Q29388",
+    "id": 29388,
+    "label": "Sam Kass",
     "image": null
   },
-  "Q25640": {
-    "qid": "Q25640",
-    "id": 25640,
-    "label": "Marti Mayo",
+  "Q29390": {
+    "qid": "Q29390",
+    "id": 29390,
+    "label": "Joel Lucas",
     "image": null
   },
-  "Q25736": {
-    "qid": "Q25736",
-    "id": 25736,
-    "label": "Laurie Anderson",
+  "Q29392": {
+    "qid": "Q29392",
+    "id": 29392,
+    "label": "Maury Oren",
     "image": null
   },
-  "Q25737": {
-    "qid": "Q25737",
-    "id": 25737,
-    "label": "Richard Rutledge",
+  "Q29393": {
+    "qid": "Q29393",
+    "id": 29393,
+    "label": "Jim Brady",
     "image": null
   },
-  "Q25740": {
-    "qid": "Q25740",
-    "id": 25740,
-    "label": "Marcel Duchamp",
+  "Q29396": {
+    "qid": "Q29396",
+    "id": 29396,
+    "label": "Joanne Santo",
     "image": null
   },
-  "Q25742": {
-    "qid": "Q25742",
-    "id": 25742,
-    "label": "Isamu Noguchi",
+  "Q29399": {
+    "qid": "Q29399",
+    "id": 29399,
+    "label": "Georgele Williams",
     "image": null
   },
-  "Q25763": {
-    "qid": "Q25763",
-    "id": 25763,
-    "label": "DeWitt Godfrey",
+  "Q29400": {
+    "qid": "Q29400",
+    "id": 29400,
+    "label": "Louis Maggi",
     "image": null
   },
-  "Q19595": {
-    "qid": "Q19595",
-    "id": 19595,
-    "label": "Simone Swan",
+  "Q29475": {
+    "qid": "Q29475",
+    "id": 29475,
+    "label": "DeWain Valentine",
     "image": null
   },
-  "Q19600": {
-    "qid": "Q19600",
-    "id": 19600,
-    "label": "Soren Brunes",
+  "Q29476": {
+    "qid": "Q29476",
+    "id": 29476,
+    "label": "John McCracken",
     "image": null
   },
-  "Q19606": {
-    "qid": "Q19606",
-    "id": 19606,
-    "label": "Steve Paxton",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19606.jpg"
+  "Q29477": {
+    "qid": "Q29477",
+    "id": 29477,
+    "label": "Earle Brown",
+    "image": null
   },
-  "Q19608": {
-    "qid": "Q19608",
-    "id": 19608,
-    "label": "Stretch Winslow",
+  "Q29478": {
+    "qid": "Q29478",
+    "id": 29478,
+    "label": "Morton Feldman",
     "image": null
   },
-  "Q19609": {
-    "qid": "Q19609",
-    "id": 19609,
-    "label": "Sue Hartnett",
+  "Q29482": {
+    "qid": "Q29482",
+    "id": 29482,
+    "label": "Fletcher Benton",
     "image": null
   },
-  "Q19613": {
-    "qid": "Q19613",
-    "id": 19613,
-    "label": "Ted Kennedy",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19613.jpg"
+  "Q29487": {
+    "qid": "Q29487",
+    "id": 29487,
+    "label": "Donald Sch\u00f6n",
+    "image": null
   },
-  "Q19617": {
-    "qid": "Q19617",
-    "id": 19617,
-    "label": "Terry M. Riley",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19617.jpg"
+  "Q29488": {
+    "qid": "Q29488",
+    "id": 29488,
+    "label": "Morris Louis",
+    "image": null
   },
-  "Q19627": {
-    "qid": "Q19627",
-    "id": 19627,
-    "label": "Thelma Schumacher",
+  "Q29529": {
+    "qid": "Q29529",
+    "id": 29529,
+    "label": "Calvin Albert",
     "image": null
   },
-  "Q19628": {
-    "qid": "Q19628",
-    "id": 19628,
-    "label": "Theodore W. Kheel",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19628.jpg"
+  "Q29530": {
+    "qid": "Q29530",
+    "id": 29530,
+    "label": "Nicolas Sch\u00f6ffer",
+    "image": null
   },
-  "Q19630": {
-    "qid": "Q19630",
-    "id": 19630,
-    "label": "Thomas Buehler",
+  "Q29532": {
+    "qid": "Q29532",
+    "id": 29532,
+    "label": "Reyner Banham",
     "image": null
   },
-  "Q19633": {
-    "qid": "Q19633",
-    "id": 19633,
-    "label": "Toby Mussman",
+  "Q29642": {
+    "qid": "Q29642",
+    "id": 29642,
+    "label": "George Logemann",
     "image": null
   },
-  "Q19634": {
-    "qid": "Q19634",
-    "id": 19634,
-    "label": "Tom Dissinger",
+  "Q29643": {
+    "qid": "Q29643",
+    "id": 29643,
+    "label": "Carl Machover",
     "image": null
   },
-  "Q19635": {
-    "qid": "Q19635",
-    "id": 19635,
-    "label": "Tom Gormley",
+  "Q29644": {
+    "qid": "Q29644",
+    "id": 29644,
+    "label": "Emmanuel Ghent",
     "image": null
   },
-  "Q19636": {
-    "qid": "Q19636",
-    "id": 19636,
-    "label": "Tom Mee",
+  "Q29645": {
+    "qid": "Q29645",
+    "id": 29645,
+    "label": "Laurie Spiegel",
     "image": null
   },
-  "Q19637": {
-    "qid": "Q19637",
-    "id": 19637,
-    "label": "Tom Wesselmann",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19637.jpg"
+  "Q29646": {
+    "qid": "Q29646",
+    "id": 29646,
+    "label": "Nancy Burson",
+    "image": null
   },
-  "Q19638": {
-    "qid": "Q19638",
-    "id": 19638,
-    "label": "Tony Conrad",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19638.jpg"
+  "Q29647": {
+    "qid": "Q29647",
+    "id": 29647,
+    "label": "John Bardeen",
+    "image": null
   },
-  "Q19639": {
-    "qid": "Q19639",
-    "id": 19639,
-    "label": "Tony Smith",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19639.jpg"
+  "Q29648": {
+    "qid": "Q29648",
+    "id": 29648,
+    "label": "A. Michael Noll",
+    "image": "https://semlab.s3.amazonaws.com/images/Q29648.jpg"
   },
-  "Q19640": {
-    "qid": "Q19640",
-    "id": 19640,
-    "label": "Tony Trozzolo",
+  "Q29649": {
+    "qid": "Q29649",
+    "id": 29649,
+    "label": "Walter Houser Brattain",
     "image": null
   },
-  "Q19641": {
-    "qid": "Q19641",
-    "id": 19641,
-    "label": "Toshi Ichiyanagi",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19641.jpg"
+  "Q29650": {
+    "qid": "Q29650",
+    "id": 29650,
+    "label": "William Shockley",
+    "image": null
   },
-  "Q19642": {
-    "qid": "Q19642",
-    "id": 19642,
-    "label": "Treitel-Gratz",
+  "Q29651": {
+    "qid": "Q29651",
+    "id": 29651,
+    "label": "Arno Allan Penzias",
     "image": null
   },
-  "Q19643": {
-    "qid": "Q19643",
-    "id": 19643,
-    "label": "Trisha Brown",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19643.jpg"
+  "Q29652": {
+    "qid": "Q29652",
+    "id": 29652,
+    "label": "Alexander Graham Bell",
+    "image": null
   },
-  "Q19645": {
-    "qid": "Q19645",
-    "id": 19645,
-    "label": "Twyla Tharp",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19645.jpg"
+  "Q29653": {
+    "qid": "Q29653",
+    "id": 29653,
+    "label": "Edwin H. Land",
+    "image": null
   },
-  "Q19647": {
-    "qid": "Q19647",
-    "id": 19647,
-    "label": "Ulla Lyttkens",
+  "Q29654": {
+    "qid": "Q29654",
+    "id": 29654,
+    "label": "William O. Baker",
     "image": null
   },
-  "Q19648": {
-    "qid": "Q19648",
-    "id": 19648,
-    "label": "Ulla Wiggen",
+  "Q29655": {
+    "qid": "Q29655",
+    "id": 29655,
+    "label": "Claude Shannon",
     "image": null
   },
-  "Q19652": {
-    "qid": "Q19652",
-    "id": 19652,
-    "label": "Vaslav Nijinsky",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19652.jpg"
+  "Q29656": {
+    "qid": "Q29656",
+    "id": 29656,
+    "label": "Carol Lochbaum",
+    "image": null
   },
-  "Q19654": {
-    "qid": "Q19654",
-    "id": 19654,
-    "label": "Vera G. List",
+  "Q29657": {
+    "qid": "Q29657",
+    "id": 29657,
+    "label": "John Larry Kelly",
     "image": null
   },
-  "Q19655": {
-    "qid": "Q19655",
-    "id": 19655,
-    "label": "Vernon Lobb",
+  "Q29658": {
+    "qid": "Q29658",
+    "id": 29658,
+    "label": "Morton Subotnick",
     "image": null
   },
-  "Q19656": {
-    "qid": "Q19656",
-    "id": 19656,
-    "label": "Victor W. Ganz",
+  "Q29659": {
+    "qid": "Q29659",
+    "id": 29659,
+    "label": "Rhys Chatham",
     "image": null
   },
-  "Q19657": {
-    "qid": "Q19657",
-    "id": 19657,
-    "label": "Vikram Sarabhai",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19657.jpg"
+  "Q29660": {
+    "qid": "Q29660",
+    "id": 29660,
+    "label": "Daniel D. McCracken",
+    "image": null
   },
-  "Q19658": {
-    "qid": "Q19658",
-    "id": 19658,
-    "label": "Virgina Dwan",
+  "Q29661": {
+    "qid": "Q29661",
+    "id": 29661,
+    "label": "Steve Rutt",
     "image": null
   },
-  "Q19661": {
-    "qid": "Q19661",
-    "id": 19661,
-    "label": "Walter Allner",
+  "Q29662": {
+    "qid": "Q29662",
+    "id": 29662,
+    "label": "Manfred R. Schroeder",
     "image": null
   },
-  "Q19662": {
-    "qid": "Q19662",
-    "id": 19662,
-    "label": "Walter Gutman",
+  "Q29663": {
+    "qid": "Q29663",
+    "id": 29663,
+    "label": "Frank William Sinden",
     "image": null
   },
-  "Q19663": {
-    "qid": "Q19663",
-    "id": 19663,
-    "label": "Walter W. Straley",
+  "Q29664": {
+    "qid": "Q29664",
+    "id": 29664,
+    "label": "Peter Denes",
     "image": null
   },
-  "Q19664": {
-    "qid": "Q19664",
-    "id": 19664,
-    "label": "Warren Brodey",
+  "Q29665": {
+    "qid": "Q29665",
+    "id": 29665,
+    "label": "Hermann Scherchen",
     "image": null
   },
-  "Q19669": {
-    "qid": "Q19669",
-    "id": 19669,
-    "label": "Wesley Barry",
+  "Q29666": {
+    "qid": "Q29666",
+    "id": 29666,
+    "label": "Roy E. Disney",
     "image": null
   },
-  "Q19672": {
-    "qid": "Q19672",
-    "id": 19672,
-    "label": "William Davis",
+  "Q29667": {
+    "qid": "Q29667",
+    "id": 29667,
+    "label": "Piet Mondrian",
     "image": null
   },
-  "Q19673": {
-    "qid": "Q19673",
-    "id": 19673,
-    "label": "Witt Wittnebert",
+  "Q29668": {
+    "qid": "Q29668",
+    "id": 29668,
+    "label": "Bridget Riley",
     "image": null
   },
-  "Q19676": {
-    "qid": "Q19676",
-    "id": 19676,
-    "label": "Yale Joel",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19676.jpg"
+  "Q29669": {
+    "qid": "Q29669",
+    "id": 29669,
+    "label": "Rebekah Harkness",
+    "image": null
   },
-  "Q19677": {
-    "qid": "Q19677",
-    "id": 19677,
-    "label": "Yvonne Rainer",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19677.jpg"
+  "Q29670": {
+    "qid": "Q29670",
+    "id": 29670,
+    "label": "Jos\u00e9 Lim\u00f3n",
+    "image": null
   },
-  "Q19678": {
-    "qid": "Q19678",
-    "id": 19678,
-    "label": "Zbigniew Brzezinski",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19678.jpg"
+  "Q29671": {
+    "qid": "Q29671",
+    "id": 29671,
+    "label": "Stanley Kubrick",
+    "image": null
   },
-  "Q19842": {
-    "qid": "Q19842",
-    "id": 19842,
-    "label": "Alan Posner",
+  "Q29672": {
+    "qid": "Q29672",
+    "id": 29672,
+    "label": "Nelson Max",
     "image": null
   },
-  "Q20514": {
-    "qid": "Q20514",
-    "id": 20514,
-    "label": "K. G. Pontus Hulten",
-    "image": "https://semlab.s3.amazonaws.com/images/Q19521.jpg"
+  "Q29673": {
+    "qid": "Q29673",
+    "id": 29673,
+    "label": "William Shakespeare",
+    "image": null
   },
-  "Q20534": {
-    "qid": "Q20534",
-    "id": 20534,
-    "label": "Shriver",
+  "Q29674": {
+    "qid": "Q29674",
+    "id": 29674,
+    "label": "Rembrandt",
     "image": null
   },
-  "Q20535": {
-    "qid": "Q20535",
-    "id": 20535,
-    "label": "Kramer",
+  "Q29675": {
+    "qid": "Q29675",
+    "id": 29675,
+    "label": "Maurice Constant",
     "image": null
   },
-  "Q20543": {
-    "qid": "Q20543",
-    "id": 20543,
-    "label": "Mrs. J. Brown",
+  "Q29704": {
+    "qid": "Q29704",
+    "id": 29704,
+    "label": "Cynthia Pannucci",
     "image": null
   },
-  "Q21235": {
-    "qid": "Q21235",
-    "id": 21235,
-    "label": "Yoshiaki Tono",
+  "Q29718": {
+    "qid": "Q29718",
+    "id": 29718,
+    "label": "Doree Duncan Seligmann",
     "image": null
   },
-  "Q21292": {
-    "qid": "Q21292",
-    "id": 21292,
-    "label": "Barbara Rose",
+  "Q29737": {
+    "qid": "Q29737",
+    "id": 29737,
+    "label": "doctorate",
     "image": null
   },
-  "Q21307": {
-    "qid": "Q21307",
-    "id": 21307,
-    "label": "Erika Abeel",
+  "Q29739": {
+    "qid": "Q29739",
+    "id": 29739,
+    "label": "Harold Hardriss",
     "image": null
+  },
+  "Q29740": {
+    "qid": "Q29740",
+    "id": 29740,
+    "label": "ultrasonic beams",
+    "image": "https://semlab.s3.amazonaws.com/images/Q29740.jpg"
   }
 }

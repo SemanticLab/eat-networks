@@ -309,9 +309,12 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
     #menu-panel-filter{
       padding: 0.5em 1em;
       border-bottom: solid 1px #eee;
+      display: flex;
+      gap: 6px;
     }
     #menu-panel-filter input{
-      width: 100%;
+      flex: 1 1 auto;
+      min-width: 0;
       box-sizing: border-box;
       padding: 0.4em 0.5em;
       border: solid 1px #ccc;
@@ -322,6 +325,22 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
     #menu-panel-filter input:focus{
       outline: none;
       border-color: #212427;
+    }
+    #menu-panel-clear{
+      flex: 0 0 auto;
+      padding: 0.4em 0.7em;
+      font-family: inherit;
+      font-size: 0.8em;
+      background-color: #f5f5f5;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #212427;
+    }
+    #menu-panel-clear:hover{
+      background-color: #ff2d2d;
+      border-color: #ff2d2d;
+      color: #fff;
     }
     #menu-panel-hint{
       padding: 0.25em 1em 0.5em;
@@ -380,6 +399,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
     </div>
     <div id="menu-panel-filter">
       <input id="menu-panel-filter-input" type="text" placeholder="Filter by name (use | for OR)..." />
+      <button id="menu-panel-clear" type="button">Clear</button>
     </div>
     <div id="menu-panel-hint">Check people or type to highlight. Their 2-hop connections stay visible; everyone else is dimmed.</div>
     <div id="menu-panel-list"></div>
@@ -1018,6 +1038,17 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       for (const p of peopleNodes){
         const visible = terms.length === 0 || matchesFilter(p.name || '', terms);
         menuItemEls.get(p.id).classList.toggle('hidden', !visible);
+      }
+      recompute();
+    });
+
+    document.getElementById('menu-panel-clear').addEventListener('click', () => {
+      filterInput.value = '';
+      checkedIds.clear();
+      for (const p of peopleNodes){
+        const cb = document.getElementById(`person-toggle-${p.id}`);
+        if (cb) cb.checked = false;
+        menuItemEls.get(p.id).classList.remove('hidden');
       }
       recompute();
     });

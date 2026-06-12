@@ -1,0 +1,794 @@
+<head>
+  <meta charset="UTF-8">
+  <style> body { margin: 0; overflow: hidden; } </style>
+
+  <style>
+    body{
+      font-family: verdana;
+      color: #212427;
+      background-color: #fff;
+    }
+    h1{
+      position: absolute;
+      left: 10px;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      text-transform: uppercase;
+      font-family: verdana;
+      font-size: 5em;
+      font-weight: 700;
+      color: #f5f5f5;
+      text-shadow: 1px 1px 1px #919191,
+          1px 2px 1px #919191,
+          1px 3px 1px #919191,
+          1px 4px 1px #919191,
+          1px 5px 1px #919191,
+          1px 6px 1px #919191,
+          1px 7px 1px #919191,
+          1px 8px 1px #919191,
+          1px 9px 1px #919191,
+          1px 10px 1px #919191,
+      1px 18px 6px rgba(16,16,16,0.4),
+      1px 22px 10px rgba(16,16,16,0.2),
+      1px 25px 35px rgba(16,16,16,0.2),
+      1px 30px 60px rgba(16,16,16,0.4);
+      pointer-events: none;
+      z-index: 5;
+      transition-property: opacity;
+      transition-duration: 2.5s;
+    }
+
+    #hive{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      cursor: grab;
+    }
+    #hive.panning{
+      cursor: grabbing;
+    }
+
+    #loading{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em;
+      color: #919191;
+      z-index: 4;
+    }
+
+    /* Curves. Stroke widths divide by the zoom factor (--invk) so lines keep
+       constant screen thickness without vector-effect:non-scaling-stroke,
+       which forces a full re-stroke every repaint and tanks performance. */
+    #hive { --edge-opacity: 0.35; --invk: 1; }
+    .link{
+      fill: none;
+      stroke-width: calc(1px * var(--invk));
+      opacity: var(--edge-opacity);
+    }
+    #hive.focus .link{
+      opacity: 0.03;
+    }
+    #hive.focus .link.hl{
+      opacity: 0.95;
+      stroke-width: calc(1.8px * var(--invk));
+    }
+
+    .node{
+      cursor: pointer;
+      stroke-width: 0.9;
+    }
+    #hive.focus .node{
+      opacity: 0.15;
+    }
+    #hive.focus .node.hl{
+      opacity: 1;
+    }
+    .node.match{
+      stroke: #ff2d2d;
+      stroke-width: 2;
+      opacity: 1 !important;
+    }
+
+    .axis-line{
+      stroke: #c9c4bb;
+      stroke-width: calc(1.5px * var(--invk));
+      stroke-linecap: round;
+    }
+    .axis-label{
+      font-family: verdana;
+      font-size: 9px;
+      fill: #8a857c;
+      cursor: pointer;
+    }
+    .axis-label:hover{
+      fill: #212427;
+      font-weight: 700;
+    }
+    #hive.focus .axis-label{
+      opacity: 0.25;
+    }
+    #hive.focus .axis-label.hl{
+      opacity: 1;
+      fill: #212427;
+      font-weight: 700;
+    }
+    .match-label{
+      font-family: verdana;
+      font-size: 11px;
+      fill: #fff;
+      pointer-events: none;
+    }
+    .match-label-bg{
+      fill: rgba(255, 45, 45, 0.9);
+      pointer-events: none;
+    }
+
+    #tooltip{
+      position: absolute;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 0.4em 0.6em;
+      border-radius: 4px;
+      font-size: 0.8em;
+      pointer-events: none;
+      z-index: 20;
+      max-width: 280px;
+    }
+    #tooltip .tt-name{
+      font-weight: 700;
+    }
+    #tooltip .tt-meta{
+      color: #ccc;
+      font-size: 0.9em;
+      margin-top: 2px;
+    }
+
+    #panel{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 280px;
+      max-height: calc(100vh - 24px);
+      background-color: rgba(255, 255, 255, 0.97);
+      border: solid 1px #212427;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+      z-index: 10;
+      overflow-y: auto;
+      font-size: 0.85em;
+    }
+    #panel-header{
+      padding: 0.75em 1em;
+      border-bottom: solid 1px #ddd;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.9em;
+    }
+    .panel-section{
+      padding: 0.6em 1em;
+      border-bottom: solid 1px #eee;
+    }
+    .panel-section:last-child{
+      border-bottom: none;
+    }
+    .panel-section-title{
+      font-weight: 700;
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.5em;
+      color: #666;
+    }
+    .panel-explain{
+      font-size: 0.85em;
+      color: #555;
+      line-height: 1.5;
+    }
+    .legend-row{
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      margin: 0.3em 0;
+    }
+    .legend-swatch{
+      width: 14px;
+      height: 14px;
+      border-radius: 7px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    .panel-section label{
+      cursor: pointer;
+    }
+    .sort-option{
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+      margin: 0.25em 0;
+    }
+    .sort-option input{
+      accent-color: #ff2d2d;
+      cursor: pointer;
+    }
+    #edge-opacity{
+      width: 100%;
+      accent-color: #ff2d2d;
+      cursor: pointer;
+    }
+    #search-input{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.4em 0.5em;
+      border: solid 1px #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95em;
+    }
+    #search-input:focus{
+      outline: none;
+      border-color: #212427;
+    }
+    #stats{
+      font-size: 0.8em;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">Artworks Hive</h1>
+
+  <div id="loading">loading artworks&hellip;</div>
+  <svg id="hive" xmlns="http://www.w3.org/2000/svg"></svg>
+
+  <div id="tooltip"></div>
+
+  <div id="panel">
+    <div id="panel-header">Artworks Hive</div>
+
+    <div class="panel-section">
+      <div class="panel-explain">
+        Every <b>axis is an artwork</b>; the dots on it are the people who
+        made or contributed to it. A curve connects the <i>same person</i>
+        between two artworks they both worked on &mdash; so the curves show
+        who carried collaborations from artwork to artwork. Each person keeps
+        one color across all their curves.
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-section-title">Dots</div>
+      <div class="legend-row">
+        <span class="legend-swatch" style="background:#ddd; border: solid 2px #ff2d2d;"></span>
+        <span>Creator of the artwork</span>
+      </div>
+      <div class="legend-row">
+        <span class="legend-swatch" style="background:#ddd; border: solid 2px #919191;"></span>
+        <span>Contributor</span>
+      </div>
+      <div class="legend-row">
+        <span class="legend-swatch" style="background:linear-gradient(90deg,#e15759,#59a14f,#4e79a7)"></span>
+        <span>Curve color = the person</span>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-section-title">Artwork order around circle</div>
+      <div class="sort-option">
+        <input type="radio" name="order" id="order-similar" value="similar" checked>
+        <label for="order-similar">Shared people side by side</label>
+      </div>
+      <div class="sort-option">
+        <input type="radio" name="order" id="order-alpha" value="alpha">
+        <label for="order-alpha">Alphabetical</label>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-section-title">Curve visibility</div>
+      <input type="range" id="edge-opacity" min="0.03" max="0.9" step="0.01" value="0.35">
+    </div>
+
+    <div class="panel-section">
+      <div class="panel-section-title">Find people</div>
+      <input id="search-input" type="text" placeholder="Filter by name (use | for OR)...">
+    </div>
+
+    <div class="panel-section">
+      <div id="stats">loading&hellip;</div>
+      <div class="panel-explain" style="margin-top:0.5em;">
+        Scroll to zoom, drag to pan. Hover a dot to trace that person across
+        all their artworks; hover an artwork name to light up its whole cast.
+        Click a dot or artwork name to open it on the Semlab Wikibase.
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    const svg = document.getElementById('hive');
+    const tooltip = document.getElementById('tooltip');
+
+    const qid = (v) => parseInt(v.split('/')[v.split('/').length - 1].replace('Q', ''));
+
+    (async () => {
+
+      // Same artwork definition as artworks-2d: artwork types in the E.A.T.
+      // collection, skipping items that have performance instances.
+      let sparql = `
+        select * {
+          {select * where {
+            VALUES ?useTypes
+            {
+               wd:Q19073
+               wd:Q19074
+            }
+            ?artwork wdt:P1 ?useTypes.
+            ?artwork wdt:P11 wd:Q19104.
+            ?artwork rdfs:label ?artworkLabel.
+             optional{
+             ?artwork wdt:P128 ?performanceInstance.
+            }
+
+          }}
+
+          optional{
+            ?artwork wdt:P74 ?creator.
+            ?creator rdfs:label ?creatorLabel.
+            ?creator wdt:P3 ?creatorImg.
+          }
+
+          optional{
+            ?artwork p:P75 ?contributorStatement.
+            ?contributorStatement ps:P75 ?contributor.
+            ?contributor rdfs:label ?contributorLabel.
+
+            optional{
+              ?contributor wdt:P3 ?contributorImg.
+             }
+
+            optional{
+              ?contributorStatement pq:P117 ?role.
+              ?role rdfs:label ?roleLabel.
+            }
+          }
+
+        }
+      `;
+
+      let dataReq = await fetch('https://query.semlab.io/proxy/wdqs/bigdata/namespace/wdq/sparql?' + new URLSearchParams({
+          query: sparql
+      }), {headers: { 'Accept' : 'application/json'}});
+      let data = await dataReq.json();
+
+      const rows = data.results.bindings.filter((v) => !v['performanceInstance']);
+
+      // ---- Aggregate into artworks, people, occurrences ----
+      const artworks = new Map();   // id -> {id, label, people: Map(pid -> role)}
+      const people = new Map();     // id -> {id, label, img, artworks: Set}
+
+      for (const b of rows){
+        const aId = qid(b.artwork.value);
+        if (!artworks.has(aId)){
+          artworks.set(aId, { id: aId, label: b.artworkLabel.value, people: new Map() });
+        }
+        const art = artworks.get(aId);
+
+        const addPerson = (pId, label, img, role) => {
+          if (!people.has(pId)){
+            people.set(pId, { id: pId, label, img: img || null, artworks: new Set() });
+          }
+          if (img && !people.get(pId).img) people.get(pId).img = img;
+          people.get(pId).artworks.add(aId);
+          // creator wins over contributor; a named role wins over plain 'contributor'
+          const prev = art.people.get(pId);
+          if (!prev || prev === 'contributor') art.people.set(pId, role);
+        };
+
+        if (b.creator){
+          addPerson(qid(b.creator.value), b.creatorLabel.value,
+            b.creatorImg ? b.creatorImg.value : null, 'creator');
+        }
+        if (b.contributor){
+          addPerson(qid(b.contributor.value), b.contributorLabel.value,
+            b.contributorImg ? b.contributorImg.value : null,
+            b.roleLabel ? b.roleLabel.value : 'contributor');
+        }
+      }
+
+      // Axes only for artworks that actually have people
+      const skipped = [...artworks.values()].filter(a => a.people.size === 0).length;
+      const axes = [...artworks.values()].filter(a => a.people.size > 0);
+
+      // Cross-artwork curves: one per person per pair of their artworks
+      const curves = [];
+      for (const p of people.values()){
+        const arts = [...p.artworks];
+        for (let i = 0; i < arts.length; i++){
+          for (let j = i + 1; j < arts.length; j++){
+            curves.push({ person: p.id, a: arts[i], b: arts[j] });
+          }
+        }
+      }
+
+      // Stable per-person color (golden-angle hue from the Q id)
+      const personColor = (pid) => `hsl(${(pid * 137.508) % 360}, 55%, 48%)`;
+
+      // ---- Axis ordering ----
+      const sharedCount = (a, b) => {
+        let n = 0;
+        for (const p of a.people.keys()) if (b.people.has(p)) n++;
+        return n;
+      };
+      const orderings = {
+        alpha: () => axes.slice().sort((a, b) => a.label.localeCompare(b.label)),
+        // greedy chain: each next axis is the unplaced artwork sharing the
+        // most people with the previous one, so curves stay short
+        similar: () => {
+          const remaining = new Set(axes);
+          const out = [];
+          let current = axes.slice().sort((a, b) => b.people.size - a.people.size)[0];
+          while (current){
+            out.push(current);
+            remaining.delete(current);
+            let best = null, bestShared = -1;
+            for (const cand of remaining){
+              const s = sharedCount(current, cand);
+              if (s > bestShared || (s === bestShared && best && cand.label < best.label)){
+                best = cand; bestShared = s;
+              }
+            }
+            current = best;
+          }
+          return out;
+        },
+      };
+      let orderMode = 'similar';
+
+      // ---- Zoom / pan (persists across re-renders) ----
+      let viewport = null;
+      let zoomK = 1, zoomX = 0, zoomY = 0, zoomCount = 0, lastK = 1;
+      const applyZoom = () => {
+        if (!viewport) return;
+        viewport.setAttribute('transform', `translate(${zoomX},${zoomY}) scale(${zoomK})`);
+        if (zoomK !== lastK){
+          lastK = zoomK;
+          svg.style.setProperty('--invk', 1 / zoomK);
+        }
+      };
+      svg.addEventListener('wheel', (ev) => {
+        ev.preventDefault();
+        const factor = Math.exp(-ev.deltaY * (ev.ctrlKey ? 0.01 : 0.002));
+        const newK = Math.min(40, Math.max(0.4, zoomK * factor));
+        zoomX = ev.clientX - (ev.clientX - zoomX) * (newK / zoomK);
+        zoomY = ev.clientY - (ev.clientY - zoomY) * (newK / zoomK);
+        zoomK = newK;
+        applyZoom();
+        zoomCount++;
+        if (zoomCount > 2) document.getElementById('title').style.opacity = 0;
+      }, { passive: false });
+      let panning = false, panStartX = 0, panStartY = 0, dragDistance = 0;
+      svg.addEventListener('mousedown', (ev) => {
+        panning = true;
+        dragDistance = 0;
+        panStartX = ev.clientX;
+        panStartY = ev.clientY;
+        svg.classList.add('panning');
+      });
+      window.addEventListener('mousemove', (ev) => {
+        if (!panning) return;
+        const dx = ev.clientX - panStartX;
+        const dy = ev.clientY - panStartY;
+        dragDistance += Math.abs(dx) + Math.abs(dy);
+        zoomX += dx;
+        zoomY += dy;
+        panStartX = ev.clientX;
+        panStartY = ev.clientY;
+        applyZoom();
+      });
+      window.addEventListener('mouseup', () => {
+        panning = false;
+        svg.classList.remove('panning');
+      });
+
+      // ---- Geometry ----
+      let cx, cy, innerR, outerR;
+      const polar = (a, r) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
+      const angDelta = (a, b) => {
+        let d = (b - a) % (2 * Math.PI);
+        if (d > Math.PI) d -= 2 * Math.PI;
+        if (d <= -Math.PI) d += 2 * Math.PI;
+        return d;
+      };
+      const linkPath = (a0, r0, a1, r1) => {
+        const d = angDelta(a0, a1);
+        const [x0, y0] = polar(a0, r0);
+        const [x1, y1] = polar(a1, r1);
+        const [cx1, cy1] = polar(a0 + d / 3, r0);
+        const [cx2, cy2] = polar(a0 + 2 * d / 3, r1);
+        return `M${x0},${y0}C${cx1},${cy1} ${cx2},${cy2} ${x1},${y1}`;
+      };
+
+      // ---- Highlight bookkeeping ----
+      const personDots = new Map();   // pid -> [circle, ...] across axes
+      const personEdges = new Map();  // pid -> [path, ...]
+      const axisDots = new Map();     // aid -> [circle, ...]
+      const axisEdges = new Map();    // aid -> [path, ...]
+      const axisLabelEls = new Map(); // aid -> text
+      const dotPos = new Map();       // `${pid}-${aid}` -> [x, y]
+      let matchedIds = new Set();
+
+      const clearFocus = () => {
+        svg.classList.remove('focus');
+        for (const el of svg.querySelectorAll('.hl')) el.classList.remove('hl');
+        tooltip.style.display = 'none';
+      };
+      const focusPerson = (pid) => {
+        svg.classList.add('focus');
+        for (const el of personDots.get(pid) || []) el.classList.add('hl');
+        for (const el of personEdges.get(pid) || []) el.classList.add('hl');
+        // keep the names of their artworks readable
+        for (const aid of people.get(pid).artworks){
+          const lbl = axisLabelEls.get(aid);
+          if (lbl) lbl.classList.add('hl');
+        }
+      };
+      const focusArtwork = (aid) => {
+        svg.classList.add('focus');
+        axisLabelEls.get(aid).classList.add('hl');
+        for (const el of axisDots.get(aid) || []) el.classList.add('hl');
+        for (const el of axisEdges.get(aid) || []) el.classList.add('hl');
+      };
+
+      const showTooltip = (ev, html) => {
+        tooltip.style.display = 'block';
+        tooltip.innerHTML = html;
+        tooltip.style.left = `${Math.min(ev.clientX + 14, window.innerWidth - 300)}px`;
+        tooltip.style.top = `${ev.clientY + 14}px`;
+      };
+
+      let labelGroup = null;
+
+      const render = () => {
+        svg.innerHTML = '';
+        personDots.clear(); personEdges.clear();
+        axisDots.clear(); axisEdges.clear(); axisLabelEls.clear();
+        dotPos.clear();
+        labelGroup = null;
+
+        const w = window.innerWidth, h = window.innerHeight;
+        svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+        cx = w / 2;
+        cy = h / 2;
+        innerR = 60;
+        outerR = Math.min(w, h) / 2 - 150;
+        if (outerR < innerR + 80) outerR = innerR + 80;
+
+        const ordered = orderings[orderMode]();
+        const axisAngle = new Map();
+        ordered.forEach((a, i) => {
+          axisAngle.set(a.id, (i / ordered.length) * 2 * Math.PI - Math.PI / 2);
+        });
+
+        // dot positions: people on each axis ordered by how many artworks
+        // they span (the bridges end up at the outer tips), ties alphabetical
+        for (const art of ordered){
+          const ps = [...art.people.keys()].sort((p1, p2) =>
+            people.get(p1).artworks.size - people.get(p2).artworks.size ||
+            people.get(p1).label.localeCompare(people.get(p2).label));
+          ps.forEach((pid, i) => {
+            const t = (i + 1) / (ps.length + 1);
+            const r = innerR + t * (outerR - innerR);
+            dotPos.set(`${pid}-${art.id}`, { angle: axisAngle.get(art.id), radius: r });
+          });
+        }
+
+        // portrait patterns
+        const defs = document.createElementNS(SVG_NS, 'defs');
+        const makePattern = (id, href) => {
+          const pat = document.createElementNS(SVG_NS, 'pattern');
+          pat.setAttribute('id', id);
+          pat.setAttribute('patternContentUnits', 'objectBoundingBox');
+          pat.setAttribute('width', 1);
+          pat.setAttribute('height', 1);
+          const bg = document.createElementNS(SVG_NS, 'rect');
+          bg.setAttribute('width', 1);
+          bg.setAttribute('height', 1);
+          bg.setAttribute('fill', '#fff');
+          pat.appendChild(bg);
+          const img = document.createElementNS(SVG_NS, 'image');
+          img.setAttribute('href', href);
+          img.setAttribute('width', 1);
+          img.setAttribute('height', 1);
+          img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+          pat.appendChild(img);
+          defs.appendChild(pat);
+        };
+        makePattern('img-generic', '../img/person.png');
+        for (const p of people.values()){
+          if (p.img) makePattern(`img-${p.id}`, p.img);
+        }
+        svg.appendChild(defs);
+
+        viewport = document.createElementNS(SVG_NS, 'g');
+        svg.appendChild(viewport);
+
+        // curves first
+        const edgeGroup = document.createElementNS(SVG_NS, 'g');
+        for (const c of curves){
+          const pa = dotPos.get(`${c.person}-${c.a}`);
+          const pb = dotPos.get(`${c.person}-${c.b}`);
+          if (!pa || !pb) continue;
+          const path = document.createElementNS(SVG_NS, 'path');
+          path.setAttribute('d', linkPath(pa.angle, pa.radius, pb.angle, pb.radius));
+          path.setAttribute('class', 'link');
+          path.setAttribute('stroke', personColor(c.person));
+          edgeGroup.appendChild(path);
+          if (!personEdges.has(c.person)) personEdges.set(c.person, []);
+          personEdges.get(c.person).push(path);
+          for (const aid of [c.a, c.b]){
+            if (!axisEdges.has(aid)) axisEdges.set(aid, []);
+            axisEdges.get(aid).push(path);
+          }
+        }
+        viewport.appendChild(edgeGroup);
+
+        // axis spokes + rotated artwork labels
+        const axisGroup = document.createElementNS(SVG_NS, 'g');
+        for (const art of ordered){
+          const a = axisAngle.get(art.id);
+          const [x0, y0] = polar(a, innerR - 8);
+          const [x1, y1] = polar(a, outerR + 8);
+          const line = document.createElementNS(SVG_NS, 'line');
+          line.setAttribute('x1', x0); line.setAttribute('y1', y0);
+          line.setAttribute('x2', x1); line.setAttribute('y2', y1);
+          line.setAttribute('class', 'axis-line');
+          axisGroup.appendChild(line);
+
+          const [lx, ly] = polar(a, outerR + 14);
+          let deg = a * 180 / Math.PI;
+          let anchor = 'start';
+          if (deg > 90 || deg < -90){ deg += 180; anchor = 'end'; }
+          const label = document.createElementNS(SVG_NS, 'text');
+          label.setAttribute('x', lx);
+          label.setAttribute('y', ly);
+          label.setAttribute('transform', `rotate(${deg} ${lx} ${ly})`);
+          label.setAttribute('text-anchor', anchor);
+          label.setAttribute('dominant-baseline', 'middle');
+          label.setAttribute('class', 'axis-label');
+          label.textContent = art.label.length > 42 ? art.label.slice(0, 40) + '…' : art.label;
+          label.addEventListener('mouseenter', () => focusArtwork(art.id));
+          label.addEventListener('mouseleave', clearFocus);
+          label.addEventListener('mousemove', (ev) => {
+            showTooltip(ev, `<div class="tt-name">${art.label}</div>` +
+              `<div class="tt-meta">${art.people.size} people</div>`);
+          });
+          label.addEventListener('click', () => {
+            if (dragDistance > 4) return;
+            window.open(`http://base.semlab.io/wiki/Item:Q${art.id}`, '_blank');
+          });
+          axisGroup.appendChild(label);
+          axisLabelEls.set(art.id, label);
+        }
+        viewport.appendChild(axisGroup);
+
+        // person dots
+        const nodeGroup = document.createElementNS(SVG_NS, 'g');
+        for (const art of ordered){
+          for (const [pid, role] of art.people){
+            const p = people.get(pid);
+            const pos = dotPos.get(`${pid}-${art.id}`);
+            const [x, y] = polar(pos.angle, pos.radius);
+            const c = document.createElementNS(SVG_NS, 'circle');
+            c.setAttribute('cx', x);
+            c.setAttribute('cy', y);
+            c.setAttribute('r', 2.5 + Math.sqrt(p.artworks.size) * 1.1);
+            c.setAttribute('fill', p.img ? `url(#img-${pid})` : 'url(#img-generic)');
+            c.setAttribute('stroke', role === 'creator' ? '#ff2d2d' : '#919191');
+            c.setAttribute('class', 'node');
+            c.addEventListener('mouseenter', () => focusPerson(pid));
+            c.addEventListener('mouseleave', clearFocus);
+            c.addEventListener('mousemove', (ev) => {
+              const roleTxt = role === 'creator' ? 'Creator' : (role === 'contributor' ? 'Contributor' : role);
+              showTooltip(ev, `<div class="tt-name">${p.label}</div>` +
+                `<div class="tt-meta">${roleTxt} &middot; ${art.label}</div>` +
+                `<div class="tt-meta">worked on ${p.artworks.size} artwork${p.artworks.size > 1 ? 's' : ''}</div>`);
+            });
+            c.addEventListener('click', () => {
+              if (dragDistance > 4) return;
+              window.open(`http://base.semlab.io/wiki/Item:Q${pid}`, '_blank');
+            });
+            nodeGroup.appendChild(c);
+            if (!personDots.has(pid)) personDots.set(pid, []);
+            personDots.get(pid).push(c);
+            if (!axisDots.has(art.id)) axisDots.set(art.id, []);
+            axisDots.get(art.id).push(c);
+          }
+        }
+        viewport.appendChild(nodeGroup);
+
+        applyZoom();
+        applySearch();
+      };
+
+      // ---- Search ----
+      const searchInput = document.getElementById('search-input');
+      const applySearch = () => {
+        const terms = searchInput.value.toLowerCase().split('|')
+          .map(s => s.trim()).filter(s => s.length > 0);
+        matchedIds = new Set();
+        if (terms.length > 0){
+          for (const p of people.values()){
+            const name = p.label.toLowerCase();
+            if (terms.some(t => name.includes(t))) matchedIds.add(p.id);
+          }
+        }
+        for (const [pid, els] of personDots){
+          const on = matchedIds.has(pid);
+          els.forEach(el => el.classList.toggle('match', on));
+        }
+        if (labelGroup) labelGroup.remove();
+        labelGroup = document.createElementNS(SVG_NS, 'g');
+        for (const pid of matchedIds){
+          const p = people.get(pid);
+          // label the occurrence furthest from center
+          let best = null;
+          for (const aid of p.artworks){
+            const pos = dotPos.get(`${pid}-${aid}`);
+            if (pos && (!best || pos.radius > best.radius)) best = pos;
+          }
+          if (!best) continue;
+          const [x, y] = polar(best.angle, best.radius);
+          const bg = document.createElementNS(SVG_NS, 'rect');
+          bg.setAttribute('class', 'match-label-bg');
+          bg.setAttribute('x', x + 6);
+          bg.setAttribute('y', y - 7);
+          bg.setAttribute('width', p.label.length * 6.6 + 8);
+          bg.setAttribute('height', 15);
+          bg.setAttribute('rx', 3);
+          labelGroup.appendChild(bg);
+          const text = document.createElementNS(SVG_NS, 'text');
+          text.setAttribute('class', 'match-label');
+          text.setAttribute('x', x + 10);
+          text.setAttribute('y', y + 4);
+          text.textContent = p.label;
+          labelGroup.appendChild(text);
+        }
+        viewport.appendChild(labelGroup);
+      };
+      searchInput.addEventListener('input', applySearch);
+
+      // ---- Controls ----
+      for (const radio of document.querySelectorAll('input[name="order"]')){
+        radio.addEventListener('change', () => {
+          orderMode = radio.value;
+          render();
+        });
+      }
+      document.getElementById('edge-opacity').addEventListener('input', (ev) => {
+        svg.style.setProperty('--edge-opacity', ev.target.value);
+      });
+
+      // ---- Stats ----
+      const multi = [...people.values()].filter(p => p.artworks.size > 1).length;
+      document.getElementById('stats').innerHTML =
+        `${axes.length} artworks &middot; ${people.size} people &middot; ` +
+        `${curves.length.toLocaleString()} cross-artwork connections<br>` +
+        `${multi} people worked on more than one artwork` +
+        (skipped ? `<br>${skipped} artworks with no linked people are not shown` : '');
+
+      document.getElementById('loading').remove();
+      window.addEventListener('resize', render);
+      render();
+
+    })();
+
+  </script>
+</body>

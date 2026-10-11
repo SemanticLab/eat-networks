@@ -1,9 +1,7 @@
 <head>
   <style> body { margin: 0; } </style>
 
-  <script src="//unpkg.com/three"></script>
-
-  <script src="//unpkg.com/3d-force-graph"></script>
+  <script src="//unpkg.com/3d-force-graph@1.80.1/dist/3d-force-graph.min.js"></script>
   <!--<script src="../../dist/3d-force-graph.js"></script>-->
   <script src="../people_network.js"></script>
 
@@ -13,8 +11,10 @@
 <body>
   <div id="3d-graph"></div>
 
-  <script>
-
+  <script type="module">
+    // three >= r160 ships no browser-global (UMD) build, so THREE must be imported as a module.
+    // Keep this version in step with 3d-force-graph's three peer dependency.
+    import * as THREE from 'https://esm.sh/three@0.186.1';
 
     let imgs = {}
     let imgUrls = {}
@@ -56,13 +56,13 @@
       (document.getElementById('3d-graph'))
       .nodeThreeObject((node) => {
 
-        console.log(node)
         let imgTexture
         if (node.img){
           imgTexture = new THREE.TextureLoader().load(node.img);
         }else{
           imgTexture = new THREE.TextureLoader().load('../img/person_white.png');
         }
+        imgTexture.colorSpace = THREE.SRGBColorSpace;
         let material = new THREE.SpriteMaterial({ map: imgTexture });
         material.transparent = true
         material.needsUpdate = true        

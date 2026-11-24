@@ -64,10 +64,13 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       left:5vw;
       top:5vh;
       position: absolute;
+      z-index: 20;
       box-shadow: -1px 14px 15px -3px rgba(0,0,0,0.46);
       overflow: hidden;
        border: solid 1px #212427;
     }
+    /* the passages modal covers the focus card and menus */
+    body:has(#modal) #focus-card{ display: none !important; }
 
 
     .loading-gradient {
@@ -410,7 +413,29 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
     .menu-item label{
       cursor: pointer;
       flex-grow: 1;
+      min-width: 0;
     }
+    .menu-actions{
+      display: flex;
+      gap: 0.35em;
+      flex-shrink: 0;
+      margin-left: 0.5em;
+    }
+    .menu-actions button, .menu-actions a{
+      font: inherit;
+      font-size: 0.8em;
+      line-height: 1.4;
+      padding: 0 0.45em;
+      border: solid 1px #c8c8c8;
+      border-radius: 4px;
+      background: #fff;
+      color: #444;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .menu-actions button:hover, .menu-actions a:hover{ border-color: #212427; color: #000; }
+    .menu-item.offgraph .menu-actions button, .menu-item.offgraph .menu-actions a{ color: #999; }
   </style>
   <!--<script src="../../dist/force-graph.js"></script>-->
 </head>
@@ -448,7 +473,7 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       <input id="menu-panel-filter-input" type="text" placeholder="Filter by name (use | for OR)..." />
       <button id="menu-panel-clear" type="button">Clear</button>
     </div>
-    <div id="menu-panel-hint">Check people or type to highlight. Their 2-hop connections stay visible; everyone else is dimmed.</div>
+    <div id="menu-panel-hint">Type a name to find people; every match is ticked. Untick anyone to drop them, or tick more. Ticked people are highlighted with their 2-hop circle and everyone else is dimmed.</div>
     <div id="menu-panel-list"></div>
   </div>
 
@@ -1029,10 +1054,8 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
 
     const rebuild = () => {
       primaryIds.clear(); hop1Ids.clear(); hop2Ids.clear(); visibleIds.clear();
-      const terms = parseFilterTerms();
       for (const n of allNodes){
-        if (checkedIds.has(n.id) || n.id === focusId) { primaryIds.add(n.id); continue; }
-        if (terms.length > 0 && matchesFilter(n.name || '', terms)) primaryIds.add(n.id);
+        if (checkedIds.has(n.id) || n.id === focusId) primaryIds.add(n.id);
       }
       computeActive();
       if (primaryIds.size > 0){
@@ -1124,15 +1147,56 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
       label.htmlFor = checkbox.id;
       label.textContent = p.name || `Q${p.id}`;
       checkbox.addEventListener('change', () => {
-        if (checkbox.checked) checkedIds.add(p.id);
-        else checkedIds.delete(p.id);
+        if (checkbox.checked){ checkedIds.add(p.id); dismissedIds.delete(p.id); }
+        else {
+          checkedIds.delete(p.id);
+          if (autoCheckedIds.has(p.id)){ autoCheckedIds.delete(p.id); dismissedIds.add(p.id); }
+        }
         rebuild();
       });
+      const actions = document.createElement('span');
+      actions.className = 'menu-actions';
+      const passages = document.createElement('button');
+      passages.type = 'button';
+      passages.textContent = 'Passages';
+      passages.title = 'Show the text blocks this person shares with others';
+      passages.addEventListener('click', (e) => { e.stopPropagation(); vueApp.nodeClick(p); });
+      const wb = document.createElement('a');
+      wb.textContent = 'Wikibase';
+      wb.href = `http://base.semlab.io/wiki/Item:Q${p.id}`;
+      wb.target = '_blank';
+      wb.rel = 'noopener';
+      wb.title = 'Open in the Semantic Lab Wikibase';
+      wb.addEventListener('click', (e) => e.stopPropagation());
+      actions.appendChild(passages);
+      actions.appendChild(wb);
       item.appendChild(checkbox);
       item.appendChild(label);
+      item.appendChild(actions);
       menuList.appendChild(item);
       menuItemEls.set(p.id, item);
     }
+    // search: matches are ticked for the user, so each one can be unticked again
+    const autoCheckedIds = new Set();   // ticked by the current search text
+    const dismissedIds = new Set();     // unticked by hand while that text is in the box
+    const applySearch = () => {
+      const terms = parseFilterTerms();
+      const matched = new Set();
+      if (terms.length > 0) for (const p of peopleNodes) if (matchesFilter(p.name || '', terms)) matched.add(p.id);
+      for (const id of [...autoCheckedIds]) if (!matched.has(id)){
+        autoCheckedIds.delete(id); checkedIds.delete(id);
+        const cb = document.getElementById(`person-toggle-${id}`); if (cb) cb.checked = false;
+      }
+      for (const id of matched) if (!checkedIds.has(id) && !dismissedIds.has(id)){
+        autoCheckedIds.add(id); checkedIds.add(id);
+        const cb = document.getElementById(`person-toggle-${id}`); if (cb) cb.checked = true;
+      }
+      if (terms.length === 0) dismissedIds.clear();
+      for (const p of peopleNodes){
+        const visible = terms.length === 0 || matched.has(p.id) || checkedIds.has(p.id);
+        menuItemEls.get(p.id).classList.toggle('hidden', !visible);
+      }
+    };
     const updateMenuAvailability = () => {
       for (const p of peopleNodes){
         const on = adjacency.has(p.id);
@@ -1144,17 +1208,10 @@ background: linear-gradient(180deg, rgba(255,255,255,1) 27%, rgba(50,50,50,1) 10
     document.getElementById('menu-toggle').addEventListener('click', () => {
       document.getElementById('menu-panel').classList.toggle('open');
     });
-    filterInput.addEventListener('input', () => {
-      const terms = parseFilterTerms();
-      for (const p of peopleNodes){
-        const visible = terms.length === 0 || matchesFilter(p.name || '', terms);
-        menuItemEls.get(p.id).classList.toggle('hidden', !visible);
-      }
-      rebuild();
-    });
+    filterInput.addEventListener('input', () => { applySearch(); rebuild(); });
     document.getElementById('menu-panel-clear').addEventListener('click', () => {
       filterInput.value = '';
-      checkedIds.clear();
+      checkedIds.clear(); autoCheckedIds.clear(); dismissedIds.clear();
       focusId = null;
       for (const p of peopleNodes){
         const cb = document.getElementById(`person-toggle-${p.id}`);

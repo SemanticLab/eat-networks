@@ -22,7 +22,7 @@ params = {
 
 headers = {
 	'Accept' : 'application/json',
-	'User-Agent': 'USER thisismattmiller - Test Script '
+	'User-Agent': 'semlab-data-process (eat-network-tests)'
 }
 
 r = requests.get(url, params=params, headers=headers)

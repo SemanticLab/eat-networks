@@ -40,6 +40,12 @@
       transition-duration: 2.5s;
     }
 
+
+    /* Drawing happens on two canvases. The base edge layer holds all
+       co-mention links and is only repainted when the view settles; while
+       zooming or panning it is moved as a bitmap with a CSS transform. The
+       top layer (axes, nodes, highlighted links, labels) is cheap enough to
+       repaint every frame. */
     #hive{
       position: absolute;
       left: 0;
@@ -47,78 +53,21 @@
       width: 100vw;
       height: 100vh;
       cursor: grab;
+      overflow: hidden;
     }
-    #hive.panning{
-      cursor: grabbing;
+    #hive.panning{ cursor: grabbing; }
+    #hive.hovering{ cursor: pointer; }
+    #hive canvas{
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: 0 0;
     }
-
-    /* Edges. Stroke widths are divided by the zoom factor (--invk, set from
-       JS) so lines keep constant screen thickness. vector-effect:
-       non-scaling-stroke does the same but forces the browser to re-stroke
-       all 7.7k paths every repaint, which tanks zoom/pan to ~6fps. */
-    #hive { --edge-opacity: 0.07; --invk: 1; }
-    .link{
-      fill: none;
-      stroke-width: calc(0.7px * var(--invk));
-      opacity: var(--edge-opacity);
+    #edges{
+      will-change: transform, opacity;
+      transition: opacity 0.15s;
     }
-    #hive.focus .link{
-      opacity: 0.012;
-    }
-    #hive.focus .link.hl{
-      opacity: 0.85;
-      stroke-width: calc(1.4px * var(--invk));
-    }
-
-    /* Nodes */
-    .node{
-      cursor: pointer;
-      stroke-width: 0.75;
-    }
-    #hive.focus .node{
-      opacity: 0.15;
-    }
-    #hive.focus .node.hl{
-      opacity: 1;
-    }
-    .node.match{
-      stroke: #ff2d2d;
-      stroke-width: 2;
-      opacity: 1 !important;
-    }
-
-    .axis-line{
-      stroke: #c9c4bb;
-      stroke-width: calc(2px * var(--invk));
-      stroke-linecap: round;
-    }
-    .axis-label{
-      font-family: verdana;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      fill: #919191;
-    }
-    .axis-sublabel{
-      font-family: verdana;
-      font-size: 10px;
-      fill: #b0aba2;
-      text-transform: none;
-      letter-spacing: 0;
-      font-weight: 400;
-    }
-    .match-label{
-      font-family: verdana;
-      font-size: 11px;
-      fill: #fff;
-      pointer-events: none;
-    }
-    .match-label-bg{
-      fill: rgba(255, 45, 45, 0.9);
-      rx: 3;
-      pointer-events: none;
-    }
+    #hive.focus #edges{ opacity: 0.17; }
 
     #tooltip{
       position: absolute;
@@ -242,7 +191,11 @@
 <body>
   <h1 id="title">Hive Plot</h1>
 
-  <svg id="hive" xmlns="http://www.w3.org/2000/svg"></svg>
+  <div id="hive">
+    <canvas id="edges"></canvas>
+    <canvas id="top"></canvas>
+  </div>
+
 
   <div id="tooltip"></div>
 
@@ -300,10 +253,13 @@
     </div>
   </div>
 
-  <script>
 
-    const SVG_NS = 'http://www.w3.org/2000/svg';
-    const svg = document.getElementById('hive');
+  <script>
+    const hive = document.getElementById('hive');
+    const edgesC = document.getElementById('edges');
+    const topC = document.getElementById('top');
+    const ectx = edgesC.getContext('2d');
+    const tctx = topC.getContext('2d');
     const tooltip = document.getElementById('tooltip');
 
     const nodes = allData.nodes;
@@ -316,7 +272,6 @@
       degree.set(l.source, degree.get(l.source) + 1);
       degree.set(l.target, degree.get(l.target) + 1);
     }
-
     const byDegree = nodes.slice().sort((a, b) =>
       degree.get(a.id) - degree.get(b.id) || (a.name || '').localeCompare(b.name || ''));
 
@@ -332,7 +287,6 @@
       tierOf.set(n.id, t);
       tierNodes[t].push(n);
     });
-    // Degree range per tier, for the legend
     const tierRange = tierNodes.map(list => {
       const ds = list.map(n => degree.get(n.id));
       return [Math.min(...ds), Math.max(...ds)];
@@ -341,24 +295,17 @@
     // ---- Geometry ----
     // Three axis groups 120° apart, hubs on top. Each group is rendered as
     // two clone spokes ±DELTA so intra-tier links span the clone pair.
-    const GROUP_ANGLE = [Math.PI / 2 + 2 * Math.PI / 3,   // peripheral, lower-left... see below
-                         Math.PI / 2 - 2 * Math.PI / 3,
-                         -Math.PI / 2];
     // screen coords: y grows downward, so -PI/2 points up (hubs on top),
     // peripheral at lower-left (150°), connected at lower-right (30°).
-    GROUP_ANGLE[0] = Math.PI - Math.PI / 6;   // 150°  peripheral
-    GROUP_ANGLE[1] = Math.PI / 6;             // 30°   connected
-    GROUP_ANGLE[2] = -Math.PI / 2;            // -90°  hubs
+    const GROUP_ANGLE = [Math.PI - Math.PI / 6, Math.PI / 6, -Math.PI / 2];
     const DELTA = Math.PI / 20;               // 9° clone offset
 
-    // Pair colors for link legend / strokes, keyed "min-max" of tier indices
     const PAIR_COLORS = {
       '0-0': '#4e79a7', '1-1': '#59a14f', '2-2': '#e15759',
       '0-1': '#76b7b2', '0-2': '#b07aa1', '1-2': '#f28e2b',
     };
     const pairKey = (a, b) => `${Math.min(a, b)}-${Math.max(a, b)}`;
 
-    // Shortest signed angular distance from a to b, in (-PI, PI]
     const angDelta = (a, b) => {
       let d = (b - a) % (2 * Math.PI);
       if (d > Math.PI) d -= 2 * Math.PI;
@@ -366,19 +313,8 @@
       return d;
     };
 
-    let cx, cy, innerR, outerR;
+    let cx, cy, innerR, outerR, W, H;
     const polar = (a, r) => [cx + Math.cos(a) * r, cy + Math.sin(a) * r];
-
-    // Hive link: cubic Bézier whose control points interpolate the angle at
-    // thirds while holding each endpoint's radius (à la d3.hive.link)
-    const linkPath = (a0, r0, a1, r1) => {
-      const d = angDelta(a0, a1);
-      const [x0, y0] = polar(a0, r0);
-      const [x1, y1] = polar(a1, r1);
-      const [cx1, cy1] = polar(a0 + d / 3, r0);
-      const [cx2, cy2] = polar(a0 + 2 * d / 3, r1);
-      return `M${x0},${y0}C${cx1},${cy1} ${cx2},${cy2} ${x1},${y1}`;
-    };
 
     // ---- Per-node radius (rank along axis) ----
     let sortMode = 'degree';
@@ -410,225 +346,375 @@
       return [GROUP_ANGLE[tu] + su * DELTA, GROUP_ANGLE[tv] + sv * DELTA];
     };
 
-    // ---- Adjacency for hover highlighting ----
+    // ---- Adjacency ----
     const neighbors = new Map();
-    for (const n of nodes) neighbors.set(n.id, new Set());
-    for (const l of links){
+    const linksOf = new Map();       // id -> [link index]
+    for (const n of nodes){ neighbors.set(n.id, new Set()); linksOf.set(n.id, []); }
+    links.forEach((l, i) => {
       neighbors.get(l.source).add(l.target);
       neighbors.get(l.target).add(l.source);
-    }
+      linksOf.get(l.source).push(i);
+      linksOf.get(l.target).push(i);
+    });
 
-    // ---- Render ----
-    const nodeEls = new Map();   // id -> [circle, circle]
-    const edgeEls = new Map();   // id -> [path, ...]
-    let matchedIds = new Set();
-    let viewport = null;         // <g> that zoom/pan transforms apply to
+    // ---- Layout cache (world units = screen px at zoom 1) ----
+    const nodePos = new Map();       // id -> [x-, y-, x+, y+] clone positions
+    const nodeSize = new Map();      // id -> radius
+    const linkGeo = new Float64Array(links.length * 8);   // x0 y0 c1x c1y c2x c2y x1 y1
+    const linkColor = new Array(links.length);
+    const colorBatches = new Map();  // color -> [link index]
 
-    // ---- Zoom / pan state (persists across re-renders) ----
+    const layout = () => {
+      W = window.innerWidth; H = window.innerHeight;
+      cx = W / 2;
+      cy = H * 0.54;
+      innerR = 70;
+      // Arms are sized by population, not by the window: every person gets
+      // PX_PER_PERSON of axis, so the plot is larger than the screen and is
+      // explored by panning and zooming.
+      const PX_PER_PERSON = 3.2;
+      const biggest = Math.max(...tierNodes.map(l => l.length));
+      outerR = Math.max(Math.min(W, H * 1.08) / 2 - 110, biggest * PX_PER_PERSON);
+      if (outerR < innerR + 60) outerR = innerR + 60;
+      computeRadii();
+      for (const n of nodes){
+        const t = tierOf.get(n.id), r = radiusOf.get(n.id);
+        const [xa, ya] = polar(GROUP_ANGLE[t] - DELTA, r);
+        const [xb, yb] = polar(GROUP_ANGLE[t] + DELTA, r);
+        nodePos.set(n.id, [xa, ya, xb, yb]);
+        nodeSize.set(n.id, 2.5 + Math.sqrt(degree.get(n.id)) * 0.3);
+      }
+      colorBatches.clear();
+      links.forEach((l, i) => {
+        const tu = tierOf.get(l.source), tv = tierOf.get(l.target);
+        const [a0, a1] = linkAngles(tu, tv);
+        const r0 = radiusOf.get(l.source), r1 = radiusOf.get(l.target);
+        const d = angDelta(a0, a1);
+        const [x0, y0] = polar(a0, r0);
+        const [x1, y1] = polar(a1, r1);
+        const [c1x, c1y] = polar(a0 + d / 3, r0);
+        const [c2x, c2y] = polar(a0 + 2 * d / 3, r1);
+        linkGeo.set([x0, y0, c1x, c1y, c2x, c2y, x1, y1], i * 8);
+        const col = PAIR_COLORS[pairKey(tu, tv)];
+        linkColor[i] = col;
+        if (!colorBatches.has(col)) colorBatches.set(col, []);
+        colorBatches.get(col).push(i);
+      });
+    };
+
+    // ---- View state ----
     let zoomK = 1, zoomX = 0, zoomY = 0;
     let zoomCount = 0;
-    let lastK = 1;
-    const applyZoom = () => {
-      if (!viewport) return;
-      viewport.setAttribute('transform', `translate(${zoomX},${zoomY}) scale(${zoomK})`);
-      // only touch the CSS var when k changes — pans then skip the style recalc
-      if (zoomK !== lastK){
-        lastK = zoomK;
-        svg.style.setProperty('--invk', 1 / zoomK);
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    let edgeOpacity = 0.07;
+
+    const sizeCanvas = (c) => {
+      c.width = Math.round(W * dpr); c.height = Math.round(H * dpr);
+      c.style.width = W + 'px'; c.style.height = H + 'px';
+    };
+
+    // The edge bitmap remembers the view it was painted for; between repaints
+    // it is moved with a CSS transform so pan/zoom stays at full frame rate.
+    const edgesView = { k: 1, x: 0, y: 0 };
+    const tracePath = (ctx, i) => {
+      const o = i * 8;
+      ctx.moveTo(linkGeo[o], linkGeo[o + 1]);
+      ctx.bezierCurveTo(linkGeo[o + 2], linkGeo[o + 3], linkGeo[o + 4], linkGeo[o + 5], linkGeo[o + 6], linkGeo[o + 7]);
+    };
+    const drawEdges = () => {
+      ectx.setTransform(1, 0, 0, 1, 0, 0);
+      ectx.clearRect(0, 0, edgesC.width, edgesC.height);
+      ectx.setTransform(dpr * zoomK, 0, 0, dpr * zoomK, dpr * zoomX, dpr * zoomY);
+      ectx.lineWidth = 0.7 / zoomK;
+      ectx.lineCap = 'round';
+      ectx.globalAlpha = edgeOpacity;
+      // Strokes are batched in small groups: one stroke per link keeps the
+      // translucent overlaps that give the plot its density shading, but is
+      // slow; one stroke per colour loses them. Groups of 24 keep most of the
+      // shading at a fraction of the cost.
+      const GROUP = 24;
+      for (const [col, idx] of colorBatches){
+        ectx.strokeStyle = col;
+        for (let s = 0; s < idx.length; s += GROUP){
+          ectx.beginPath();
+          const e = Math.min(idx.length, s + GROUP);
+          for (let j = s; j < e; j++) tracePath(ectx, idx[j]);
+          ectx.stroke();
+        }
       }
+      edgesView.k = zoomK; edgesView.x = zoomX; edgesView.y = zoomY;
+      edgesC.style.transform = '';
+    };
+    const syncEdges = () => {
+      const s = zoomK / edgesView.k;
+      edgesC.style.transform = `translate(${zoomX - s * edgesView.x}px, ${zoomY - s * edgesView.y}px) scale(${s})`;
+    };
+    let edgeTimer = null;
+    const scheduleEdges = (delay = 160) => {
+      clearTimeout(edgeTimer);
+      edgeTimer = setTimeout(() => requestAnimationFrame(drawEdges), delay);
     };
 
-    svg.addEventListener('wheel', (ev) => {
-      ev.preventDefault();
-      const factor = Math.exp(-ev.deltaY * (ev.ctrlKey ? 0.01 : 0.002));
-      const newK = Math.min(40, Math.max(0.4, zoomK * factor));
-      // keep the point under the cursor fixed while scaling
-      zoomX = ev.clientX - (ev.clientX - zoomX) * (newK / zoomK);
-      zoomY = ev.clientY - (ev.clientY - zoomY) * (newK / zoomK);
-      zoomK = newK;
-      applyZoom();
-      zoomCount++;
-      if (zoomCount > 2) document.getElementById('title').style.opacity = 0;
-    }, { passive: false });
-
-    let panning = false, panStartX = 0, panStartY = 0, dragDistance = 0;
-    svg.addEventListener('mousedown', (ev) => {
-      panning = true;
-      dragDistance = 0;
-      panStartX = ev.clientX;
-      panStartY = ev.clientY;
-      svg.classList.add('panning');
-    });
-    window.addEventListener('mousemove', (ev) => {
-      if (!panning) return;
-      const dx = ev.clientX - panStartX;
-      const dy = ev.clientY - panStartY;
-      dragDistance += Math.abs(dx) + Math.abs(dy);
-      zoomX += dx;
-      zoomY += dy;
-      panStartX = ev.clientX;
-      panStartY = ev.clientY;
-      applyZoom();
-    });
-    window.addEventListener('mouseup', () => {
-      panning = false;
-      svg.classList.remove('panning');
-    });
-
-    const clearFocus = () => {
-      svg.classList.remove('focus');
-      for (const els of nodeEls.values()) els.forEach(el => el.classList.remove('hl'));
-      for (const els of edgeEls.values()) els.forEach(el => el.classList.remove('hl'));
-      tooltip.style.display = 'none';
-    };
-
-    const focusNode = (node) => {
-      svg.classList.add('focus');
-      for (const el of edgeEls.get(node.id) || []) el.classList.add('hl');
-      for (const el of nodeEls.get(node.id) || []) el.classList.add('hl');
-      for (const nb of neighbors.get(node.id) || []){
-        for (const el of nodeEls.get(nb) || []) el.classList.add('hl');
+    // ---- Portraits, loaded lazily when a node is big enough on screen ----
+    const images = new Map();   // src -> HTMLImageElement
+    const GENERIC = '../img/person.png';
+    const imageFor = (src) => {
+      let im = images.get(src);
+      if (!im){
+        im = new Image();
+        im.onload = requestTop;
+        im.src = src;
+        images.set(src, im);
       }
+      return im.complete && im.naturalWidth ? im : null;
     };
 
-    const render = () => {
-      svg.innerHTML = '';
-      nodeEls.clear();
-      for (const k of edgeEls.keys()) edgeEls.set(k, []);
+    // ---- Interaction state ----
+    let hovered = null;          // node object
+    let matchedIds = new Set();
+    let hoveredKey = null;
 
-      const w = window.innerWidth, h = window.innerHeight;
-      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-      cx = w / 2;
-      cy = h * 0.54;
-      innerR = 70;
-      outerR = Math.min(w, h * 1.08) / 2 - 110;
-      if (outerR < innerR + 60) outerR = innerR + 60;
-
-      computeRadii();
-
-      // image patterns: one per person photo + a shared generic-person fallback
-      const defs = document.createElementNS(SVG_NS, 'defs');
-      const makePattern = (id, href) => {
-        const pat = document.createElementNS(SVG_NS, 'pattern');
-        pat.setAttribute('id', id);
-        pat.setAttribute('patternContentUnits', 'objectBoundingBox');
-        pat.setAttribute('width', 1);
-        pat.setAttribute('height', 1);
-        const bg = document.createElementNS(SVG_NS, 'rect');
-        bg.setAttribute('width', 1);
-        bg.setAttribute('height', 1);
-        bg.setAttribute('fill', '#fff');
-        pat.appendChild(bg);
-        const img = document.createElementNS(SVG_NS, 'image');
-        img.setAttribute('href', href);
-        img.setAttribute('width', 1);
-        img.setAttribute('height', 1);
-        img.setAttribute('preserveAspectRatio', 'xMidYMid slice');
-        pat.appendChild(img);
-        defs.appendChild(pat);
-      };
-      makePattern('img-generic', '../img/person.png');
+    const toWorld = (sx, sy) => [(sx - zoomX) / zoomK, (sy - zoomY) / zoomK];
+    const drawR = (id) => Math.max(nodeSize.get(id), 1.6 / zoomK);   // never below ~1.6px on screen
+    const nodeAt = (sx, sy) => {
+      const [wx, wy] = toWorld(sx, sy);
+      const slack = 4 / zoomK;
+      let best = null, bestD = Infinity;
       for (const n of nodes){
-        if (n.img) makePattern(`img-${n.id}`, n.img);
+        const p = nodePos.get(n.id), r = drawR(n.id) + slack;
+        for (let k = 0; k < 4; k += 2){
+          const dx = p[k] - wx, dy = p[k + 1] - wy;
+          const d = dx * dx + dy * dy;
+          if (d < r * r && d < bestD){ bestD = d; best = n; }
+        }
       }
-      svg.appendChild(defs);
+      return best;
+    };
 
-      // all zoomable content lives in the viewport group
-      viewport = document.createElementNS(SVG_NS, 'g');
-      svg.appendChild(viewport);
+    // ---- Top layer ----
+    let topQueued = false;
+    function requestTop(){
+      if (topQueued) return;
+      topQueued = true;
+      requestAnimationFrame(() => { topQueued = false; drawTop(); });
+    }
 
-      // edges first so nodes draw on top
-      const edgeGroup = document.createElementNS(SVG_NS, 'g');
-      for (const l of links){
-        const tu = tierOf.get(l.source), tv = tierOf.get(l.target);
-        const [au, av] = linkAngles(tu, tv);
-        const p = document.createElementNS(SVG_NS, 'path');
-        p.setAttribute('d', linkPath(au, radiusOf.get(l.source), av, radiusOf.get(l.target)));
-        p.setAttribute('class', 'link');
-        p.setAttribute('stroke', PAIR_COLORS[pairKey(tu, tv)]);
-        edgeGroup.appendChild(p);
-        if (!edgeEls.has(l.source)) edgeEls.set(l.source, []);
-        if (!edgeEls.has(l.target)) edgeEls.set(l.target, []);
-        edgeEls.get(l.source).push(p);
-        edgeEls.get(l.target).push(p);
-      }
-      viewport.appendChild(edgeGroup);
+    const circle = (ctx, x, y, r) => { ctx.moveTo(x + r, y); ctx.arc(x, y, r, 0, Math.PI * 2); };
 
-      // axis spokes + labels
-      const axisGroup = document.createElementNS(SVG_NS, 'g');
+    function drawTop(){
+      const ctx = tctx;
+      ctx.setTransform(1, 0, 0, 1, 0, 0);
+      ctx.clearRect(0, 0, topC.width, topC.height);
+      ctx.setTransform(dpr * zoomK, 0, 0, dpr * zoomK, dpr * zoomX, dpr * zoomY);
+      const inv = 1 / zoomK;
+      // visible world rect, for culling
+      const [vx0, vy0] = toWorld(0, 0), [vx1, vy1] = toWorld(W, H);
+      const pad = 30 * inv;
+      const visible = (x, y) => x > vx0 - pad && x < vx1 + pad && y > vy0 - pad && y < vy1 + pad;
+
+      // axis spokes
+      ctx.strokeStyle = '#c9c4bb';
+      ctx.lineWidth = 2 * inv;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
       TIERS.forEach((tier, t) => {
         for (const sign of [-1, 1]){
           const a = GROUP_ANGLE[t] + sign * DELTA;
           const [x0, y0] = polar(a, innerR - 12);
           const [x1, y1] = polar(a, outerR + 12);
-          const line = document.createElementNS(SVG_NS, 'line');
-          line.setAttribute('x1', x0); line.setAttribute('y1', y0);
-          line.setAttribute('x2', x1); line.setAttribute('y2', y1);
-          line.setAttribute('class', 'axis-line');
-          axisGroup.appendChild(line);
+          ctx.moveTo(x0, y0); ctx.lineTo(x1, y1);
         }
-        const [lx, ly] = polar(GROUP_ANGLE[t], outerR + 48);
-        const label = document.createElementNS(SVG_NS, 'text');
-        label.setAttribute('x', lx);
-        label.setAttribute('y', ly);
-        label.setAttribute('text-anchor', 'middle');
-        label.setAttribute('class', 'axis-label');
-        label.textContent = tier.name;
-        axisGroup.appendChild(label);
-        const sub = document.createElementNS(SVG_NS, 'text');
-        sub.setAttribute('x', lx);
-        sub.setAttribute('y', ly + 15);
-        sub.setAttribute('text-anchor', 'middle');
-        sub.setAttribute('class', 'axis-sublabel');
-        sub.textContent = `${tierRange[t][0]}–${tierRange[t][1]} links each`;
-        axisGroup.appendChild(sub);
       });
-      viewport.appendChild(axisGroup);
+      ctx.stroke();
 
-      // nodes: one portrait per clone spoke, ringed with the tier color
-      const nodeGroup = document.createElementNS(SVG_NS, 'g');
-      for (const n of nodes){
-        const t = tierOf.get(n.id);
-        const r = radiusOf.get(n.id);
-        const size = 2.5 + Math.sqrt(degree.get(n.id)) * 0.3;
-        const els = [];
-        for (const sign of [-1, 1]){
-          const [x, y] = polar(GROUP_ANGLE[t] + sign * DELTA, r);
-          const c = document.createElementNS(SVG_NS, 'circle');
-          c.setAttribute('cx', x);
-          c.setAttribute('cy', y);
-          c.setAttribute('r', size);
-          c.setAttribute('fill', n.img ? `url(#img-${n.id})` : 'url(#img-generic)');
-          c.setAttribute('stroke', TIERS[t].color);
-          c.setAttribute('class', 'node');
-          c.addEventListener('mouseenter', () => focusNode(n));
-          c.addEventListener('mouseleave', clearFocus);
-          c.addEventListener('mousemove', (ev) => {
-            tooltip.style.display = 'block';
-            tooltip.innerHTML = `<div class="tt-name">${n.name}</div>` +
-              `<div class="tt-meta">${degree.get(n.id)} co-mention links &middot; ${TIERS[t].name}</div>`;
-            tooltip.style.left = `${Math.min(ev.clientX + 14, window.innerWidth - 280)}px`;
-            tooltip.style.top = `${ev.clientY + 14}px`;
-          });
-          c.addEventListener('click', () => {
-            if (dragDistance > 4) return; // it was a pan, not a click
-            window.open(`http://base.semlab.io/wiki/Item:Q${n.id}`, '_blank');
-          });
-          nodeGroup.appendChild(c);
-          els.push(c);
+      const focus = !!hovered;
+      const hl = focus ? neighbors.get(hovered.id) : null;
+
+      // highlighted links of the hovered person, drawn crisp on top of the dimmed base layer
+      if (focus){
+        ctx.globalAlpha = 0.85;
+        ctx.lineWidth = 1.4 * inv;
+        const byCol = new Map();
+        for (const i of linksOf.get(hovered.id)){
+          if (!byCol.has(linkColor[i])) byCol.set(linkColor[i], []);
+          byCol.get(linkColor[i]).push(i);
         }
-        nodeEls.set(n.id, els);
+        for (const [col, idx] of byCol){
+          ctx.strokeStyle = col;
+          ctx.beginPath();
+          for (const i of idx) tracePath(ctx, i);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
       }
-      viewport.appendChild(nodeGroup);
 
-      applyZoom();
-      applySearch();
-    };
+      // nodes, batched per tier: fills then rings. Portraits only when the
+      // circle is at least 5px on screen.
+      ctx.lineWidth = 0.75 * inv;
+      for (let t = 0; t < 3; t++){
+        const list = tierNodes[t];
+        const pass = (alpha, filter) => {
+          ctx.globalAlpha = alpha;
+          ctx.beginPath();
+          for (const n of list){
+            if (!filter(n)) continue;
+            const p = nodePos.get(n.id), r = drawR(n.id);
+            if (visible(p[0], p[1])) circle(ctx, p[0], p[1], r);
+            if (visible(p[2], p[3])) circle(ctx, p[2], p[3], r);
+          }
+          ctx.fillStyle = '#efece6';
+          ctx.fill();
+          ctx.strokeStyle = TIERS[t].color;
+          ctx.stroke();
+        };
+        if (focus){
+          pass(0.15, n => n !== hovered && !hl.has(n.id));
+          pass(1, n => n === hovered || hl.has(n.id));
+        } else {
+          pass(1, () => true);
+        }
+      }
+      ctx.globalAlpha = 1;
 
-    // ---- Search highlighting ----
+      // portraits
+      for (const n of nodes){
+        const r = drawR(n.id);
+        if (r * zoomK < 5) continue;
+        const p = nodePos.get(n.id);
+        if (!visible(p[0], p[1]) && !visible(p[2], p[3])) continue;
+        const im = imageFor(n.img || GENERIC);
+        if (!im) continue;
+        const dim = focus && n !== hovered && !hl.has(n.id);
+        ctx.globalAlpha = dim ? 0.15 : 1;
+        for (let k = 0; k < 4; k += 2){
+          if (!visible(p[k], p[k + 1])) continue;
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(p[k], p[k + 1], r - 0.4 * inv, 0, Math.PI * 2);
+          ctx.clip();
+          // cover-fit the image into the circle
+          const s = Math.max((2 * r) / im.naturalWidth, (2 * r) / im.naturalHeight);
+          const dw = im.naturalWidth * s, dh = im.naturalHeight * s;
+          ctx.drawImage(im, p[k] - dw / 2, p[k + 1] - dh / 2, dw, dh);
+          ctx.restore();
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // search matches: red ring on both clones
+      if (matchedIds.size){
+        ctx.strokeStyle = '#ff2d2d';
+        ctx.lineWidth = 2 * inv;
+        ctx.beginPath();
+        for (const id of matchedIds){
+          const p = nodePos.get(id), r = drawR(id);
+          circle(ctx, p[0], p[1], r); circle(ctx, p[2], p[3], r);
+        }
+        ctx.stroke();
+      }
+
+      // text is drawn in screen space so it keeps its size at any zoom
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const toScreen = (x, y) => [x * zoomK + zoomX, y * zoomK + zoomY];
+      ctx.textAlign = 'center';
+      TIERS.forEach((tier, t) => {
+        const [lx, ly] = toScreen(...polar(GROUP_ANGLE[t], outerR + 48));
+        ctx.font = '700 13px verdana';
+        ctx.fillStyle = '#919191';
+        ctx.fillText(tier.name.toUpperCase(), lx, ly);
+        ctx.font = '400 10px verdana';
+        ctx.fillStyle = '#b0aba2';
+        ctx.fillText(`${tierRange[t][0]}–${tierRange[t][1]} links each`, lx, ly + 15);
+      });
+      if (matchedIds.size){
+        ctx.font = '11px verdana';
+        ctx.textAlign = 'left';
+        for (const id of matchedIds){
+          const n = nodeById.get(id);
+          const p = nodePos.get(id);
+          const [x, y] = toScreen(p[2], p[3]);
+          const w = ctx.measureText(n.name).width + 8;
+          ctx.fillStyle = 'rgba(255, 45, 45, 0.9)';
+          ctx.beginPath();
+          ctx.roundRect(x + 6, y - 7, w, 15, 3);
+          ctx.fill();
+          ctx.fillStyle = '#fff';
+          ctx.fillText(n.name, x + 10, y + 4);
+        }
+      }
+    }
+    const nodeById = new Map(nodes.map(n => [n.id, n]));
+
+    // ---- Zoom / pan ----
+    const viewChanged = () => { syncEdges(); requestTop(); scheduleEdges(); };
+    hive.addEventListener('wheel', (ev) => {
+      ev.preventDefault();
+      const factor = Math.exp(-ev.deltaY * (ev.ctrlKey ? 0.01 : 0.002));
+      // floor: half of the zoom that fits the whole plot in the window
+      const minK = Math.min(W, H) / (2 * (outerR + 120)) * 0.5;
+      const newK = Math.min(40, Math.max(minK, zoomK * factor));
+      zoomX = ev.clientX - (ev.clientX - zoomX) * (newK / zoomK);
+      zoomY = ev.clientY - (ev.clientY - zoomY) * (newK / zoomK);
+      zoomK = newK;
+      viewChanged();
+      zoomCount++;
+      if (zoomCount > 2) document.getElementById('title').style.opacity = 0;
+    }, { passive: false });
+
+    let panning = false, panStartX = 0, panStartY = 0, dragDistance = 0;
+    hive.addEventListener('mousedown', (ev) => {
+      panning = true;
+      dragDistance = 0;
+      panStartX = ev.clientX;
+      panStartY = ev.clientY;
+      hive.classList.add('panning');
+    });
+    window.addEventListener('mousemove', (ev) => {
+      if (panning){
+        const dx = ev.clientX - panStartX;
+        const dy = ev.clientY - panStartY;
+        dragDistance += Math.abs(dx) + Math.abs(dy);
+        zoomX += dx;
+        zoomY += dy;
+        panStartX = ev.clientX;
+        panStartY = ev.clientY;
+        viewChanged();
+        return;
+      }
+      if (ev.target !== topC) return;
+      const n = nodeAt(ev.clientX, ev.clientY);
+      if (n !== hovered){
+        hovered = n;
+        hive.classList.toggle('focus', !!n);
+        hive.classList.toggle('hovering', !!n);
+        requestTop();
+      }
+      if (n){
+        tooltip.style.display = 'block';
+        tooltip.innerHTML = `<div class="tt-name">${n.name}</div>` +
+          `<div class="tt-meta">${degree.get(n.id)} co-mention links &middot; ${TIERS[tierOf.get(n.id)].name}</div>`;
+        tooltip.style.left = `${Math.min(ev.clientX + 14, window.innerWidth - 280)}px`;
+        tooltip.style.top = `${ev.clientY + 14}px`;
+      } else {
+        tooltip.style.display = 'none';
+      }
+    });
+    window.addEventListener('mouseup', () => {
+      panning = false;
+      hive.classList.remove('panning');
+    });
+    hive.addEventListener('mouseleave', () => {
+      if (hovered){ hovered = null; hive.classList.remove('focus', 'hovering'); requestTop(); }
+      tooltip.style.display = 'none';
+    });
+    topC.addEventListener('click', (ev) => {
+      if (dragDistance > 4) return; // it was a pan, not a click
+      const n = nodeAt(ev.clientX, ev.clientY);
+      if (n) window.open(`http://base.semlab.io/wiki/Item:Q${n.id}`, '_blank');
+    });
+
+    // ---- Search ----
     const searchInput = document.getElementById('search-input');
-    let labelGroup = null;
-
     const applySearch = () => {
       const terms = searchInput.value.toLowerCase().split('|')
         .map(s => s.trim()).filter(s => s.length > 0);
@@ -639,48 +725,22 @@
           if (terms.some(t => name.includes(t))) matchedIds.add(n.id);
         }
       }
-      for (const [id, els] of nodeEls){
-        const on = matchedIds.has(id);
-        els.forEach(el => el.classList.toggle('match', on));
-      }
-      if (labelGroup) labelGroup.remove();
-      labelGroup = document.createElementNS(SVG_NS, 'g');
-      for (const id of matchedIds){
-        const n = nodes.find(x => x.id === id);
-        const t = tierOf.get(id);
-        const [x, y] = polar(GROUP_ANGLE[t] + DELTA, radiusOf.get(id));
-        const text = document.createElementNS(SVG_NS, 'text');
-        text.setAttribute('class', 'match-label');
-        text.setAttribute('x', x + 10);
-        text.setAttribute('y', y + 4);
-        text.textContent = n.name;
-        labelGroup.appendChild(text);
-        const bbWidth = (n.name || '').length * 6.6 + 8;
-        const bg = document.createElementNS(SVG_NS, 'rect');
-        bg.setAttribute('class', 'match-label-bg');
-        bg.setAttribute('x', x + 6);
-        bg.setAttribute('y', y - 7);
-        bg.setAttribute('width', bbWidth);
-        bg.setAttribute('height', 15);
-        bg.setAttribute('rx', 3);
-        labelGroup.insertBefore(bg, text);
-        labelGroup.appendChild(text);
-      }
-      viewport.appendChild(labelGroup);
+      requestTop();
     };
-
     searchInput.addEventListener('input', applySearch);
 
     // ---- Controls ----
     for (const radio of document.querySelectorAll('input[name="sort"]')){
       radio.addEventListener('change', () => {
         sortMode = radio.value;
-        render();
+        layout();
+        drawEdges();
+        requestTop();
       });
     }
-
     document.getElementById('edge-opacity').addEventListener('input', (ev) => {
-      svg.style.setProperty('--edge-opacity', ev.target.value);
+      edgeOpacity = +ev.target.value;
+      scheduleEdges(60);
     });
 
     // ---- Legends + stats ----
@@ -693,7 +753,6 @@
         `<span>${tier.name} &mdash; ${tierNodes[t].length} people, ${tierRange[t][0]}&ndash;${tierRange[t][1]} links</span>`;
       legendAxes.appendChild(row);
     });
-
     const legendLinks = document.getElementById('legend-links');
     const pairLabel = (a, b) => a === b ? `Within ${TIERS[a].name}` : `${TIERS[a].name} &harr; ${TIERS[b].name}`;
     for (const key of ['2-2', '1-2', '0-2', '1-1', '0-1', '0-0']){
@@ -704,12 +763,25 @@
         `<span>${pairLabel(a, b)}</span>`;
       legendLinks.appendChild(row);
     }
-
     document.getElementById('stats').textContent =
       `${nodes.length} people · ${links.length.toLocaleString()} co-mention links`;
 
+    // ---- Boot ----
+    let booted = false;
+    const render = () => {
+      layout();
+      sizeCanvas(edgesC); sizeCanvas(topC);
+      if (!booted){
+        booted = true;
+        zoomK = Math.min(1, Math.min(W, H) * 0.9 / outerR);
+        zoomX = W / 2 - cx * zoomK;
+        zoomY = H * 0.54 - cy * zoomK;
+      }
+      drawEdges();
+      drawTop();
+    };
     window.addEventListener('resize', render);
     render();
-
   </script>
+
 </body>

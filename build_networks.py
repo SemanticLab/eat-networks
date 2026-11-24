@@ -17,76 +17,56 @@ all_relationships = {}
 raw_path = 'associated_entities_raw.cleaned.json' if os.path.exists('associated_entities_raw.cleaned.json') else 'associated_entities_raw.json'
 print(f'reading {raw_path}')
 
+# Co-mention links, weighted. Every pair of people named in the same block
+# (passage) is a tie. A pair's weight sums 1/(k-1) over the passages it shares,
+# where k is the number of people in that passage: two people alone in a
+# passage count 1, a 50-name list contributes almost nothing per pair. We also
+# keep how many passages (p) and documents (d) each pair shares, and the first
+# block as its reference, so the pages can prune one-off ties.
+pairs = {}          # (a, b) -> {'w':, 'p':, 'docs': set(), 'ref':}
+people_seen = {}
 for doc in json.load(open(raw_path)):
-
-
 	blocks = {}
-
 	for e in doc['entities']:
+		if e['type_qid'] != 'Q1':
+			continue
+		blocks.setdefault(e['block_qid'], [])
+		if e['entity_qid'] not in blocks[e['block_qid']]:
+			blocks[e['block_qid']].append(e['entity_qid'])
+	for b, qids in blocks.items():
+		qids = [q for q in qids if q in people_lookup or missing.append(q) or False]
+		if len(qids) < 2:
+			continue
+		share = 1.0 / (len(qids) - 1)
+		for q in qids:
+			people_seen[q] = True
+		for a, b2 in itertools.combinations(sorted(qids, key=lambda q: int(q[1:])), 2):
+			rec = pairs.get((a, b2))
+			if rec is None:
+				rec = pairs[(a, b2)] = {'w': 0.0, 'p': 0, 'docs': set(), 'ref': b}
+			rec['w'] += share
+			rec['p'] += 1
+			rec['docs'].add(doc['qid'])
 
-		if e['block_qid'] not in blocks:
-			blocks[e['block_qid']] = {}
-			blocks[e['block_qid']]['relationshipsAdded'] = {}
-			blocks[e['block_qid']]['relationships'] = []
-			blocks[e['block_qid']]['qids'] = []
+for qid in people_seen:
+	nodes.append({
+		'id': int(qid[1:]),
+		'name': people_lookup[qid]['label'],
+		'img': people_lookup[qid]['image']
+	})
+for (a, b2), rec in pairs.items():
+	links.append({
+		'source': int(a[1:]),
+		'target': int(b2[1:]),
+		'ref': rec['ref'],
+		'w': round(rec['w'], 4),
+		'p': rec['p'],
+		'd': len(rec['docs']),
+	})
+missing = sorted(set(missing))
+print(f"{len(nodes)} people, {len(links)} co-mention pairs; "
+      f"{sum(1 for l in links if l['p'] >= 2)} shared by 2+ passages, {sum(1 for l in links if l['d'] >= 2)} by 2+ documents")
 
-		if e['type_qid'] == 'Q1':
-
-			if e['entity_qid'] not in blocks[e['block_qid']]:
-				blocks[e['block_qid']]['qids'].append(e['entity_qid'])
-
-
-	for b in blocks:
-		if len(blocks[b]['qids']) > 1:
-			print(b)
-			print(blocks[b])
-			for subset in itertools.combinations(blocks[b]['qids'], 2):
-
-				print(subset)
-				ltr = f"{subset[0]}-{subset[1]}"
-				rtl = f"{subset[1]}-{subset[0]}"
-
-
-				# if ltr not in blocks[b]['relationshipsAdded'] and rtl not in blocks[b]['relationshipsAdded']:
-				if ltr not in all_relationships and rtl not in all_relationships:
-				
-
-					blocks[b]['relationships'].append(
-					        {
-					            "source": int(subset[0][1:]),
-					            "target": int(subset[1][1:]),
-					            "ref":b
-					        })
-
-						
-					# blocks[b]['relationshipsAdded'][ltr] = True
-					# blocks[b]['relationshipsAdded'][rtl] = True
-					all_relationships[ltr] = True
-					all_relationships[rtl] = True
-
-
-
-	# build nodes and links
-	for b in blocks:
-		if len(blocks[b]['qids']) > 1:
-			links = links + blocks[b]['relationships']
-			for qid in blocks[b]['qids']:
-				if qid not in nodesAdded:
-
-					if qid not in people_lookup:
-						missing.append(qid)
-						continue
-
-					nodesAdded[qid] = True
-					nodes.append({
-						'id': int(qid[1:]),
-						'name': people_lookup[qid]['label'],
-						'img': people_lookup[qid]['image']
-					})
-
-
-# Drop links pointing at nodes that were skipped (missing from people_lookup),
-# otherwise force-graph throws "node not found".
 node_ids = {n['id'] for n in nodes}
 clean_links = [l for l in links if l['source'] in node_ids and l['target'] in node_ids]
 dropped = len(links) - len(clean_links)
@@ -101,7 +81,7 @@ with open('people_network.js','w') as outfile:
 	all_data = json.dumps({ 'nodes': nodes, 'links': links })
 	outfile.write(f"const allData = {all_data}")
 
-print(missing)
+print(f'{len(missing)} entities not in people_lookup:', missing[:20], '...' if len(missing) > 20 else '')
 
 
 # stuff = [1, 2, 3]
